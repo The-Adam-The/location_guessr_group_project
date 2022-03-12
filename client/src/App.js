@@ -1,10 +1,10 @@
 import './App.css';
-import GameContainer from './containers/GameContainer';
+import MainContainer from './containers/MainContainer';
 
 function App() {
   return (
     <div className="App">
-     <GameContainer />
+     <MainContainer />
     </div>
   );
 }
