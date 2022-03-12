@@ -1,4 +1,5 @@
 const express = require('express');
+const { ReturnDocument } = require('mongodb');
 const ObjectId = require('mongodb').ObjectId;
 
 const createRouter = (collection) => {
@@ -31,6 +32,21 @@ const createRouter = (collection) => {
         })
     })
 
+      //show random
+      router.get('/randomquestion', (res, req) => {
+        collection
+        .find()
+        .toArray()
+        .aggregate([{$sample:{size:1}}])
+        .then((doc) => res.json(doc))
+       
+        .catch((error) => {
+            console.error(error)
+            res.status(500)
+            res.json({status: 500, error: error})
+        })
+    })
+
     //create
     router.post('/', (req, res) => {
         const newData = req.body;
@@ -43,6 +59,19 @@ const createRouter = (collection) => {
             res.json({status: 500, error: error})
         })
     })
+
+    // //count questions
+    // router.get('/countquestions', (req, res) => {
+    //     collection
+    //     .count({name: "Uluru"})
+    //     .then((doc) => res.json(doc))
+    //     .catch((error) => {
+    //         console.error(error)
+    //         res.status(500)
+    //         res.json({status: 500, error: error})
+    //     })
+    // })
+    
 
     return router
 
