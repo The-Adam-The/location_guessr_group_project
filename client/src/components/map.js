@@ -2,16 +2,11 @@ import {useState, useCallback, useRef, useEffect} from 'react'
 import {GoogleMap, Marker, Polyline} from "@react-google-maps/api"
 import mapStyle from "../mapStyle"
 
-const Map = ({questions}) => {
+const Map = ({question}) => {
     const [center, setCenter] = useState({lat: 0, lng: 0});
     const [markers, setMarkers] = useState([]);
-    const [question, setQuestion] = useState({});
 
-    useEffect(() => {
-        setQuestion(questions[0])
-    }, [questions]);
-
-    console.log(question);
+    console.log(question)
 
     // sets the size of the map
     const mapContainerStyle = {
