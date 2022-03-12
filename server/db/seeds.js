@@ -37,4 +37,23 @@ db.questions.insertMany(
     }
 ])
 
+db.scores.insertMany(
+[
+    { 
+        name: "Rachel",
+        score: 30000
+    },
+    {
+        name: "Caroline",
+        score: 35000
+    },
+    {
+        name: "James",
+        score: 31000
+    },
+    {
+        name: "Adam",
+        score: 23000
+    }
+])
 
