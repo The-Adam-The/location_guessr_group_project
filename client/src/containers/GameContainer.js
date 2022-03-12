@@ -1,6 +1,6 @@
 import {useLoadScript} from "@react-google-maps/api"
 import { useState, useEffect } from "react";
-import Map from "../components/map";
+import Map from "../components/Map";
 import QuestionsService from "../services/QuestionsServices";
 
 const libraries = ["places"];
@@ -14,16 +14,16 @@ const {isLoaded, loadError} = useLoadScript({
     if (loadError) return "Error loading maps";
     if (!isLoaded) return "Loading map";
 
-    const [questions, setQuesions] = useState()
+    // const [questions, setQuesions] = useState([])
 
-    useEffect(() => {
-        QuestionsService.getQuestions()
-        .then(questions => setQuesions(questions))
-    }, [])
+    // useEffect(() => {
+    //     QuestionsService.getQuestions()
+    //     .then(questions => setQuesions(questions))
+    // }, [])
 
     return(
         <>
-            <Map questions={questions}/>
+            <Map />
         </>
     );
 };
