@@ -5,6 +5,13 @@ import mapStyle from "../mapStyle"
 const Map = ({questions}) => {
     const [center, setCenter] = useState({lat: 0, lng: 0});
     const [markers, setMarkers] = useState([]);
+    const [question, setQuestion] = useState({});
+
+    useEffect(() => {
+        setQuestion(questions[0])
+    }, [questions]);
+
+    console.log(question);
 
     // sets the size of the map
     const mapContainerStyle = {
@@ -72,8 +79,11 @@ const Map = ({questions}) => {
     return(
         <>
             <GoogleMap mapContainerStyle={mapContainerStyle} zoom={2} center={center} options={options} onClick={markers.length !== 2 ? handleMarkerClick : null} onLoad={onMapLoad}>
-                {markers.map(marker => <Marker key={marker.time.toISOString()} position={{lat: marker.lat, lng: marker.lng}} />)}
+                {markers.map(marker => <Marker key={marker._id} position={{lat: marker.lat, lng: marker.lng}} />)}
+                {markers.length === 2 ? <Polyline path={[markers[0], markers[1]]} options={lineOptions} /> : null}
             </GoogleMap>
+
+            
         </>
     );
 };

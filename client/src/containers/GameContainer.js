@@ -11,19 +11,20 @@ const {isLoaded, loadError} = useLoadScript({
     libraries
     });
 
+  
+
+    const [questions, setQuestions] = useState([])
+
+    useEffect(() => {
+        QuestionsService.getQuestions()
+        .then(questions => setQuestions(questions))
+    }, [])
+
     if (loadError) return "Error loading maps";
     if (!isLoaded) return "Loading map";
-
-    // const [questions, setQuesions] = useState([])
-
-    // useEffect(() => {
-    //     QuestionsService.getQuestions()
-    //     .then(questions => setQuesions(questions))
-    // }, [])
-
     return(
         <>
-            <Map />
+            <Map questions={questions}/>
         </>
     );
 };
