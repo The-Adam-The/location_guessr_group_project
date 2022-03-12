@@ -14,7 +14,7 @@ const Map = ({question}) => {
         height: "90vh"
       };
     
-    // loads in options to the map including the mapStyle which is how the map looks and sets allowed controls
+    // loads in options to the map including the mapStyle which is how the map looks and sets allowed controls.
     const options = {
         styles: mapStyle,
         disableDefaultUI: true,
