@@ -8,7 +8,7 @@ const Map = ({question}) => {
 
     console.log(question)
 
-    // sets the size of the map
+    // sets the size of the maps
     const mapContainerStyle = {
         width: "95vw",
         height: "90vh"
