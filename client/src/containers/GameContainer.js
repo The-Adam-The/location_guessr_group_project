@@ -24,12 +24,17 @@ const {isLoaded, loadError} = useLoadScript({
 
     useEffect(() => {
         QuestionsService.getQuestion()
-        .then(questions => setQuestion(questions))
+        .then(question => setQuestion(question))
     }, [])
 
     useEffect(() => {
         setQuestion(question)
     }, [question])
+
+    const nextQuestion = () => {
+        QuestionsService.getQuestion()
+        .then(question => setQuestion(question))
+    }
 
     // sets the map in reference state so we can use the reference to pan around with the panTo function
     const mapRef = useRef();
@@ -65,7 +70,7 @@ const {isLoaded, loadError} = useLoadScript({
         <div className="game-container">
             <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter} onMapLoad={onMapLoad}/>
             <Question question={question}/>
-            <CheckButton markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} haversineDistance={haversineDistance} mapRef={mapRef}/>
+            <CheckButton markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} haversineDistance={haversineDistance} mapRef={mapRef} nextQuestion={nextQuestion}/>
 
             <button id="rules-btn" onClick={() => setRulePopup(true)}>Rules</button>
             <RulesPopup trigger={rulePopup} setTrigger={setRulePopup}>
