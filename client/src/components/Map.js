@@ -2,10 +2,9 @@ import {useState, useCallback, useRef} from 'react'
 import {GoogleMap, Marker, Polyline} from "@react-google-maps/api"
 import mapStyle from "../mapStyle"
 
-const Map = ({question}) => {
+const Map = ({question, checkButton, setCheckButton}) => {
     const [center, setCenter] = useState({lat: 0, lng: 0});
     const [markers, setMarkers] = useState([]);
-    const [button, setButton] = useState(0);
 
     // sets the size of the maps
     const mapContainerStyle = {
@@ -61,14 +60,15 @@ const Map = ({question}) => {
     // adds question marker to marker state and switches check button to next button
     const handleCheckClick = () => {
         setMarkers(current => [...current, question.location.coords])
-        setButton(1)
+        setCheckButton(true)
+
       };
   
       // resets state of game to default settings and will set next question
       const handleNextClick = () => {
         setCenter({lat: 0, lng: 0})
         mapRef.current.setZoom(2)
-        setButton(0)
+        setCheckButton(false)
         setMarkers([])
         // add in a setQuestion(newQuestion) function here once we have selection of questions from db
       };
@@ -93,7 +93,7 @@ const Map = ({question}) => {
                 {markers.map(marker => <Marker key={marker._id} position={{lat: marker.lat, lng: marker.lng}} />)}
                 {markers.length === 2 ? <Polyline path={[markers[0], markers[1]]} options={lineOptions} /> : null}
             </GoogleMap>
-            {button === 0 ? <button className='question-button' onClick={markers.length !== 0 ? handleCheckClick : null}>Check</button> : <button className='question-button' onClick={handleNextClick}>Next</button>}
+            {checkButton ? <button className='question-button' onClick={handleNextClick}>Next</button> : <button className='question-button' onClick={markers.length !== 0 ? handleCheckClick : null}>Check</button>}
             {markers.length === 2 ? <h2>{haversine_distance(markers[0], markers[1]).toFixed(2)}mi / {(haversine_distance(markers[0], markers[1])*1.60934).toFixed(2)}km</h2>  : null}
         </div>
     );
