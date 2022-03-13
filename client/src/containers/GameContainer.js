@@ -20,6 +20,7 @@ const {isLoaded, loadError} = useLoadScript({
     const [rulePopup, setRulePopup] = useState(false);
     const [checkButton, setCheckButton] = useState(false);
     const [markers, setMarkers] = useState([]);
+    const [center, setCenter] = useState({lat: 0, lng: 0});
 
     useEffect(() => {
         QuestionsService.getQuestion()
@@ -35,9 +36,9 @@ const {isLoaded, loadError} = useLoadScript({
 
     return(
         <div className="game-container">
-            <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers}/>
+            <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter}/>
             <Question question={question}/>
-            <CheckButton markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton}/>
+            <CheckButton markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter}/>
 
             <button id="rules-btn" onClick={() => setRulePopup(true)}>Rules</button>
             <RulesPopup trigger={rulePopup} setTrigger={setRulePopup}>

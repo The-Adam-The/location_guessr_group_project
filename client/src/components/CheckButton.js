@@ -1,13 +1,11 @@
-const CheckButton = ({markers, setMarkers, checkButton, setCheckButton}) => {
+const CheckButton = ({markers, setMarkers, checkButton, setCheckButton, question, setCenter}) => {
     
 
      // adds question marker to marker state and switches check button to next button
      const handleCheckClick = () => {
         setMarkers(current => [...current, question.location.coords])
         setCheckButton(true)
-
       };
-
 
     // resets state of game to default settings and will set next question
     const handleNextClick = () => {
