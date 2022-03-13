@@ -1,5 +1,8 @@
 const express = require('express');
+const { ReturnDocument } = require('mongodb');
 const ObjectId = require('mongodb').ObjectId;
+const _ = require('lodash.sample')
+
 
 const createRouter = (collection) => {
 
@@ -18,6 +21,23 @@ const createRouter = (collection) => {
         })
     })
     
+      //show random
+      router.get('/random/question', (req, res) => {
+       collection
+       .find()
+       .toArray()
+       .then((docs) => {
+        question = docs[Math.round(Math.random() * docs.length)]   
+        res.json(question)
+        })
+        .catch((error) => {
+            console.error(error)
+            res.status(500)
+            res.json({status: 500, error: error})
+        })
+    })
+    
+    
     //show 
     router.get('/:id', (req, res) => {
         const id = req.params.id;
@@ -31,6 +51,7 @@ const createRouter = (collection) => {
         })
     })
 
+
     //create
     router.post('/', (req, res) => {
         const newData = req.body;
@@ -43,6 +64,19 @@ const createRouter = (collection) => {
             res.json({status: 500, error: error})
         })
     })
+
+    // //count questions
+    // router.get('/countquestions', (req, res) => {
+    //     collection
+    //     .count({name: "Uluru"})
+    //     .then((doc) => res.json(doc))
+    //     .catch((error) => {
+    //         console.error(error)
+    //         res.status(500)
+    //         res.json({status: 500, error: error})
+    //     })
+    // })
+    
 
     return router
 

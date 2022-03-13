@@ -1,6 +1,8 @@
 const ScoreBreakdown = () => {
     return(
-        <></>
+        <>
+            <p>Score Breakdown</p>
+        </>
     );
 };
 
