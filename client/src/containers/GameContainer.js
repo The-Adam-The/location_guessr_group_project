@@ -2,7 +2,10 @@ import {useLoadScript} from "@react-google-maps/api"
 import { useState, useEffect } from "react";
 import Map from "../components/Map";
 import QuestionsService from "../services/QuestionsServices";
+import Question from "../components/Question"
+import './GameContainer.css';
 import RulesPopup from "../components/RulesPopup";
+
 
 const libraries = ["places"];
 
@@ -22,22 +25,23 @@ const {isLoaded, loadError} = useLoadScript({
     }, [])
 
     useEffect(() => {
-        setQuestion(questions[0])
+        setQuestion(questions[2])
     }, [questions])
     
     if (loadError) return "Error loading maps";
     if (!isLoaded) return "Loading map";
 
     return(
-        <>
+        <div className="game-container">
             <Map question={question}/>
+            <Question question={question}/>
             <button id="rules-btn" onClick={() => setRulePopup(true)}>Rules</button>
             <RulesPopup trigger={rulePopup} setTrigger={setRulePopup}>
                 <h3>Game Rules:</h3>
                 <br />
                 <p>Drop your pin on the map when you have guessed the location from the clues!</p>
             </RulesPopup>
-        </>
+        </div>
     );
 };
 
