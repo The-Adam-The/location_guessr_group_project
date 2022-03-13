@@ -37,7 +37,7 @@ const createRouter = (collection) => {
         collection
         .find()
         .toArray()
-        .aggregate([{$sample:{size:1}}])
+        .aggregate([{project: {_id: 1, name: 1, question: 1, location: 1, imageLink: 1} }, {$sample:{size:1}}])
         .then((doc) => res.json(doc))
        
         .catch((error) => {
