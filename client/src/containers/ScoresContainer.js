@@ -5,8 +5,8 @@ const ScoresContainer = ({scores}) => {
 
     return(
         <>
-            <ScoreBreakdown/>
-            <Leaderboard/>
+            <ScoreBreakdown scores={scores}/>
+            <Leaderboard scores={scores}/>
         </>
     );
 };
