@@ -29,8 +29,8 @@ db.questions.insertMany(
         imageLink: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Uluru_%28Helicopter_view%29-crop.jpg/1920px-Uluru_%28Helicopter_view%29-crop.jpg"
     },
     {
-        name: "Schwarznegger",
-        question: "Where was Arnorld Schwarznegger born??",
+        name: "Schwarzenegger",
+        question: "Where was Arnold Schwarzenegger born??",
         location: {
             place: "Thal",
             country: "Austria",
