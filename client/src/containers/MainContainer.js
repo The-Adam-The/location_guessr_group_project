@@ -3,6 +3,7 @@ import GameContainer from './GameContainer';
 import ScoresContainer from './ScoresContainer';
 
 const MainContainer = () => {
+
     return(
         <>
             <LogInContainer/>

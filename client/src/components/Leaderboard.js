@@ -1,6 +1,8 @@
 const Leaderboard = () => {
     return(
-        <></>
+        <>
+            <p>Leaderboard</p>
+        </>
     );
 };
 
