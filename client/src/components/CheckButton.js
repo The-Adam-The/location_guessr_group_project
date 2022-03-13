@@ -1,4 +1,4 @@
-const CheckButton = ({markers, setMarkers, checkButton, setCheckButton, question, setCenter, haversineDistance, mapRef}) => {
+const CheckButton = ({markers, setMarkers, checkButton, setCheckButton, question, setCenter, haversineDistance, mapRef, nextQuestion}) => {
     
 
      // adds question marker to marker state and switches check button to next button
@@ -13,9 +13,8 @@ const CheckButton = ({markers, setMarkers, checkButton, setCheckButton, question
     mapRef.current.setZoom(2)
     setCheckButton(false)
     setMarkers([])
-    // add in a setQuestion(newQuestion) function here once we have selection of questions from db
+    nextQuestion()
     };
-
 
     return ( 
 
