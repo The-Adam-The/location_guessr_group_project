@@ -15,19 +15,18 @@ const {isLoaded, loadError} = useLoadScript({
     libraries
     });
 
-    const [questions, setQuestions] = useState([])
     const [question, setQuestion] = useState({});
     const [rulePopup, setRulePopup] = useState(false);
 
     useEffect(() => {
-        QuestionsService.getQuestions()
-        .then(questions => setQuestions(questions))
+        QuestionsService.getQuestion()
+        .then(questions => setQuestion(questions))
     }, [])
 
     useEffect(() => {
-        setQuestion(questions[2])
-    }, [questions])
-    
+        setQuestion(question)
+    }, [question])
+
     if (loadError) return "Error loading maps";
     if (!isLoaded) return "Loading map";
 
