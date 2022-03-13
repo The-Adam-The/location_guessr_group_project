@@ -2,6 +2,8 @@ import {useLoadScript} from "@react-google-maps/api"
 import { useState, useEffect } from "react";
 import Map from "../components/Map";
 import QuestionsService from "../services/QuestionsServices";
+import Question from "../components/Question"
+import './GameContainer.css';
 
 const libraries = ["places"];
 
@@ -20,16 +22,17 @@ const {isLoaded, loadError} = useLoadScript({
     }, [])
 
     useEffect(() => {
-        setQuestion(questions[0])
+        setQuestion(questions[2])
     }, [questions])
     
     if (loadError) return "Error loading maps";
     if (!isLoaded) return "Loading map";
 
     return(
-        <>
+        <div className="game-contianer">
             <Map question={question}/>
-        </>
+            <Question question={question}/>
+        </div>
     );
 };
 

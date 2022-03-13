@@ -9,8 +9,9 @@ const Map = ({question}) => {
 
     // sets the size of the maps
     const mapContainerStyle = {
-        width: "95vw",
-        height: "90vh"
+        position: "relative",
+        width: "75vw",
+        height: "97vh"
       };
     
     // loads in options to the map including the mapStyle which is how the map looks and sets allowed controls
@@ -18,6 +19,7 @@ const Map = ({question}) => {
         styles: mapStyle,
         disableDefaultUI: true,
         zoomControl: true,
+        minZoom: 1.75,
       };
 
     // this function calculates the distance between two locations with lat and lng values
@@ -86,14 +88,14 @@ const Map = ({question}) => {
     if (markers.length === 1) panTo(markers[0]);
 
     return(
-        <>
-            <GoogleMap mapContainerStyle={mapContainerStyle} zoom={2} center={center} options={options} onClick={markers.length !== 2 ? handleMarkerClick : null} onLoad={onMapLoad}>
+        <div className='map-box'>
+            <GoogleMap mapContainerStyle={mapContainerStyle} zoom={2} center={center} options={options} mapContainerClassName={'map-container'} onClick={markers.length !== 2 ? handleMarkerClick : null} onLoad={onMapLoad}>
                 {markers.map(marker => <Marker key={marker._id} position={{lat: marker.lat, lng: marker.lng}} />)}
                 {markers.length === 2 ? <Polyline path={[markers[0], markers[1]]} options={lineOptions} /> : null}
             </GoogleMap>
             {button === 0 ? <button className='question-button' onClick={markers.length !== 0 ? handleCheckClick : null}>Check</button> : <button className='question-button' onClick={handleNextClick}>Next</button>}
             {markers.length === 2 ? <h2>{haversine_distance(markers[0], markers[1]).toFixed(2)}mi / {(haversine_distance(markers[0], markers[1])*1.60934).toFixed(2)}km</h2>  : null}
-        </>
+        </div>
     );
 };
 
