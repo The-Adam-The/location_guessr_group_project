@@ -1,8 +1,8 @@
-import {useState, useCallback, useRef} from 'react'
+import {useCallback} from 'react'
 import {GoogleMap, Marker, Polyline} from "@react-google-maps/api"
 import mapStyle from "../mapStyle"
 
-const Map = ({question, checkButton, setCheckButton, markers, setMarkers, center, setCenter}) => {
+const Map = ({markers, setMarkers, center, onMapLoad}) => {
 
     // sets the size of the maps
     const mapContainerStyle = {
@@ -38,24 +38,9 @@ const Map = ({question, checkButton, setCheckButton, markers, setMarkers, center
         setMarkers(() => [{
             lat: event.latLng.lat(),
             lng: event.latLng.lng(),
-            //  replace time with id for key
             time: new Date()
         }])
     }, []);
-
-    // sets the map in reference state so we can use the reference to pan around with the panTo function
-    const mapRef = useRef();
-    const onMapLoad = useCallback((map) => {
-      mapRef.current = map;
-    }, []);
-
-    // pans using lat and ln of latest marker drop
-    const panTo = useCallback(({lat,lng}) => {
-        mapRef.current.panTo({lat,lng})
-      }, []);
-
-    // makes sure only to pan when choosing answer marker position
-    if (markers.length === 1) panTo(markers[0]);
 
     return(
         <div className='map-box'>

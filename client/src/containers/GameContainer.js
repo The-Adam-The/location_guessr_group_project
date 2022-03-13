@@ -1,5 +1,5 @@
 import {useLoadScript} from "@react-google-maps/api"
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Map from "../components/Map";
 import CheckButton from "../components/CheckButton";
 import QuestionsService from "../services/QuestionsServices";
@@ -31,6 +31,20 @@ const {isLoaded, loadError} = useLoadScript({
         setQuestion(question)
     }, [question])
 
+    // sets the map in reference state so we can use the reference to pan around with the panTo function
+    const mapRef = useRef();
+    const onMapLoad = useCallback((map) => {
+        mapRef.current = map;
+    }, []);
+
+    // pans using lat and ln of latest marker drop
+    const panTo = useCallback(({lat,lng}) => {
+        mapRef.current.panTo({lat,lng})
+        }, []);
+
+    // makes sure only to pan when choosing answer marker position
+    if (markers.length === 1) panTo(markers[0]);
+
 
     // this function calculates the distance between two locations with lat and lng values
     const haversineDistance = (mk1, mk2) => {
@@ -49,9 +63,9 @@ const {isLoaded, loadError} = useLoadScript({
 
     return(
         <div className="game-container">
-            <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter}/>
+            <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter} onMapLoad={onMapLoad}/>
             <Question question={question}/>
-            <CheckButton markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} haversineDistance={haversineDistance}/>
+            <CheckButton markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} haversineDistance={haversineDistance} mapRef={mapRef}/>
 
             <button id="rules-btn" onClick={() => setRulePopup(true)}>Rules</button>
             <RulesPopup trigger={rulePopup} setTrigger={setRulePopup}>
