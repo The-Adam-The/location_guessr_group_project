@@ -1,6 +1,7 @@
 import {useLoadScript} from "@react-google-maps/api"
 import { useState, useEffect } from "react";
 import Map from "../components/Map";
+import CheckButton from "../components/CheckButton";
 import QuestionsService from "../services/QuestionsServices";
 import Question from "../components/Question"
 import './GameContainer.css';
@@ -36,6 +37,8 @@ const {isLoaded, loadError} = useLoadScript({
         <div className="game-container">
             <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers}/>
             <Question question={question}/>
+            <CheckButton markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton}/>
+
             <button id="rules-btn" onClick={() => setRulePopup(true)}>Rules</button>
             <RulesPopup trigger={rulePopup} setTrigger={setRulePopup}>
                 <h3>Game Rules:</h3>

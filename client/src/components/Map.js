@@ -59,21 +59,21 @@ const Map = ({question, checkButton, setCheckButton, markers, setMarkers}) => {
         }])
     }, []);
 
-    // adds question marker to marker state and switches check button to next button
-    const handleCheckClick = () => {
-        setMarkers(current => [...current, question.location.coords])
-        setCheckButton(true)
+    // // adds question marker to marker state and switches check button to next button
+    // const handleCheckClick = () => {
+    //     setMarkers(current => [...current, question.location.coords])
+    //     setCheckButton(true)
 
-      };
+    //   };
   
-      // resets state of game to default settings and will set next question
-      const handleNextClick = () => {
-        setCenter({lat: 0, lng: 0})
-        mapRef.current.setZoom(2)
-        setCheckButton(false)
-        setMarkers([])
-        // add in a setQuestion(newQuestion) function here once we have selection of questions from db
-      };
+      // // resets state of game to default settings and will set next question
+      // const handleNextClick = () => {
+      //   setCenter({lat: 0, lng: 0})
+      //   mapRef.current.setZoom(2)
+      //   setCheckButton(false)
+      //   setMarkers([])
+      //   // add in a setQuestion(newQuestion) function here once we have selection of questions from db
+      // };
 
     // sets the map in reference state so we can use the reference to pan around with the panTo function
     const mapRef = useRef();
@@ -95,8 +95,8 @@ const Map = ({question, checkButton, setCheckButton, markers, setMarkers}) => {
                 {markers.map(marker => <Marker key={marker._id} position={{lat: marker.lat, lng: marker.lng}} />)}
                 {markers.length === 2 ? <Polyline path={[markers[0], markers[1]]} options={lineOptions} /> : null}
             </GoogleMap>
-            {checkButton ? <button className='question-button' onClick={handleNextClick}>Next</button> : <button className='question-button' onClick={markers.length !== 0 ? handleCheckClick : null}>Check</button>}
-            {markers.length === 2 ? <h2>{haversine_distance(markers[0], markers[1]).toFixed(2)}mi / {(haversine_distance(markers[0], markers[1])*1.60934).toFixed(2)}km</h2>  : null}
+            {/* {checkButton ? <button className='question-button' onClick={handleNextClick}>Next</button> : <button className='question-button' onClick={markers.length !== 0 ? handleCheckClick : null}>Check</button>}
+            {markers.length === 2 ? <h2>{haversine_distance(markers[0], markers[1]).toFixed(2)}mi / {(haversine_distance(markers[0], markers[1])*1.60934).toFixed(2)}km</h2>  : null} */}
         </div>
     );
 };
