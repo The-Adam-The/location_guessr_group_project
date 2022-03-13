@@ -58,7 +58,7 @@ const Map = ({question}) => {
 
     // adds question marker to marker state and switches check button to next button
     const handleCheckClick = () => {
-        setMarkers(current => [...current, question.coords])
+        setMarkers(current => [...current, question.location.coords])
         setButton(1)
       };
   
