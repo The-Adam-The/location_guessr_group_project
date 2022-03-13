@@ -1,6 +1,7 @@
 import {useLoadScript} from "@react-google-maps/api"
 import { useState, useEffect } from "react";
 import Map from "../components/Map";
+import CheckButton from "../components/CheckButton";
 import QuestionsService from "../services/QuestionsServices";
 import Question from "../components/Question"
 import './GameContainer.css';
@@ -17,6 +18,9 @@ const {isLoaded, loadError} = useLoadScript({
 
     const [question, setQuestion] = useState({});
     const [rulePopup, setRulePopup] = useState(false);
+    const [checkButton, setCheckButton] = useState(false);
+    const [markers, setMarkers] = useState([]);
+    const [center, setCenter] = useState({lat: 0, lng: 0});
 
     useEffect(() => {
         QuestionsService.getQuestion()
@@ -27,13 +31,28 @@ const {isLoaded, loadError} = useLoadScript({
         setQuestion(question)
     }, [question])
 
+
+    // this function calculates the distance between two locations with lat and lng values
+    const haversineDistance = (mk1, mk2) => {
+        var R = 3958.8; // Radius of the Earth in miles
+        var rlat1 = mk1.lat * (Math.PI/180); // Convert degrees to radians
+        var rlat2 = mk2.lat * (Math.PI/180); // Convert degrees to radians
+        var difflat = rlat2-rlat1; // Radian difference (latitudes)
+        var difflon = (mk2.lng-mk1.lng) * (Math.PI/180); // Radian difference (longitudes)
+        
+        var d = 2 * R * Math.asin(Math.sqrt(Math.sin(difflat/2)*Math.sin(difflat/2)+Math.cos(rlat1)*Math.cos(rlat2)*Math.sin(difflon/2)*Math.sin(difflon/2)));
+        return d;
+        };
+
     if (loadError) return "Error loading maps";
     if (!isLoaded) return "Loading map";
 
     return(
         <div className="game-container">
-            <Map question={question}/>
+            <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter}/>
             <Question question={question}/>
+            <CheckButton markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} haversineDistance={haversineDistance}/>
+
             <button id="rules-btn" onClick={() => setRulePopup(true)}>Rules</button>
             <RulesPopup trigger={rulePopup} setTrigger={setRulePopup}>
                 <h3>Game Rules:</h3>
