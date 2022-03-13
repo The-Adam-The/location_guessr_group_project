@@ -1,4 +1,4 @@
-const CheckButton = ({markers, setMarkers, checkButton, setCheckButton, question, setCenter}) => {
+const CheckButton = ({markers, setMarkers, checkButton, setCheckButton, question, setCenter, haversineDistance}) => {
     
 
      // adds question marker to marker state and switches check button to next button
@@ -10,7 +10,7 @@ const CheckButton = ({markers, setMarkers, checkButton, setCheckButton, question
     // resets state of game to default settings and will set next question
     const handleNextClick = () => {
     setCenter({lat: 0, lng: 0})
-    mapRef.current.setZoom(2)
+    // mapRef.current.setZoom(2)
     setCheckButton(false)
     setMarkers([])
     // add in a setQuestion(newQuestion) function here once we have selection of questions from db
@@ -21,7 +21,7 @@ const CheckButton = ({markers, setMarkers, checkButton, setCheckButton, question
 
         <div className="checkbutton">
             {checkButton ? <button className='question-button' onClick={handleNextClick}>Next</button> : <button className='question-button' onClick={markers.length !== 0 ? handleCheckClick : null}>Check</button>}
-            {markers.length === 2 ? <h2>{haversine_distance(markers[0], markers[1]).toFixed(2)}mi / {(haversine_distance(markers[0], markers[1])*1.60934).toFixed(2)}km</h2>  : null}
+            {markers.length === 2 ? <h2>{haversineDistance(markers[0], markers[1]).toFixed(2)}mi / {(haversineDistance(markers[0], markers[1])*1.60934).toFixed(2)}km</h2>  : null}
         </div>
 
      );
