@@ -1,7 +1,7 @@
 import ScoreBreakdown from "../components/ScoreBreakdown";
 import Leaderboard from "../components/Leaderboard";
 
-const ScoresContainer = () => {
+const ScoresContainer = ({scores}) => {
 
     return(
         <>
