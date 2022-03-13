@@ -2,9 +2,9 @@ import {useState, useCallback, useRef} from 'react'
 import {GoogleMap, Marker, Polyline} from "@react-google-maps/api"
 import mapStyle from "../mapStyle"
 
-const Map = ({question, checkButton, setCheckButton}) => {
+const Map = ({question, checkButton, setCheckButton, markers, setMarkers}) => {
     const [center, setCenter] = useState({lat: 0, lng: 0});
-    const [markers, setMarkers] = useState([]);
+  
 
     // sets the size of the maps
     const mapContainerStyle = {
@@ -47,7 +47,9 @@ const Map = ({question, checkButton, setCheckButton}) => {
         radius: 30000,
         zIndex: 1
     }; 
-      
+    
+    
+
     const handleMarkerClick = useCallback((event) => {
         setMarkers(() => [{
             lat: event.latLng.lat(),
