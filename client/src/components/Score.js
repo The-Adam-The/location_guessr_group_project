@@ -9,11 +9,13 @@ const Score = ({markers, haversineDistance, checkButton}) => {
         const distance = 
             (haversineDistance(markers[0], markers[1])*1.60934).toFixed(2)
         setIndDistance(distance);
+        distance >= 5 ? setIndAccuracy(100) : setIndAccuracy(100-(distance/1.55));
     }
 
     return(
         <>
-            <p>{indDistance}</p>
+            <p>{indDistance} km</p>
+            <p>{indAccuracy} %</p>
         </>
     );
 };
