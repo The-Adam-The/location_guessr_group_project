@@ -4,6 +4,7 @@ import Map from "../components/Map";
 import CheckButton from "../components/CheckButton";
 import QuestionsService from "../services/QuestionsServices";
 import Question from "../components/Question"
+import QuestionRoundDisplay from "../components/QuestionRoundDisplay";
 import './GameContainer.css';
 import RulesPopup from "../components/RulesPopup";
 
@@ -68,6 +69,7 @@ const {isLoaded, loadError} = useLoadScript({
 
     return(
         <div className="game-container">
+            <QuestionRoundDisplay/>
             <div className="question-map-box">
                 <Question question={question}/>
                 <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter} onMapLoad={onMapLoad}/>
