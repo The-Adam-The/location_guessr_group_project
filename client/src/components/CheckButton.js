@@ -1,4 +1,4 @@
-const CheckButton = ({nextRound, markers, setMarkers, checkButton, setCheckButton, question, setCenter, haversineDistance, mapRef, nextQuestion}) => {
+const CheckButton = ({displayScoresPage, nextRound, markers, setMarkers, checkButton, setCheckButton, question, setCenter, haversineDistance, mapRef, nextQuestion}) => {
     
 
      // adds question marker to marker state and switches check button to next button
@@ -9,12 +9,13 @@ const CheckButton = ({nextRound, markers, setMarkers, checkButton, setCheckButto
 
     // resets state of game to default settings and will set next question
     const handleNextClick = () => {
-    setCenter({lat: 0, lng: 0})
-    mapRef.current.setZoom(2)
-    setCheckButton(false)
-    setMarkers([])
-    nextQuestion()
-    nextRound()
+
+      setCenter({lat: 0, lng: 0})
+      mapRef.current.setZoom(2)
+      setCheckButton(false)
+      setMarkers([])
+      nextQuestion()
+      nextRound()
     };
 
     return ( 
