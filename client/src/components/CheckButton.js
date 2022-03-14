@@ -1,4 +1,4 @@
-const CheckButton = ({markers, setMarkers, checkButton, setCheckButton, question, setCenter, haversineDistance, mapRef, nextQuestion}) => {
+const CheckButton = ({nextRound, markers, setMarkers, checkButton, setCheckButton, question, setCenter, haversineDistance, mapRef, nextQuestion}) => {
     
 
      // adds question marker to marker state and switches check button to next button
@@ -14,6 +14,7 @@ const CheckButton = ({markers, setMarkers, checkButton, setCheckButton, question
     setCheckButton(false)
     setMarkers([])
     nextQuestion()
+    nextRound()
     };
 
     return ( 
