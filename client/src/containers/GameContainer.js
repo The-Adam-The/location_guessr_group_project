@@ -68,7 +68,7 @@ const {isLoaded, loadError} = useLoadScript({
 
     return(
         <div className="game-container">
-            <div question-map-box>
+            <div className="question-map-box">
                 <Question question={question}/>
                 <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter} onMapLoad={onMapLoad}/>
             </div>
