@@ -79,7 +79,7 @@ const {isLoaded, loadError} = useLoadScript({
                 <br />
                 <p>Drop your pin on the map when you have guessed the location from the clues!</p>
             </RulesPopup>
-            <Score markers={markers} haversineDistance={haversineDistance}/>
+            <Score markers={markers} haversineDistance={haversineDistance} checkButton={checkButton}/>
         </div>
     );
 };
