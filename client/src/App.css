@@ -1,0 +1,9 @@
+.App {
+    background-color: #dbdbdb;
+    padding: 10px;
+}
+
+.login-container, .game-container{
+    background-color: #fff;
+    padding: 15px;
+}
