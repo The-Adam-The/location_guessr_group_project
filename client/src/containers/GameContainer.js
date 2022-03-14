@@ -68,8 +68,10 @@ const {isLoaded, loadError} = useLoadScript({
 
     return(
         <div className="game-container">
-            <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter} onMapLoad={onMapLoad}/>
-            <Question question={question}/>
+            <div question-map-box>
+                <Question question={question}/>
+                <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter} onMapLoad={onMapLoad}/>
+            </div>
             <CheckButton markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} haversineDistance={haversineDistance} mapRef={mapRef} nextQuestion={nextQuestion}/>
 
             <button id="rules-btn" onClick={() => setRulePopup(true)}>Rules</button>
