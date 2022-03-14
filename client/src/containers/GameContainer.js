@@ -7,6 +7,7 @@ import Question from "../components/Question"
 import QuestionRoundDisplay from "../components/QuestionRoundDisplay";
 import './GameContainer.css';
 import RulesPopup from "../components/RulesPopup";
+import Score from "../components/Score";
 
 
 const libraries = ["places"];
@@ -23,6 +24,9 @@ const {isLoaded, loadError} = useLoadScript({
     const [markers, setMarkers] = useState([]);
     const [center, setCenter] = useState({lat: 0, lng: 0});
     const [roundNumber, setRoundNumber] = useState(1);
+
+    const [indDistance, setIndDistance] = useState(0);
+    const [indAccuracy, setIndAccuracy] = useState(0);
 
     useEffect(() => {
         QuestionsService.getQuestion()
@@ -61,18 +65,42 @@ const {isLoaded, loadError} = useLoadScript({
 
     // this function calculates the distance between two locations with lat and lng values
     const haversineDistance = (mk1, mk2) => {
-        var R = 3958.8; // Radius of the Earth in miles
-        var rlat1 = mk1.lat * (Math.PI/180); // Convert degrees to radians
-        var rlat2 = mk2.lat * (Math.PI/180); // Convert degrees to radians
-        var difflat = rlat2-rlat1; // Radian difference (latitudes)
-        var difflon = (mk2.lng-mk1.lng) * (Math.PI/180); // Radian difference (longitudes)
+        let R = 6371.071; // Radius of the Earth in kilometers
+        let rlat1 = mk1.lat * (Math.PI/180); // Convert degrees to radians
+        let rlat2 = mk2.lat * (Math.PI/180); // Convert degrees to radians
+        let difflat = rlat2-rlat1; // Radian difference (latitudes)
+        let difflon = (mk2.lng-mk1.lng) * (Math.PI/180); // Radian difference (longitudes)
         
-        var d = 2 * R * Math.asin(Math.sqrt(Math.sin(difflat/2)*Math.sin(difflat/2)+Math.cos(rlat1)*Math.cos(rlat2)*Math.sin(difflon/2)*Math.sin(difflon/2)));
+        let d = 2 * R * Math.asin(Math.sqrt(Math.sin(difflat/2)*Math.sin(difflat/2)+Math.cos(rlat1)*Math.cos(rlat2)*Math.sin(difflon/2)*Math.sin(difflon/2)));
         return d;
         };
 
+    // Calculate score
+    useEffect(() => {
+        if(markers.length === 2) {
+            handleCalculation()
+        }
+    }, [markers])
+
+    const handleCalculation = () => {
+        const distance = haversineDistance(markers[0], markers[1]).toFixed(2)
+        setIndDistance(distance);
+        const calculateAccuracy = () => {
+            if(distance <= 5){
+                setIndAccuracy(100)
+            } else if(distance > 155){
+                setIndAccuracy(0)
+            } else{
+                setIndAccuracy((100-(distance/1.55)).toFixed(2))
+            }
+        }
+        calculateAccuracy()
+    }
+
     if (loadError) return "Error loading maps";
     if (!isLoaded) return "Loading map";
+
+    
 
     return(
         <div className="game-container">
@@ -89,6 +117,7 @@ const {isLoaded, loadError} = useLoadScript({
                 <br />
                 <p>Drop your pin on the map when you have guessed the location from the clues!</p>
             </RulesPopup>
+            <Score indDistance={indDistance} indAccuracy={indAccuracy} handleCalculation={handleCalculation}/>
         </div>
     );
 };
