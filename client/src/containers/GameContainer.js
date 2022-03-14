@@ -21,6 +21,7 @@ const GameContainer = ({displayScoresPage, userName}) => {
     });
 
     const [question, setQuestion] = useState({});
+    const [questions, setQuestions] = useState([])
     const [rulePopup, setRulePopup] = useState(false);
     const [checkButton, setCheckButton] = useState(false);
     const [markers, setMarkers] = useState([]);
@@ -31,13 +32,13 @@ const GameContainer = ({displayScoresPage, userName}) => {
     const [indAccuracy, setIndAccuracy] = useState(0);
 
     useEffect(() => {
-        QuestionsService.getQuestion()
-        .then(question => setQuestion(question))
+        QuestionsService.getQuestions()
+        .then(questions => setQuestions(questions))
     }, [])
 
     const nextQuestion = () => {
-        QuestionsService.getQuestion()
-        .then(question => setQuestion(question))
+        QuestionsService.getQuestions()
+        .then(questions => setQuestion(questions))
     }   
 
     const nextRound = () => {
