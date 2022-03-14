@@ -4,6 +4,7 @@ import Map from "../components/Map";
 import CheckButton from "../components/CheckButton";
 import QuestionsService from "../services/QuestionsServices";
 import Question from "../components/Question"
+import QuestionRoundDisplay from "../components/QuestionRoundDisplay";
 import './GameContainer.css';
 import RulesPopup from "../components/RulesPopup";
 import Score from "../components/Score";
@@ -22,6 +23,7 @@ const {isLoaded, loadError} = useLoadScript({
     const [checkButton, setCheckButton] = useState(false);
     const [markers, setMarkers] = useState([]);
     const [center, setCenter] = useState({lat: 0, lng: 0});
+    const [roundNumber, setRoundNumber] = useState(1);
 
     const [indDistance, setIndDistance] = useState(0);
     const [indAccuracy, setIndAccuracy] = useState(0);
@@ -38,7 +40,13 @@ const {isLoaded, loadError} = useLoadScript({
     const nextQuestion = () => {
         QuestionsService.getQuestion()
         .then(question => setQuestion(question))
+    }   
+
+    const nextRound = () => {
+        const temp = roundNumber + 1;
+        setRoundNumber(temp)
     }
+
 
     // sets the map in reference state so we can use the reference to pan around with the panTo function
     const mapRef = useRef();
@@ -96,9 +104,12 @@ const {isLoaded, loadError} = useLoadScript({
 
     return(
         <div className="game-container">
-            <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter} onMapLoad={onMapLoad}/>
-            <Question question={question}/>
-            <CheckButton markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} haversineDistance={haversineDistance} mapRef={mapRef} nextQuestion={nextQuestion} />
+            <QuestionRoundDisplay roundNumber={roundNumber}/>
+            <div className="question-map-box">
+                <Question question={question}/>
+                <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter} onMapLoad={onMapLoad}/>
+            </div>
+            <CheckButton nextRound={nextRound} markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} haversineDistance={haversineDistance} mapRef={mapRef} nextQuestion={nextQuestion}/>
 
             <button id="rules-btn" onClick={() => setRulePopup(true)}>Rules</button>
             <RulesPopup trigger={rulePopup} setTrigger={setRulePopup}>
