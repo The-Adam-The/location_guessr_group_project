@@ -34,7 +34,18 @@ const GameContainer = ({displayScoresPage, userName}) => {
     useEffect(() => {
         QuestionsService.getQuestions()
         .then(questions => setQuestions(questions))
+        selectQuestion()
+
     }, [])
+
+    const selectQuestion = () => {
+        const tempQuestionsList = questions
+        const questionsLength = tempQuestionsList.length
+        const randomNumber = Math.round(Math.random() * (questionsLength -1))
+        const chosenQuestion = tempQuestionsList.splice(randomNumber, 1)
+        setQuestion(chosenQuestion)
+        setQuestions(tempQuestionsList)
+    }
 
     const nextQuestion = () => {
         QuestionsService.getQuestions()
