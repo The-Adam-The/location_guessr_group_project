@@ -55,7 +55,7 @@ const createRouter = (collection) => {
                     var docLength = docs.length
                     var randomNumber = Math.round(Math.random() * (docLength -1))
                     var question = docs.splice(randomNumber, 1)
-                    questions.push(question)
+                    questions.push(question[0])
                 }
                 res.json(questions)
             })
