@@ -29,11 +29,18 @@ const GameContainer = ({displayScoresPage, userName}) => {
 
     const [indDistance, setIndDistance] = useState(0);
     const [indAccuracy, setIndAccuracy] = useState(0);
+    const [userScores, setUserScores] = useState({name: '', scores: [], total: {}});
 
     useEffect(() => {
         QuestionsService.getQuestion()
         .then(question => setQuestion(question))
     }, [])
+
+
+
+    useEffect(() => {
+        setUserScores(userScores.name = userName)
+    }, [userName])
 
     const nextQuestion = () => {
         QuestionsService.getQuestion()
@@ -44,7 +51,6 @@ const GameContainer = ({displayScoresPage, userName}) => {
         const temp = roundNumber + 1;
         setRoundNumber(temp)
     }
-
 
     // sets the map in reference state so we can use the reference to pan around with the panTo function
     const mapRef = useRef();
@@ -77,6 +83,7 @@ const GameContainer = ({displayScoresPage, userName}) => {
     useEffect(() => {
         if(markers.length === 2) {
             handleCalculation()
+            handleUserScores()
         }
     }, [markers])
 
@@ -95,10 +102,15 @@ const GameContainer = ({displayScoresPage, userName}) => {
         calculateAccuracy()
     }
 
+    const handleUserScores = () => {
+        setUserScores({name: userName, scores: [{
+            questionId: question._id,
+            distance: indDistance,
+            accuracy: indAccuracy}], total: {}})
+     }
+
     if (loadError) return "Error loading maps";
     if (!isLoaded) return "Loading map";
-
-    
 
     return(
         <div className="game-container">
@@ -115,7 +127,7 @@ const GameContainer = ({displayScoresPage, userName}) => {
                 <br />
                 <p>Drop your pin on the map when you have guessed the location from the clues!</p>
             </RulesPopup>
-            <Score indDistance={indDistance} indAccuracy={indAccuracy} question={question}/>
+            {checkButton === true ? <Score indDistance={indDistance} indAccuracy={indAccuracy} question={question}/> : null}
         </div>
     );
 };
