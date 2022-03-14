@@ -9,13 +9,16 @@ const CheckButton = ({roundNumber, displayScoresPage, nextRound, markers, setMar
 
     // resets state of game to default settings and will set next question
     const handleNextClick = () => {
-      
-      setCenter({lat: 0, lng: 0})
-      mapRef.current.setZoom(2)
-      setCheckButton(false)
-      setMarkers([])
-      nextQuestion()
-      nextRound()
+      if(roundNumber === 3) {
+        displayScoresPage()
+      } else {
+        setCenter({lat: 0, lng: 0})
+        mapRef.current.setZoom(2)
+        setCheckButton(false)
+        setMarkers([])
+        nextQuestion()
+        nextRound()
+      }
     };
 
     return ( 
