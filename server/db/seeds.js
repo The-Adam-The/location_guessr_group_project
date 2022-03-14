@@ -56,7 +56,7 @@ db.questions.insertMany(
     },
     {
         name: "Tsar Bomb",
-        question: "Where did the USSR drop the Tsar bomba in  1961?",
+        question: "Where did the USSR drop the Tsar bomba in 1961?",
         location: {
             place: "Severny Island, Arkhangelsk Oblast",
             country: "Russia",
