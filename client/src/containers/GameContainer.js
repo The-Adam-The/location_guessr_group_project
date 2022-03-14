@@ -57,7 +57,7 @@ const {isLoaded, loadError} = useLoadScript({
 
     // this function calculates the distance between two locations with lat and lng values
     const haversineDistance = (mk1, mk2) => {
-        let R = 3958.8; // Radius of the Earth in miles
+        let R = 6371.071; // Radius of the Earth in kilometers
         let rlat1 = mk1.lat * (Math.PI/180); // Convert degrees to radians
         let rlat2 = mk2.lat * (Math.PI/180); // Convert degrees to radians
         let difflat = rlat2-rlat1; // Radian difference (latitudes)
@@ -68,11 +68,25 @@ const {isLoaded, loadError} = useLoadScript({
         };
 
     // Calculate score
-    const handleIndScore = () => {
-        const distance = 
-            (haversineDistance(markers[0], markers[1])*1.60934).toFixed(2)
-            setIndDistance(distance);
-            distance >= 5 ? setIndAccuracy(100) : setIndAccuracy(100-(distance/1.55));
+    useEffect(() => {
+        if(markers.length === 2) {
+            handleCalculation()
+        }
+    }, [markers])
+
+    const handleCalculation = () => {
+        const distance = haversineDistance(markers[0], markers[1]).toFixed(2)
+        setIndDistance(distance);
+        const calculateAccuracy = () => {
+            if(distance <= 5){
+                setIndAccuracy(100)
+            } else if(distance > 155){
+                setIndAccuracy(0)
+            } else{
+                setIndAccuracy(100-(distance/1.55))
+            }
+        }
+        calculateAccuracy()
     }
 
     if (loadError) return "Error loading maps";
@@ -92,7 +106,7 @@ const {isLoaded, loadError} = useLoadScript({
                 <br />
                 <p>Drop your pin on the map when you have guessed the location from the clues!</p>
             </RulesPopup>
-            <Score indDistance={indDistance} indAccuracy={indAccuracy}/>
+            <Score indDistance={indDistance} indAccuracy={indAccuracy} handleCalculation={handleCalculation}/>
         </div>
     );
 };

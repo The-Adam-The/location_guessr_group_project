@@ -1,4 +1,4 @@
-const Score = ({indDistance, indAccuracy}) => {
+const Score = ({indDistance, indAccuracy, handleCalculation}) => {
 
     return(
         <>
