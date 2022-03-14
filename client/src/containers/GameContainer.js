@@ -83,7 +83,7 @@ const {isLoaded, loadError} = useLoadScript({
             } else if(distance > 155){
                 setIndAccuracy(0)
             } else{
-                setIndAccuracy(100-(distance/1.55))
+                setIndAccuracy((100-(distance/1.55)).toFixed(2))
             }
         }
         calculateAccuracy()
