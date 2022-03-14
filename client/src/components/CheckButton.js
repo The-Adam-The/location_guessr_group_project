@@ -21,9 +21,7 @@ const CheckButton = ({nextRound, markers, setMarkers, checkButton, setCheckButto
 
         <div className="checkbutton">
             {checkButton ? <button className='question-button' onClick={handleNextClick}>Next</button> : <button className='question-button' onClick={markers.length !== 0 ? handleCheckClick : null}>Check</button>}
-            {markers.length === 2 ? <h2>{haversineDistance(markers[0], markers[1]).toFixed(2)}mi / {(haversineDistance(markers[0], markers[1])*1.60934).toFixed(2)}km</h2>  : null}
         </div>
-
      );
 }
 

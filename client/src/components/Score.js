@@ -1,9 +1,9 @@
-const Score = ({indDistance, indAccuracy, handleCalculation}) => {
+const Score = ({indDistance, indAccuracy, question}) => {
 
     return(
         <>
-            <p>{indDistance} km</p>
-            <p>{indAccuracy} %</p>
+            <p>You were {indDistance} km from {question.location.place}, {question.location.country}</p>
+            <p>Accuracy: {indAccuracy} %</p>
         </>
     );
 };
