@@ -22,7 +22,7 @@ const {isLoaded, loadError} = useLoadScript({
     const [checkButton, setCheckButton] = useState(false);
     const [markers, setMarkers] = useState([]);
     const [center, setCenter] = useState({lat: 0, lng: 0});
-    const [roundNumber, setRoundNumber] = useState(2);
+    const [roundNumber, setRoundNumber] = useState(1);
 
     useEffect(() => {
         QuestionsService.getQuestion()
@@ -36,7 +36,13 @@ const {isLoaded, loadError} = useLoadScript({
     const nextQuestion = () => {
         QuestionsService.getQuestion()
         .then(question => setQuestion(question))
+    }   
+
+    const nextRound = () => {
+        const temp = roundNumber + 1;
+        setRoundNumber(temp)
     }
+
 
     // sets the map in reference state so we can use the reference to pan around with the panTo function
     const mapRef = useRef();
