@@ -6,6 +6,7 @@ import QuestionsService from "../services/QuestionsServices";
 import Question from "../components/Question"
 import './GameContainer.css';
 import RulesPopup from "../components/RulesPopup";
+import Score from "../components/Score";
 
 
 const libraries = ["places"];
@@ -78,6 +79,7 @@ const {isLoaded, loadError} = useLoadScript({
                 <br />
                 <p>Drop your pin on the map when you have guessed the location from the clues!</p>
             </RulesPopup>
+            <Score markers={markers} haversineDistance={haversineDistance}/>
         </div>
     );
 };
