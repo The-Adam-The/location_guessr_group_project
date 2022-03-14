@@ -12,7 +12,7 @@ import Score from "../components/Score";
 
 const libraries = ["places"];
 
-const GameContainer = () => {
+const GameContainer = ({userName}) => {
 const {isLoaded, loadError} = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries
@@ -32,10 +32,6 @@ const {isLoaded, loadError} = useLoadScript({
         QuestionsService.getQuestion()
         .then(question => setQuestion(question))
     }, [])
-
-    useEffect(() => {
-        setQuestion(question)
-    }, [question])
 
     const nextQuestion = () => {
         QuestionsService.getQuestion()
@@ -88,10 +84,10 @@ const {isLoaded, loadError} = useLoadScript({
         const calculateAccuracy = () => {
             if(distance <= 5){
                 setIndAccuracy(100)
-            } else if(distance > 155){
+            } else if(distance > 400){
                 setIndAccuracy(0)
             } else{
-                setIndAccuracy((100-(distance/1.55)).toFixed(2))
+                setIndAccuracy((100-(distance/4.)).toFixed(2))
             }
         }
         calculateAccuracy()
@@ -117,7 +113,7 @@ const {isLoaded, loadError} = useLoadScript({
                 <br />
                 <p>Drop your pin on the map when you have guessed the location from the clues!</p>
             </RulesPopup>
-            <Score indDistance={indDistance} indAccuracy={indAccuracy} handleCalculation={handleCalculation}/>
+            <Score indDistance={indDistance} indAccuracy={indAccuracy} question={question}/>
         </div>
     );
 };

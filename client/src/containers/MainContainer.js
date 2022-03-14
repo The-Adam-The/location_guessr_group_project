@@ -30,7 +30,7 @@ const MainContainer = () => {
     return(
         <div>
             {page === 'LogInPage' ? <LogInContainer displayGamePage={displayGamePage} setUserName={setUserName}/> : null}
-            {page === 'GamePage' ? <GameContainer displayScoresPage={displayScoresPage}/> : null}
+            {page === 'GamePage' ? <GameContainer displayScoresPage={displayScoresPage} userName={userName}/> : null}
             {page === 'ScoresPage' ?<ScoresContainer scores={scores} displayLogInPage={displayLogInPage}/> : null}
         </div>
     );
