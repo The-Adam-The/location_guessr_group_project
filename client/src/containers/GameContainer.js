@@ -23,6 +23,9 @@ const {isLoaded, loadError} = useLoadScript({
     const [markers, setMarkers] = useState([]);
     const [center, setCenter] = useState({lat: 0, lng: 0});
 
+    const [indDistance, setIndDistance] = useState(0);
+    const [indAccuracy, setIndAccuracy] = useState(0);
+
     useEffect(() => {
         QuestionsService.getQuestion()
         .then(question => setQuestion(question))
@@ -64,14 +67,24 @@ const {isLoaded, loadError} = useLoadScript({
         return d;
         };
 
+    // Calculate score
+    const handleIndScore = () => {
+        const distance = 
+            (haversineDistance(markers[0], markers[1])*1.60934).toFixed(2)
+            setIndDistance(distance);
+            distance >= 5 ? setIndAccuracy(100) : setIndAccuracy(100-(distance/1.55));
+    }
+
     if (loadError) return "Error loading maps";
     if (!isLoaded) return "Loading map";
+
+    
 
     return(
         <div className="game-container">
             <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter} onMapLoad={onMapLoad}/>
             <Question question={question}/>
-            <CheckButton markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} haversineDistance={haversineDistance} mapRef={mapRef} nextQuestion={nextQuestion}/>
+            <CheckButton markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} haversineDistance={haversineDistance} mapRef={mapRef} nextQuestion={nextQuestion} />
 
             <button id="rules-btn" onClick={() => setRulePopup(true)}>Rules</button>
             <RulesPopup trigger={rulePopup} setTrigger={setRulePopup}>
@@ -79,7 +92,7 @@ const {isLoaded, loadError} = useLoadScript({
                 <br />
                 <p>Drop your pin on the map when you have guessed the location from the clues!</p>
             </RulesPopup>
-            <Score markers={markers} haversineDistance={haversineDistance} checkButton={checkButton}/>
+            <Score indDistance={indDistance} indAccuracy={indAccuracy}/>
         </div>
     );
 };
