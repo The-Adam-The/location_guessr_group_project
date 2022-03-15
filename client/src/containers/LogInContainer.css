@@ -16,6 +16,7 @@
 
 .globe {
     width: 700px;
+    border-radius: 10px;
 }
 
 .game-info {
@@ -85,7 +86,37 @@
     width: 469px;
     height: 174px;
     margin-left: 40px;
-    padding: 40px 100px;
+    padding: 20px 100px;
     border-radius: 10px;
     box-shadow: 0px 0px 30px rgba(39, 15, 86, 0.1);
+}
+
+.form-title {
+    padding-left: 15px;
+}
+
+.enter-name {
+    width: 280px;
+    height: 30px;
+    border: 1px solid #EBE8E8;
+    margin-bottom: 20px;
+}
+
+.start-game-btn {
+    width: 80px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #7624F6;
+    color: #fff;
+    text-align: center;
+    margin: auto;
+    display: flex;
+}
+
+.start-game-btn:hover {
+    background-color: #43CAFC;
+    color: #fff;
+    cursor: pointer;
+    transition-delay: .1s;
 }
