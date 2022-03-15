@@ -3,12 +3,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    padding-top: 0;
 }
 
 .page-info {
-    width: 80vw;
     display: flex;
     align-items: center;
+    width: 98vw;
 }
 
 .globe {
@@ -19,6 +21,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 60vw;
+    padding: 0 4.75rem;
 }
 
 .info-boxes {
@@ -28,8 +32,17 @@
 
 .headings h1{
     font-size: 38px;
+    padding: 10px;
+    padding-top: 100px;
 }
 
 .headings h2 {
     font-size: 20px;
+    padding: 10px;
+}
+
+.headings {
+    width: 40vw;
+    background-color: var(--primary-color);
+    height: 100vh;
 }

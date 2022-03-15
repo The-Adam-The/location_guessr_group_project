@@ -3,6 +3,11 @@
     --accent-color: #7624F6;
     --secondary-color: #43CAFC;
     --primary-color: #d8f2fc;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
