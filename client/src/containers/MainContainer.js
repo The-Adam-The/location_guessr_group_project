@@ -17,6 +17,8 @@ const MainContainer = () => {
     }, [page])
     
     const displayLogInPage = () => {
+        setUserName('')
+        setUserScores([])
         setPage('LogInPage')
     }
 

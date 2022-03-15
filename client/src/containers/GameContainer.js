@@ -38,14 +38,9 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores})
      
     }, [])
 
-
     useEffect(() => {
         selectQuestion()
     }, [questions, roundNumber])
-
-    useEffect(() => {
-        setUserScores(userScores.name = userName)
-    }, [userName])
     
     const selectQuestion = () => {
         console.log("select question called")
