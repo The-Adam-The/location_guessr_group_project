@@ -20,8 +20,18 @@
     padding-left: 10px;
 }
 
+.map-overlay-box {
+    height: auto;
+    width: auto;
+}
+
 .feedback-overlay {
+    padding: 20px 0;
     height: auto;
     width: 100%;
-    background-color: red;
+    background-color: #bcbcbc;
+    color: #fff;
+    position: relative;
+    bottom: 250px;
+    text-align: center;
 }

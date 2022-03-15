@@ -145,9 +145,12 @@ const GameContainer = ({displayScoresPage, userName}) => {
             <QuestionRoundDisplay roundNumber={roundNumber}/>
             <div className="question-map-box">
                 <Question question={question}/>
-                <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter} onMapLoad={onMapLoad}/>
+                <div className="map-overlay-box">
+                    <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter} onMapLoad={onMapLoad}/>
+                    {checkButton ? <FeedbackOverlay checkButton={checkButton} indDistance={indDistance} indAccuracy={indAccuracy} question={question} />: null}
+                </div>
             </div>
-           {checkButton ? <FeedbackOverlay checkButton={checkButton} indDistance={indDistance} indAccuracy={indAccuracy} question={question} />: null}
+           
             <CheckButton roundNumber={roundNumber} displayScoresPage={displayScoresPage} nextRound={nextRound} markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} mapRef={mapRef} postUserScores={postUserScores}/>
 
             <button id="rules-btn" onClick={() => setRulePopup(true)}>Rules</button>
