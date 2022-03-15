@@ -1,5 +1,5 @@
-*, *::before, *::after{
-    box-sizing: border-box;
+div, button{
+    font-family: var(--main-font);
 }
 
 .leaderboard-container{
@@ -7,8 +7,6 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    border: 1px solid black;
-    border-radius: 5px;
 }
 
 .leaderboard {
@@ -17,17 +15,15 @@
     height: 20vh;
     width: 60vw;
     overflow-y: scroll;
-    border: 1px solid black;
     border-radius: 5px;
-    
   }
 
 .leaderboard-list-items{
     display: flex;
     justify-content: space-evenly;
-    border: 1px solid black;
     border-radius: 5px;
-    margin: 1px;
+    margin: 10px;
+    background-color: var(--primary-color);
 }
 
 .scores-breakdown{
@@ -36,7 +32,8 @@
 }
 
 .rounds-breakdown{
-    border: 1px solid black;
+    background-color: var(--primary-color);
+
     border-radius: 5px;
     margin: 10px;
     width: 400px;
@@ -49,25 +46,28 @@
 }
 
 .totals{
-    border: 1px solid black;
+
     border-radius: 5px;
     margin: 10px;
     width: 400px;
     height: 200px;
     padding-left: 20px;
+    background-color: var(--primary-color);
 }
 
 .button-box{
-    border: 1px solid black;
+
     border-radius: 5px;
     display: flex;
     justify-content: center;
     width: 400px;
     height: 120px;
     margin-left: 10px;
+    background-color: var(--primary-color);
 }
 
 .new-game-button{
+    font-family: var(--main-font);
     height: 30px;
     margin-top: 3em;
     padding: 0;
