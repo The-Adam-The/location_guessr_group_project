@@ -1,8 +1,11 @@
 const LeaderboardScore = ({score}) => {
     return (
         <li>
-            <p>Name: {score.name}</p>
-            <p>Score: {score.score}</p>
+            <p>{score.name}:</p>
+            <p>Points: {score.total.points}</p>
+            <p>Average Distance: {score.total.averageDistance}</p>
+            <p>Average Accuracy: {score.total.averageAccuracy}</p>
+
         </li>
     );
 }
