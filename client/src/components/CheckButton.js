@@ -1,5 +1,5 @@
 
-const CheckButton = ({roundNumber, displayScoresPage, nextRound, markers, setMarkers, checkButton, setCheckButton, question, setCenter, mapRef, postUserScores}) => {
+const CheckButton = ({setIndAccuracy, roundNumber, displayScoresPage, nextRound, markers, setMarkers, checkButton, setCheckButton, question, setCenter, mapRef, postUserScores}) => {
   
      // adds question marker to marker state and switches check button to next button
      const handleCheckClick = () => {
@@ -18,7 +18,7 @@ const CheckButton = ({roundNumber, displayScoresPage, nextRound, markers, setMar
         setCheckButton(false)
         setMarkers([])
         nextRound()
-        
+        setIndAccuracy(null)
       }
     };
 

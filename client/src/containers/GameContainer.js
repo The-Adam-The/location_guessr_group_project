@@ -29,13 +29,12 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores})
     const [roundNumber, setRoundNumber] = useState(1);
 
     const [indDistance, setIndDistance] = useState(0);
-    const [indAccuracy, setIndAccuracy] = useState(0);
+    const [indAccuracy, setIndAccuracy] = useState(null);
     
 
     useEffect(() => {
         QuestionsService.getQuestions()
         .then(questions => setQuestions(questions))
-     
     }, [])
 
     useEffect(() => {
@@ -43,7 +42,6 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores})
     }, [questions, roundNumber])
     
     const selectQuestion = () => {
-        console.log("select question called")
         setQuestion(questions[roundNumber-1])
     }  
 
@@ -99,7 +97,7 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores})
             }
         }
         calculateAccuracy()
-        
+        console.log("calculation made");
     }
 
     // adds scores object to userScores array
@@ -110,7 +108,7 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores})
     }, [indAccuracy])
 
     const handleUserScores = () => {
-        const indPoints= (indAccuracy * 1.55).toFixed(0)
+        const indPoints = (indAccuracy * 1.55).toFixed(0)
         const score = {
             questionId: question._id,
             points: indPoints, 
@@ -118,6 +116,7 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores})
             accuracy: indAccuracy
         }
         setUserScores([...userScores, score])
+        console.log("socrePosted");
      }
 
     // calculates averages and posts score object to db
@@ -151,7 +150,7 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores})
                 </div>
             </div>
            
-            <CheckButton roundNumber={roundNumber} displayScoresPage={displayScoresPage} nextRound={nextRound} markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} mapRef={mapRef} postUserScores={postUserScores}/>
+            <CheckButton setIndAccuracy={setIndAccuracy} roundNumber={roundNumber} displayScoresPage={displayScoresPage} nextRound={nextRound} markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} mapRef={mapRef} postUserScores={postUserScores}/>
 
             <button id="rules-btn" onClick={() => setRulePopup(true)}>Rules</button>
             <RulesPopup trigger={rulePopup} setTrigger={setRulePopup}>
