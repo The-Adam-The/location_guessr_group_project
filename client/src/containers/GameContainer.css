@@ -19,3 +19,26 @@
 .question-round-display {
     padding-left: 10px;
 }
+
+.map-overlay-box {
+    height:max-content;
+    width: auto;
+}
+
+.feedback-overlay-show {
+    padding: 20px 0;
+    height: auto;
+    width: 70em;
+    background-color: #bcbcbc;
+    color: #fff;
+    position: absolute; 
+    bottom: 155px;
+    text-align: center;
+}
+
+.feedback-overlay-hide {
+    display: none;
+    position: absolute; 
+    bottom: 155px;
+
+}
