@@ -21,17 +21,24 @@
 }
 
 .map-overlay-box {
-    height: auto;
+    height:max-content;
     width: auto;
 }
 
-.feedback-overlay {
+.feedback-overlay-show {
     padding: 20px 0;
     height: auto;
-    width: 100%;
+    width: 70em;
     background-color: #bcbcbc;
     color: #fff;
-    position: relative;
-    bottom: 250px;
+    position: absolute; 
+    bottom: 155px;
     text-align: center;
+}
+
+.feedback-overlay-hide {
+    display: none;
+    position: absolute; 
+    bottom: 155px;
+
 }

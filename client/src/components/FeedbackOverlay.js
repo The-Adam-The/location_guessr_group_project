@@ -1,10 +1,10 @@
-import {useEffect} from 'react';
+
 import Score from "./Score";
 
-const FeedbackOverlay = ({indDistance, indAccuracy, question}) =>{
+const FeedbackOverlay = ({checkButton, indDistance, indAccuracy, question}) =>{
 
      return (  
-        <div className="feedback-overlay">
+        <div className={checkButton ? "feedback-overlay-show" : "feedback-overlay-hide"}>
             <Score indDistance={indDistance} indAccuracy={indAccuracy} question={question}/>
         </div>
     )};
