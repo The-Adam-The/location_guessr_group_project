@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@300&display=swap');
+
 .login-container {
     display: flex;
     flex-direction: column;
@@ -5,7 +7,7 @@
     align-items: center;
     position: relative;
     padding-top: 0;
-    font-family: var(--main-font);
+    font-family: 'Spartan', sans-serif;
 }
 
 .page-info {
@@ -43,6 +45,7 @@
     padding: 10px;
     margin-right: 20px;
     font-size: 15px;
+    font-family: 'Spartan', sans-serif;
 }
 
 .instructions-button {
@@ -59,6 +62,7 @@
     font-size: 15px;
     margin-top: 24px;
     margin-right: 10px;
+    font-family: 'Spartan', sans-serif;
 }
 
 .headings h1{
@@ -92,18 +96,19 @@
 }
 
 .form-title {
-    padding-left: 15px;
+    font-size: 15px;
+    color:#000000;
 }
 
 .enter-name {
-    width: 280px;
+    width: 262px;
     height: 30px;
     border: 1px solid #EBE8E8;
     margin-bottom: 20px;
 }
 
 .start-game-btn {
-    width: 80px;
+    width: 90px;
     padding: 5px;
     border-radius: 5px;
     border: none;
@@ -112,6 +117,8 @@
     text-align: center;
     margin: auto;
     display: flex;
+    font-family: 'Spartan', sans-serif;
+    font-weight: 400;
 }
 
 .start-game-btn:hover {
