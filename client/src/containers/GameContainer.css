@@ -1,3 +1,11 @@
+.game-container {
+    margin: 5vw;
+}
+
+QuestRoundDisplay {
+    width: 24vw;
+}
+
 .question-map-box {
     display: inline-flex;
     width: 100%;
