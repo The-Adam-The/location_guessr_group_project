@@ -1,5 +1,5 @@
 .game-container {
-    margin: 5vw;
+    padding: 5vw;
 }
 
 
@@ -11,20 +11,24 @@
     margin-top: 125px;
 }
 
+.question-section, .map-section {
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
 .question-section {
     width: 21vw;
     height: max-content;
     margin-top: 2em;
     padding: 0 1.7em;
-    box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+    
 
 }
 
 .map-section {
     /* border: 1px solid #000; */
-    width: 64vw;
-    margin: 2em;
-    box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+    width: 59vw;
+    margin: 2em 0 0 2em;
     padding: 2em 2em 0 2em;
 }
 
