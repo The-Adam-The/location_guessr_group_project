@@ -8,6 +8,8 @@ import Question from "../components/Question"
 import QuestionRoundDisplay from "../components/QuestionRoundDisplay";
 import RulesPopup from "../components/RulesPopup";
 import FeedbackOverlay from "../components/FeedbackOverlay";
+import Header from "../components/Header";
+// import './Header.css';
 import './GameContainer.css';
 
 
@@ -141,24 +143,28 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores})
 
     return(
         <div className="game-container">
-            <QuestionRoundDisplay roundNumber={roundNumber}/>
-            <div className="question-map-box">
-                <Question question={question}/>
-                <div className="map-overlay-box">
-                    <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter} onMapLoad={onMapLoad}/>
-                    {checkButton ? <FeedbackOverlay checkButton={checkButton} indDistance={indDistance} indAccuracy={indAccuracy} question={question} />: null}
-                </div>
-            </div>
-           
-            <CheckButton setIndAccuracy={setIndAccuracy} roundNumber={roundNumber} displayScoresPage={displayScoresPage} nextRound={nextRound} markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} mapRef={mapRef} postUserScores={postUserScores}/>
-
-            <button id="rules-btn" onClick={() => setRulePopup(true)}>Rules</button>
-            <RulesPopup trigger={rulePopup} setTrigger={setRulePopup}>
-                <h3>Game Rules:</h3>
-                <br />
-                <p>Drop your pin on the map when you have guessed the location from the clues!</p>
-            </RulesPopup>
-            
+            <Header/>
+            <article className="question-map-box">
+                <section className="question-section">
+                    <QuestionRoundDisplay className="question-display" roundNumber={roundNumber}/>
+                    <Question question={question}/>
+                </section>
+                <section className="map-section">
+                    <div className="map-overlay-box">
+                        <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter} onMapLoad={onMapLoad}/>
+                        {checkButton ? <FeedbackOverlay checkButton={checkButton} indDistance={indDistance} indAccuracy={indAccuracy} question={question} />: null}
+                    </div>
+                    <RulesPopup trigger={rulePopup} setTrigger={setRulePopup}>
+                        <h3>Game Rules:</h3>
+                        <br />
+                        <p>Drop your pin on the map when you have guessed the location from the clues!</p>
+                    </RulesPopup>
+                    <nav className="question-buttons">
+                        <button className="rules-button" id="rules-btn" onClick={() => setRulePopup(true)}>Rules</button>
+                        <CheckButton className="check-button" setIndAccuracy={setIndAccuracy} roundNumber={roundNumber} displayScoresPage={displayScoresPage} nextRound={nextRound} markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} mapRef={mapRef} postUserScores={postUserScores}/>
+                    </nav>
+                </section>
+            </article>
         </div>
     );
 };
