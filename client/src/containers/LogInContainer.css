@@ -30,20 +30,19 @@
     display: flex;
     justify-content: space-between;
 }
-/* 
+
 .info-box {
     border: 1px solid #43CAFC;
     border-radius: 8px;
     color: #43CAFC;
     width: 223px;
     height: 38px;
-    left: calc(50% - 223px/2 + 50.5px);
-    top: calc(50% - 38px/2 + 263px);
     box-sizing: border-box;
     text-align: center;
     padding: 10px;
     margin-right: 20px;
-} */
+    font-size: 15px;
+}
 
 .headings h1{
     font-size: 38px;
