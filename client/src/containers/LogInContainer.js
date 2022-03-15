@@ -17,8 +17,8 @@ const LogInContainer = ({displayGamePage, setUserName}) => {
                         <section className="game-info">
                             <img className="globe" src={logo} alt="bears picture" />
                             <div className="info-boxes">
-                                <h5 className="info-box">3 Questions per round</h5>
-                                <h5 className="info-box">Game Time: Unlimited</h5>
+                                <h5 className="info-box1">3 Questions per round</h5>
+                                <h5 className="info-box2">Time: Unlimited</h5>
                                 <Instructions/>
                             </div>
                         </section>
