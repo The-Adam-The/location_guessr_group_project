@@ -22,12 +22,22 @@ const mapStyle = [
         "elementType": "labels.text.fill",
         "stylers": [
             {
-                "color": "#444444"
+                "color": "#fff"
             },
             {
                 "visibility": "off"
             }
         ]
+    },
+    {
+        "featuretype": "administrative.country",
+        "elementType": "all",
+        "stylers": [
+            {
+                color: "#ffffff"
+            }
+        ]
+        
     },
     {
         "featureType": "administrative.neighborhood",
@@ -46,7 +56,10 @@ const mapStyle = [
                 "visibility": "on"
             },
             {
-                "color": "#e0dfe0"
+                saturation: 100
+            },
+            {
+                "color": "#ad9dc5"
             }
         ]
     },
@@ -109,7 +122,10 @@ const mapStyle = [
                 "visibility": "on"
             },
             {
-                "color": "#5b5b5a"
+                "lightness": 1
+            },
+            {
+                "color": "#7624F6"
             }
         ]
     },
@@ -172,7 +188,13 @@ const mapStyle = [
         "elementType": "all",
         "stylers": [
             {
-                "color": "#ffffff"
+                "color": "#d1effa"
+            },
+            {
+                "saturation": 0
+            },
+            {
+                "lightness": 1
             },
             {
                 "visibility": "on"
