@@ -47,6 +47,12 @@
     font-family: 'Spartan', sans-serif;
 }
 
+.instructions-button:hover {
+    cursor: pointer;
+    background-color: #7624F6;
+    transition: .1s;
+}
+
 .info-boxes {
     display: flex;
     justify-content: space-between;
