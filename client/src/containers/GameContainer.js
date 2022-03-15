@@ -7,7 +7,6 @@ import ScoresService from "../services/ScoresService";
 import Question from "../components/Question"
 import QuestionRoundDisplay from "../components/QuestionRoundDisplay";
 import RulesPopup from "../components/RulesPopup";
-import Score from "../components/Score";
 import FeedbackOverlay from "../components/FeedbackOverlay";
 import './GameContainer.css';
 
@@ -148,7 +147,7 @@ const GameContainer = ({displayScoresPage, userName}) => {
                 <Question question={question}/>
                 <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter} onMapLoad={onMapLoad}/>
             </div>
-            <FeedbackOverlay/>
+            <FeedbackOverlay checkButton={checkButton} indDistance={indDistance} indAccuracy={indAccuracy} question={question} />
             <CheckButton roundNumber={roundNumber} displayScoresPage={displayScoresPage} nextRound={nextRound} markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} mapRef={mapRef} postUserScores={postUserScores}/>
 
             <button id="rules-btn" onClick={() => setRulePopup(true)}>Rules</button>
@@ -157,7 +156,7 @@ const GameContainer = ({displayScoresPage, userName}) => {
                 <br />
                 <p>Drop your pin on the map when you have guessed the location from the clues!</p>
             </RulesPopup>
-            {checkButton === true ? <Score indDistance={indDistance} indAccuracy={indAccuracy} question={question}/> : null}
+            
         </div>
     );
 };
