@@ -13,7 +13,7 @@ import './GameContainer.css';
 
 const libraries = ["places"];
 
-const GameContainer = ({displayScoresPage, userName}) => {
+const GameContainer = ({displayScoresPage, userName, userScores, setUserScores}) => {
   
     const {isLoaded, loadError} = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -30,7 +30,7 @@ const GameContainer = ({displayScoresPage, userName}) => {
 
     const [indDistance, setIndDistance] = useState(0);
     const [indAccuracy, setIndAccuracy] = useState(0);
-    const [userScores, setUserScores] = useState([]);
+    
 
     useEffect(() => {
         QuestionsService.getQuestions()
@@ -38,14 +38,9 @@ const GameContainer = ({displayScoresPage, userName}) => {
      
     }, [])
 
-
     useEffect(() => {
         selectQuestion()
     }, [questions, roundNumber])
-
-    useEffect(() => {
-        setUserScores(userScores.name = userName)
-    }, [userName])
     
     const selectQuestion = () => {
         console.log("select question called")
@@ -104,6 +99,7 @@ const GameContainer = ({displayScoresPage, userName}) => {
             }
         }
         calculateAccuracy()
+        
     }
 
     // adds scores object to userScores array
@@ -114,8 +110,10 @@ const GameContainer = ({displayScoresPage, userName}) => {
     }, [indAccuracy])
 
     const handleUserScores = () => {
+        const indPoints= (indAccuracy * 1.55).toFixed(0)
         const score = {
-            questionId: question._id, 
+            questionId: question._id,
+            points: indPoints, 
             distance: indDistance, 
             accuracy: indAccuracy
         }
@@ -126,10 +124,12 @@ const GameContainer = ({displayScoresPage, userName}) => {
     const postUserScores = () => {
         const calcAvgDistance = ((userScores.map(score => score.distance).reduce((prev, next) => parseFloat(prev) + parseFloat(next))) / 3).toFixed(2);
         const calcAvgAccuracy = ((userScores.map(score => score.accuracy).reduce((prev, next) => parseFloat(prev) + parseFloat(next))) / 3).toFixed(2);
+        const totalPoints = ((userScores.map(score => score.points).reduce((prev, next) => parseFloat(prev) + parseFloat(next)))).toFixed(0);
         const score = {
             name: userName,
             scores: userScores,
             total: {
+                points: totalPoints,
                 averageDistance: calcAvgDistance,
                 averageAccuracy: calcAvgAccuracy
             }
