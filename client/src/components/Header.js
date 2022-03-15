@@ -1,8 +1,12 @@
+import './Header.css';
+
 const Header = () => {
     return(
-        <div>
-            <h1>Whereabouts</h1>
-        </div>
+        <header>
+            <nav>
+                <a className="logo" href="/">Whereabouts</a>
+            </nav>
+        </header>
     )
 };
 

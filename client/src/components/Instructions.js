@@ -1,6 +1,8 @@
 const Instructions = () => {
     return(
-        <></>
+        <>
+            <button>Instructions</button>
+        </>
     );
 };
 
