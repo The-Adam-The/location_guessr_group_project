@@ -9,6 +9,7 @@ const MainContainer = () => {
     const [scores, setScores] = useState([]);
     const [page, setPage] = useState('LogInPage')
     const [userName, setUserName] = useState('')
+    const [userScores, setUserScores] = useState([]);
 
     useEffect(() => {
         ScoresService.getScores()
@@ -30,8 +31,8 @@ const MainContainer = () => {
     return(
         <div>
             {page === 'LogInPage' ? <LogInContainer displayGamePage={displayGamePage} setUserName={setUserName}/> : null}
-            {page === 'GamePage' ? <GameContainer displayScoresPage={displayScoresPage} userName={userName}/> : null}
-            {page === 'ScoresPage' ?<ScoresContainer scores={scores} displayLogInPage={displayLogInPage}/> : null}
+            {page === 'GamePage' ? <GameContainer displayScoresPage={displayScoresPage} userName={userName} userScores={userScores} setUserScores={setUserScores}/> : null}
+            {page === 'ScoresPage' ?<ScoresContainer scores={scores} displayLogInPage={displayLogInPage} userScores={userScores}/> : null}
         </div>
     );
 };
