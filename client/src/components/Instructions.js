@@ -1,7 +1,7 @@
 const Instructions = () => {
     return(
         <>
-            <button>Instructions</button>
+            <button className="instructions-button">Instructions</button>
         </>
     );
 };

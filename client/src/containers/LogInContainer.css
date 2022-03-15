@@ -44,6 +44,22 @@
     font-size: 15px;
 }
 
+.instructions-button {
+    border-radius: 8px;
+    border: none;
+    background-color: #43CAFC;
+    color: #fff;
+    width: 150px;
+    height: 38px;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+    margin-right: 20px;
+    font-size: 15px;
+    margin-top: 24px;
+    margin-right: 10px;
+}
+
 .headings h1{
     font-size: 38px;
     padding: 40px;
@@ -65,8 +81,6 @@
 
 .login-form {
     background-color: #fff;
-    /* padding: 50px; */
-    /* margin: 30px; */
     position: absolute;
     width: 469px;
     height: 174px;
