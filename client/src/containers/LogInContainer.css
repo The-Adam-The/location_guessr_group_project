@@ -31,19 +31,61 @@
     justify-content: space-between;
 }
 
+.info-box {
+    border: 1px solid #43CAFC;
+    border-radius: 8px;
+    color: #43CAFC;
+    width: 223px;
+    height: 38px;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+    margin-right: 20px;
+    font-size: 15px;
+}
+
+.instructions-button {
+    border-radius: 8px;
+    border: none;
+    background-color: #43CAFC;
+    color: #fff;
+    width: 150px;
+    height: 38px;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+    margin-right: 20px;
+    font-size: 15px;
+    margin-top: 24px;
+    margin-right: 10px;
+}
+
 .headings h1{
     font-size: 38px;
-    padding: 10px;
+    padding: 40px;
     padding-top: 100px;
+    padding-bottom: 0;
 }
 
 .headings h2 {
     font-size: 20px;
-    padding: 10px;
+    padding: 0 40px;
+    padding-bottom: 40px;
 }
 
 .headings {
     width: 40vw;
     background-color: var(--primary-color);
     height: 100vh;
+}
+
+.login-form {
+    background-color: #fff;
+    position: absolute;
+    width: 469px;
+    height: 174px;
+    margin-left: 40px;
+    padding: 40px 100px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(39, 15, 86, 0.1);
 }
