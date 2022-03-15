@@ -1,0 +1,74 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+.leaderboard-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.leaderboard {
+    padding: 0 20px 20px 0;
+    overflow: hidden;
+    height: 20vh;
+    width: 60vw;
+    overflow-y: scroll;
+    border: 1px solid black;
+    border-radius: 5px;
+    
+  }
+
+.leaderboard-list-items{
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 1px;
+}
+
+.scores-breakdown{
+    display: flex;
+    justify-content: center;
+}
+
+.rounds-breakdown{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px;
+    width: 400px;
+    padding-left: 20px;
+}
+
+.scores-aside{
+    display: flex;
+    flex-direction: column;
+}
+
+.totals{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px;
+    width: 400px;
+    height: 200px;
+    padding-left: 20px;
+}
+
+.button-box{
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    height: 120px;
+    margin-left: 10px;
+}
+
+.new-game-button{
+    height: 30px;
+    margin-top: 3em;
+    padding: 0;
+}

@@ -11,12 +11,12 @@ const Leaderboard = ({scores}) => {
     })
 
     return(
-        <>
+        <div className="leaderboard-container">
             <h2>Leaderboard</h2>
-            <ul>
+            <ul className="leaderboard">
                 {scoresList}
             </ul>
-        </>
+        </div>
     );
 };
 

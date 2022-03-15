@@ -1,6 +1,6 @@
 const LeaderboardScore = ({score}) => {
     return (
-        <li>
+        <li className="leaderboard-list-items">
             <p>{score.name}:</p>
             <p>Points: {score.total.points}</p>
             <p>Average Distance: {score.total.averageDistance}km</p>

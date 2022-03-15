@@ -13,7 +13,7 @@ import './GameContainer.css';
 
 const libraries = ["places"];
 
-const GameContainer = ({displayScoresPage, userName, userScores, setUserScores}) => {
+const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, setTotalScore}) => {
   
     const {isLoaded, loadError} = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -97,7 +97,6 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores})
             }
         }
         calculateAccuracy()
-        console.log("calculation made");
     }
 
     // adds scores object to userScores array
@@ -116,7 +115,6 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores})
             accuracy: indAccuracy
         }
         setUserScores([...userScores, score])
-        console.log("socrePosted");
      }
 
     // calculates averages and posts score object to db
@@ -134,6 +132,7 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores})
             }
         }
         ScoresService.postScore(score)
+        setTotalScore(score)
     }
 
     if (loadError) return "Error loading maps";
