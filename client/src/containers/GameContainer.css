@@ -2,13 +2,30 @@
     margin: 5vw;
 }
 
-QuestRoundDisplay {
-    width: 24vw;
-}
+
 
 .question-map-box {
-    display: inline-flex;
+    display: flex;
+    justify-content: space-between;
     width: 100%;
+    margin-top: 125px;
+}
+
+.question-section {
+    width: 21vw;
+    height: max-content;
+    margin-top: 2em;
+    padding: 0 1.7em;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+
+}
+
+.map-section {
+    /* border: 1px solid #000; */
+    width: 64vw;
+    margin: 2em;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+    padding: 2em 2em 0 2em;
 }
 
 .question-box{
@@ -18,14 +35,14 @@ QuestRoundDisplay {
     /* z-index: 10; */
     margin: 0;
     padding: 10px;
-    width: 20%;
-    border: 2px black solid;
-    border-radius: 5px;
-    height: 700px;
+    /* width: 20%; */
+    /* border: 2px black solid;
+    border-radius: 5px; */
 }
 
 .question-round-display {
     padding-left: 10px;
+    width: 24vw;
 }
 
 .map-overlay-box {
@@ -49,4 +66,10 @@ QuestRoundDisplay {
     position: absolute; 
     bottom: 155px;
 
+}
+
+.question-buttons {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
 }
