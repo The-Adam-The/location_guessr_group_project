@@ -93,7 +93,98 @@ db.questions.insertMany(
             },
         },
         imageLink: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Arnold_Schwarzenegger_by_Gage_Skidmore_4.jpg/800px-Arnold_Schwarzenegger_by_Gage_Skidmore_4.jpg"
-    }
+    },
+    {
+        name: "Mona Lisa",
+        question: "Where is the home of the Mona Lisa?",
+        location: {
+            place: "Louvre Museum, Paris",
+            country: "France",
+            coords: {
+                lat: 48.86079459806649,
+                lng:  2.33761181204535 
+            },
+        },
+        imageLink: "https://upload.wikimedia.org/wikipedia/commons/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
+    },
+    {
+        name: "Hogwarts Express",
+        question: "Where is the location of this bridge, famous for being crossed by the Hogwarts Express?",
+        location: {
+            place: "Glenfinnan Viaduct, Glenfinnan",
+            country: "Scotland",
+            coords: {
+                lat: 56.87638133802642, 
+                lng:  -5.431737443534498
+            },
+        },
+        imageLink: "https://upload.wikimedia.org/wikipedia/commons/1/17/Glenfinnan_Viaduct.jpg"
+    },
+    {
+        name: "Grunge",
+        question: "Where is the city that is considered to be the birth place of the music genre 'grunge'?",
+        location: {
+            place: "Seattle, Washington",
+            country: "USA",
+            coords: {
+                lat: 47.607851123598714,
+                lng:  -122.33177068638452
+            },
+        },
+        imageLink: "https://upload.wikimedia.org/wikipedia/commons/1/19/Nirvana_around_1992.jpg"
+    },
+    {
+        name: "Sound of Music",
+        question: "Which hills are 'alive with the sound of music'?",
+        location: {
+            place: "Salzburg",
+            country: "Austria",
+            coords: {
+                lat: 47.80960706217608, 
+                lng:  13.051966434346307
+            },
+        },
+        imageLink: "https://upload.wikimedia.org/wikipedia/commons/6/62/The_Sound_of_Music_Christopher_Plummer_and_Julie_Andrews.jpg"
+    },
+    {
+        name: "Hobitton",
+        question: "Where is Hobitton village?",
+        location: {
+            place: "Auckland",
+            country: "New Zealand",
+            coords: {
+                lat: -37.85808703945054, 
+                lng: 175.68054566233747
+            },
+        },
+        imageLink: "https://upload.wikimedia.org/wikipedia/commons/8/89/Hobbit_holes_reflected_in_water.jpg"
+    },
+    {
+        name: "Mirror",
+        question: "Where can you find the world's largest mirror?",
+        location: {
+            place: "Salar De Uyuni",
+            country: "Bolivia",
+            coords: {
+                lat: -20.13970077949789,
+                lng: -67.62774990554094
+            },
+        },
+        imageLink: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Salar_de_Uyuni_2013.jpg"
+    },
+    {
+        name: "Kilimanjaro",
+        question: "Where is Mount Kilimanjaro?",
+        location: {
+            place: "Mount Kilimanjaro National Park",
+            country: "Tanzania",
+            coords: {
+                lat: -3.066738902333098, 
+                lng: 37.35567018073739
+            },
+        },
+        imageLink: "https://upload.wikimedia.org/wikipedia/commons/9/91/Mount_Kilimanjaro.jpg"
+    }          
 ])
 
 db.scores.insertMany(
