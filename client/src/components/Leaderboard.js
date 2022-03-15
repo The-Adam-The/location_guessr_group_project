@@ -6,7 +6,7 @@ const Leaderboard = ({scores}) => {
         return <h2>Waiting for scores...</h2>
     }
 
-    const scoresList = scores.map((score, index) => {
+    const scoresList = scores.sort((a, b) => b.total.points-a.total.points).map((score, index) => {
         return <LeaderboardScore score={score} key={index}/>
     })
 
