@@ -3,6 +3,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Map from "../components/Map";
 import CheckButton from "../components/CheckButton";
 import QuestionsService from "../services/QuestionsServices";
+import ScoresService from "../services/ScoresService";
 import Question from "../components/Question"
 import QuestionRoundDisplay from "../components/QuestionRoundDisplay";
 import './GameContainer.css';
@@ -29,13 +30,14 @@ const GameContainer = ({displayScoresPage, userName}) => {
 
     const [indDistance, setIndDistance] = useState(0);
     const [indAccuracy, setIndAccuracy] = useState(0);
-    const [userScores, setUserScores] = useState({name: '', scores: [], total: {}});
+    const [userScores, setUserScores] = useState([]);
 
     useEffect(() => {
         QuestionsService.getQuestions()
         .then(questions => setQuestions(questions))
      
     }, [])
+
 
     useEffect(() => {
         selectQuestion()
@@ -86,7 +88,6 @@ const GameContainer = ({displayScoresPage, userName}) => {
     useEffect(() => {
         if(markers.length === 2) {
             handleCalculation()
-            handleUserScores()
         }
     }, [markers])
 
@@ -105,12 +106,36 @@ const GameContainer = ({displayScoresPage, userName}) => {
         calculateAccuracy()
     }
 
+    // adds scores object to userScores array
+    useEffect(() => {
+        if(markers.length === 2) {
+            handleUserScores()
+        }
+    }, [indAccuracy])
+
     const handleUserScores = () => {
-        setUserScores({name: userName, scores: [{
-            questionId: question._id,
-            distance: indDistance,
-            accuracy: indAccuracy}], total: {}})
+        const score = {
+            questionId: question._id, 
+            distance: indDistance, 
+            accuracy: indAccuracy
+        }
+        setUserScores([...userScores, score])
      }
+
+    // calculates averages and posts score object to db
+    const postUserScores = () => {
+        const calcAvgDistance = ((userScores.map(score => score.distance).reduce((prev, next) => parseFloat(prev) + parseFloat(next))) / 3).toFixed(2);
+        const calcAvgAccuracy = ((userScores.map(score => score.accuracy).reduce((prev, next) => parseFloat(prev) + parseFloat(next))) / 3).toFixed(2);
+        const score = {
+            name: userName,
+            scores: userScores,
+            total: {
+                averageDistance: calcAvgDistance,
+                averageAccuracy: calcAvgAccuracy
+            }
+        }
+        ScoresService.postScore(score)
+    }
 
     if (loadError) return "Error loading maps";
     if (!isLoaded) return "Loading map";
@@ -122,6 +147,7 @@ const GameContainer = ({displayScoresPage, userName}) => {
                 <Question question={question}/>
                 <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter} onMapLoad={onMapLoad}/>
             </div>
+
             <CheckButton roundNumber={roundNumber} displayScoresPage={displayScoresPage} nextRound={nextRound} markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} mapRef={mapRef}/>
 
             <button id="rules-btn" onClick={() => setRulePopup(true)}>Rules</button>

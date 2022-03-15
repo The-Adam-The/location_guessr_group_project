@@ -1,6 +1,6 @@
 
-const CheckButton = ({roundNumber, displayScoresPage, nextRound, markers, setMarkers, checkButton, setCheckButton, question, setCenter, mapRef}) => {
-    
+const CheckButton = ({roundNumber, displayScoresPage, nextRound, markers, setMarkers, checkButton, setCheckButton, question, setCenter, mapRef, nextQuestion}) => {
+  
      // adds question marker to marker state and switches check button to next button
      const handleCheckClick = () => {
         setMarkers(current => [...current, question.location.coords])
@@ -10,6 +10,7 @@ const CheckButton = ({roundNumber, displayScoresPage, nextRound, markers, setMar
     // resets state of game to default settings and will set next question
     const handleNextClick = () => {
       if(roundNumber === 3) {
+        postUserScores()
         displayScoresPage()
       } else {
         setCenter({lat: 0, lng: 0})
