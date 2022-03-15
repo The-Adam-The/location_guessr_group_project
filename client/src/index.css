@@ -1,5 +1,8 @@
 :root {
     --main-font: ‘Spartan’, sans-serif;
+    --accent-color: #7624F6;
+    --secondary-color: #43CAFC;
+    --primary-color: #d8f2fc;
 }
 
 body {

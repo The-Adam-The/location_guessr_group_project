@@ -12,15 +12,17 @@ const LogInContainer = ({displayGamePage, setUserName}) => {
                     <section className="headings">
                         <h1>How many locations can you pin on the map?</h1>
                         <h2>Test your trivia and geography knowledge in one game</h2>
+                        <LogInForm displayGamePage={displayGamePage} setUserName={setUserName}/>
                     </section>
-                        <img className="globe" src={logo} alt="bears picture" />
                         <section className="game-info">
-                            <h5 className="info-box">3 Questions per round</h5>
-                            <h5 className="info-box">Game Time: Unlimited</h5>
-                            <Instructions/>
+                            <img className="globe" src={logo} alt="bears picture" />
+                            <div className="info-boxes">
+                                <h5 className="info-box">3 Questions per round</h5>
+                                <h5 className="info-box">Game Time: Unlimited</h5>
+                                <Instructions/>
+                            </div>
                         </section>
                 </article>
-            <LogInForm displayGamePage={displayGamePage} setUserName={setUserName}/>
         </div>
     );
 };
