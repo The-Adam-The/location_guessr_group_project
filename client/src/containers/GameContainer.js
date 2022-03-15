@@ -13,7 +13,6 @@ import Score from "../components/Score";
 
 const libraries = ["places"];
 
-
 const GameContainer = ({displayScoresPage, userName}) => {
   
     const {isLoaded, loadError} = useLoadScript({
@@ -22,6 +21,7 @@ const GameContainer = ({displayScoresPage, userName}) => {
     });
 
     const [question, setQuestion] = useState({});
+    const [questions, setQuestions] = useState([])
     const [rulePopup, setRulePopup] = useState(false);
     const [checkButton, setCheckButton] = useState(false);
     const [markers, setMarkers] = useState([]);
@@ -33,14 +33,24 @@ const GameContainer = ({displayScoresPage, userName}) => {
     const [userScores, setUserScores] = useState([]);
 
     useEffect(() => {
-        QuestionsService.getQuestion()
-        .then(question => setQuestion(question))
+        QuestionsService.getQuestions()
+        .then(questions => setQuestions(questions))
+     
     }, [])
 
-    const nextQuestion = () => {
-        QuestionsService.getQuestion()
-        .then(question => setQuestion(question))
-    }   
+
+    useEffect(() => {
+        selectQuestion()
+    }, [questions, roundNumber])
+
+    useEffect(() => {
+        setUserScores(userScores.name = userName)
+    }, [userName])
+    
+    const selectQuestion = () => {
+        console.log("select question called")
+        setQuestion(questions[roundNumber-1])
+    }  
 
     const nextRound = () => {
         const temp = roundNumber + 1;
@@ -137,7 +147,8 @@ const GameContainer = ({displayScoresPage, userName}) => {
                 <Question question={question}/>
                 <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter} onMapLoad={onMapLoad}/>
             </div>
-            <CheckButton roundNumber={roundNumber} displayScoresPage={displayScoresPage} nextRound={nextRound} markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} haversineDistance={haversineDistance} mapRef={mapRef} nextQuestion={nextQuestion} postUserScores={postUserScores}/>
+
+            <CheckButton roundNumber={roundNumber} displayScoresPage={displayScoresPage} nextRound={nextRound} markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} mapRef={mapRef}/>
 
             <button id="rules-btn" onClick={() => setRulePopup(true)}>Rules</button>
             <RulesPopup trigger={rulePopup} setTrigger={setRulePopup}>
