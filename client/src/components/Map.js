@@ -1,5 +1,5 @@
 import {useCallback} from 'react'
-import {GoogleMap, Marker, Polyline} from "@react-google-maps/api"
+import {GoogleMap, Marker, Polyline, OverlayView} from "@react-google-maps/api"
 import mapStyle from "../mapStyle"
 
 const Map = ({markers, setMarkers, center, onMapLoad}) => {

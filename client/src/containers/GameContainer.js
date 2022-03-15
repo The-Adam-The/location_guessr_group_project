@@ -6,9 +6,10 @@ import QuestionsService from "../services/QuestionsServices";
 import ScoresService from "../services/ScoresService";
 import Question from "../components/Question"
 import QuestionRoundDisplay from "../components/QuestionRoundDisplay";
-import './GameContainer.css';
 import RulesPopup from "../components/RulesPopup";
 import Score from "../components/Score";
+import FeedbackOverlay from "../components/FeedbackOverlay";
+import './GameContainer.css';
 
 
 const libraries = ["places"];
@@ -147,7 +148,7 @@ const GameContainer = ({displayScoresPage, userName}) => {
                 <Question question={question}/>
                 <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter} onMapLoad={onMapLoad}/>
             </div>
-
+            <FeedbackOverlay/>
             <CheckButton roundNumber={roundNumber} displayScoresPage={displayScoresPage} nextRound={nextRound} markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} mapRef={mapRef} postUserScores={postUserScores}/>
 
             <button id="rules-btn" onClick={() => setRulePopup(true)}>Rules</button>

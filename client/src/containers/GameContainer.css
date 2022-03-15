@@ -19,3 +19,9 @@
 .question-round-display {
     padding-left: 10px;
 }
+
+.feedback-overlay {
+    height: 30px;
+    width: 100%;
+    background-color: red;
+}
