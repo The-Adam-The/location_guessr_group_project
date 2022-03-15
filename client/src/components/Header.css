@@ -1,0 +1,17 @@
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    text-decoration: none;
+    font-family: var(--main-font);
+    font-size: 14px;
+}
+
+header {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    background-color: transparent;
+}
