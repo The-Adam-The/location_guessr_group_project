@@ -12,7 +12,6 @@ import Score from "../components/Score";
 
 const libraries = ["places"];
 
-
 const GameContainer = ({displayScoresPage, userName}) => {
   
     const {isLoaded, loadError} = useLoadScript({
@@ -35,27 +34,21 @@ const GameContainer = ({displayScoresPage, userName}) => {
     useEffect(() => {
         QuestionsService.getQuestions()
         .then(questions => setQuestions(questions))
-        selectQuestion()
-
+     
     }, [])
+
+    useEffect(() => {
+        selectQuestion()
+    }, [questions, roundNumber])
 
     useEffect(() => {
         setUserScores(userScores.name = userName)
     }, [userName])
     
     const selectQuestion = () => {
-        const tempQuestionsList = questions
-        const questionsLength = tempQuestionsList.length
-        const randomNumber = Math.round(Math.random() * (questionsLength -1))
-        const chosenQuestion = tempQuestionsList.splice(randomNumber, 1)
-        setQuestion(chosenQuestion)
-        setQuestions(tempQuestionsList)
-    }
-
-    const nextQuestion = () => {
-        QuestionsService.getQuestions()
-        .then(questions => setQuestion(questions))
-    }   
+        console.log("select question called")
+        setQuestion(questions[roundNumber-1])
+    }  
 
     const nextRound = () => {
         const temp = roundNumber + 1;
@@ -129,7 +122,7 @@ const GameContainer = ({displayScoresPage, userName}) => {
                 <Question question={question}/>
                 <Map question={question} checkButton={checkButton} setCheckButton={setCheckButton} markers={markers} setMarkers={setMarkers} center={center} setCenter={setCenter} onMapLoad={onMapLoad}/>
             </div>
-            <CheckButton roundNumber={roundNumber} displayScoresPage={displayScoresPage} nextRound={nextRound} markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} haversineDistance={haversineDistance} mapRef={mapRef} nextQuestion={nextQuestion}/>
+            <CheckButton roundNumber={roundNumber} displayScoresPage={displayScoresPage} nextRound={nextRound} markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} mapRef={mapRef}/>
 
             <button id="rules-btn" onClick={() => setRulePopup(true)}>Rules</button>
             <RulesPopup trigger={rulePopup} setTrigger={setRulePopup}>
