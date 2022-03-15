@@ -1,0 +1,10 @@
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    text-decoration: none;
+    font-family: var(--main-font);
+    font-size: 14px;
+}
