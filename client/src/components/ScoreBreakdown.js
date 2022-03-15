@@ -1,4 +1,4 @@
-const ScoreBreakdown = ({userScores}) => {
+const ScoreBreakdown = ({userScores, totalScore, displayLogInPage}) => {
 
     const scoresList = userScores.map((score, index) => {
         return <ul key={index}>
@@ -9,10 +9,25 @@ const ScoreBreakdown = ({userScores}) => {
         </ul>
     })
     return(
-        <ul>
-            <h2>Round Breakdown</h2>
-            {scoresList}
-        </ul>
+        <div className="scores-breakdown">
+            <section className="rounds-breakdown">
+                <h2>Round Breakdown</h2>
+                <ul>
+                    {scoresList}
+                </ul>
+            </section>
+            <div className="scores-aside">
+                <section className="totals">
+                    <h3>Total</h3>
+                    <p>Accuracy {totalScore.total.averageAccuracy}%</p>
+                    <p>{totalScore.total.points} points</p>
+                    <p>{totalScore.total.averageDistance}km in total from locations</p>  
+                </section>
+                <aside className="button-box">
+                        <button onClick={displayLogInPage} className="new-game-button">New Game</button>
+                </aside>  
+            </div>
+        </div>
     );
 };
 
