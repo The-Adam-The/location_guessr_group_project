@@ -32,15 +32,24 @@ ul{
     margin-left: 1px;
 }
 
-.leaderboard-section{
-    margin-left: 545px;
+.leaderboard-section {
+    display: flex;   
+    justify-content: center;
+    align-content: center;
+    margin-top: 10px;
+}
+
+/* .leader-board-title {
+    text-align: center;
+
+} */
+
+.leaderboard-whole{
+    display: block;
+  
 }
 
 .leaderboard-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
     width: 42.5vw;
     border-radius: var(--border-radius-px);
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
