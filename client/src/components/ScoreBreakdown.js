@@ -1,4 +1,5 @@
 import dartboard from '../images/dart_with_background.png';
+import AccuracyBar from './AccuracyBar';
 
 const ScoreBreakdown = ({userScores, totalScore, displayLogInPage}) => {
 
@@ -9,6 +10,8 @@ const ScoreBreakdown = ({userScores, totalScore, displayLogInPage}) => {
         <li>{score.distance}km from location</li>
         </ul>
     })
+
+    
     return(
         <div className="scores-breakdown">
             <div className="scores-left-aside">
@@ -22,6 +25,7 @@ const ScoreBreakdown = ({userScores, totalScore, displayLogInPage}) => {
             <div className="scores-aside">
                 <section className="totals">
                     <h3>Total</h3>
+                    <AccuracyBar/>
                     <p>Accuracy {totalScore.total.averageAccuracy}%</p>
                     <p>{totalScore.total.points} points</p>
                     <p>{totalScore.total.averageDistance}km in total from locations</p>  
