@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import blueMarker from '../images/right_answer_marker_tick.png';
+import blueMarker from '../images/right_answer_marker_orange.png';
 
 const CheckButton = ({setIndAccuracy, roundNumber, displayScoresPage, nextRound, markers, setMarkers, checkButton, setCheckButton, question, setCenter, mapRef, postUserScores}) => {
 
@@ -53,7 +53,7 @@ const CheckButton = ({setIndAccuracy, roundNumber, displayScoresPage, nextRound,
 
         <div className="checkbutton">
             {/* {checkButton ? <button className='question-button' onClick={handleNextClick}>Next</button> : <button className='question-button' onClick={markers.length !== 0 ? handleCheckClick : null}>Check</button>} */}
-            <button className='question-button' onClick={checkButton ? handleNextClick : handleCheckClick}>{buttonText}</button>
+            <button className='question-button purple-btn' onClick={checkButton ? handleNextClick : handleCheckClick}>{buttonText}</button>
         </div>
      );
 }

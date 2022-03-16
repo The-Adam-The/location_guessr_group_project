@@ -1,14 +1,20 @@
-import Header from '../components/Header';
+import {useState, useEffect} from 'react';
 import ScoreBreakdown from "../components/ScoreBreakdown";
 import Leaderboard from "../components/Leaderboard";
 import './ScoresContainer.css';
 
 const ScoresContainer = ({scores, userScores, displayLogInPage, totalScore}) => {
+    const [barFill, setBarFill] = useState(0);
+
+    useEffect(() => {
+       setBarFill(totalScore.total.averageAccuracy)
+       console.log(barFill)
+
+    }, []) 
 
     return(
         <div className="scores-container">
-            <Header/>
-            <ScoreBreakdown scores={scores} userScores={userScores} totalScore={totalScore} displayLogInPage={displayLogInPage}/>
+            <ScoreBreakdown scores={scores} userScores={userScores} totalScore={totalScore} displayLogInPage={displayLogInPage} barFill={barFill}/>
             <Leaderboard scores={scores}/>
         </div>
     );

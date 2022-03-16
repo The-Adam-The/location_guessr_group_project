@@ -15,11 +15,11 @@ const Leaderboard = ({scores}) => {
             <h2>Leaderboard</h2>
                 <div className="leaderboard-container">
                     <div className="leaderboard-headers" >
-                        <h4>Position</h4>
-                        <h4>Name</h4>
-                        <h4>Total Points</h4>
-                        <h4>Average Distance</h4>
-                        <h4>Average Accuracy</h4>
+                        <h4 className="position">Position</h4>
+                        <h4 className="name">Name</h4>
+                        <h4 className="total-points">Total Points</h4>
+                        <h4 className="avg-distance">Average Distance</h4>
+                        <h4 className="avg-accuracy">Average Accuracy</h4>
                     </div>
                     <ul className="leaderboard">
                         {scoresList}

@@ -142,7 +142,6 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
 
     return(
         <div className="game-container">
-            <Header/>
             <article className="question-map-box">
                 <section className="question-section">
                     <QuestionRoundDisplay className="question-display" roundNumber={roundNumber}/>
@@ -159,7 +158,7 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
                             {rulePopup ? 
                             <RulesPopup className="rules-popup" trigger={rulePopup} setTrigger={setRulePopup}>
                                 <h3>Game Rules</h3>
-                                <p>Drop your pin on the map when you have guessed the location from the clues!</p>
+                                <p className="rules-text">Drop your pin on the map when you have guessed the location from the clues!</p>
                             </RulesPopup>
                             : null}
                         </div>

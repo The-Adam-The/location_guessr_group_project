@@ -3,6 +3,9 @@
     --darkest-purple: #1b093d;
     --dark-purple: #270f56;
 
+    --hover-color-purple-btn: #6821DB;
+    --hover-color-blue-btn: #2CBAF2;
+    --border-radius-px: 8px;
     --accent-color: #7624F6;
     --secondary-color: #43CAFC;
     --primary-color: #d8f2fc;
@@ -31,6 +34,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

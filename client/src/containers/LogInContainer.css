@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@300&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
+
+header {
+    margin-left: 500px;
+}
+
+
 .login-container {
     display: flex;
     flex-direction: column;
@@ -14,7 +20,7 @@
 .page-info {
     display: flex;
     align-items: center;
-    width: 98vw;
+    width: 100vw;
 }
 
 .globe {
@@ -33,26 +39,9 @@
 }
 
 .instructions-button {
-    border-radius: 8px;
-    border: none;
-    background-color: #43CAFC;
-    color: #fff;
-    width: 140px;
     height: 38px;
-    box-sizing: border-box;
-    text-align: center;
-    padding: 10px;
-    font-size: 15px;
-    font-weight: 600;
     margin-top: 24px;
     margin-right: 50px;
-    font-family: 'Spartan', sans-serif;
-}
-
-.instructions-button:hover {
-    cursor: pointer;
-    background-color: #7624F6;
-    transition: .5s;
 }
 
 .info-boxes {
@@ -136,25 +125,8 @@
 }
 
 .start-game-btn {
-    width: 95px;
-    padding: 5px;
-    border-radius: 8px;
-    border: none;
-    background-color: #7624F6;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
     margin: auto;
     display: flex;
-    font-family: 'Spartan', sans-serif;
-    font-weight: 600;
-}
-
-.start-game-btn:hover {
-    background-color: #43CAFC;
-    color: #fff;
-    cursor: pointer;
-    transition: .5s;
 }
 
 .instructions-popup-bg {
