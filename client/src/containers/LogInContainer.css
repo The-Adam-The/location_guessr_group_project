@@ -36,7 +36,7 @@
     border: none;
     background-color: #43CAFC;
     color: #fff;
-    width: 150px;
+    width: 140px;
     height: 38px;
     box-sizing: border-box;
     text-align: center;
@@ -86,8 +86,6 @@
     font-family: 'Spartan', sans-serif;
 }
 
-
-
 .headings h1{
     font-size: 38px;
     padding: 30px;
@@ -119,12 +117,17 @@
 }
 
 .form-title {
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 10px;
+    padding-top: 0;
+    padding-left: 0;
     font-size: 15px;
     color:#000000;
 }
 
 .enter-name {
-    width: 262px;
+    width: 269px;
     height: 30px;
     border: 1px solid #EBE8E8;
     margin-bottom: 20px;
@@ -150,4 +153,47 @@
     color: #fff;
     cursor: pointer;
     transition-delay: .1s;
+}
+
+.instructions-popup-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content:right;
+    align-items: center;
+}
+
+.instructions-popup-box {
+    position: relative;
+    padding: 10px;
+    width: 280px;
+    justify-content:right;
+    /* max-width: 640px; */
+    background-color: rgba(255, 255, 255, .75);
+    font-size: 14px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(39, 15, 86, 0.1);
+}
+
+.insructions-popup-box .instructions-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 10px;
+    margin: 4px 2px;
+    text-decoration: none;
+    border: none;
+    background-color: #fff;
+    color: rgb(179, 6, 6);
+    font-size: 18px;
+}
+
+.instructions-close-btn:hover{
+    color: black;
+    font-size: 20px;
+    transition: .5s;
+    cursor: pointer;
 }

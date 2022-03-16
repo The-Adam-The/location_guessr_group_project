@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import Header from '../components/Header';
 import LogInForm from '../components/LogInForm'
-import Instructions from '../components/Instructions'
+import InstructionsPopup from '../components/InstructionsPopup';
 import logo from '../images/globe_with_background.png';
 import './LogInContainer.css';
 
+
 const LogInContainer = ({displayGamePage, setUserName}) => {
+    const [rulePopup, setRulePopup] = useState(false);
     return(
         <div className="login-container">
             <Header />
@@ -19,7 +22,15 @@ const LogInContainer = ({displayGamePage, setUserName}) => {
                             <div className="info-boxes">
                                 <h5 className="info-box1">3 Questions per round</h5>
                                 <h5 className="info-box2">Time: Unlimited</h5>
-                                <Instructions/>
+                                <InstructionsPopup trigger={rulePopup} setTrigger={setRulePopup}>
+                                    <p>Pin your trivia guess on the map and see how close you got!</p>
+                                </InstructionsPopup>
+                                <nav className="question-buttons">
+                                    <button className="instructions-button" onClick={() => setRulePopup(true)}>
+                                        Instructions&nbsp;&nbsp; 
+                                        <span className="toggle-id"><i class="fa fa-external-link" aria-hidden="true"></i></span>
+                                    </button>
+                                </nav>
                             </div>
                         </section>
                 </article>
