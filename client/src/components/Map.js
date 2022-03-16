@@ -23,10 +23,10 @@ const Map = ({markers, setMarkers, center, onMapLoad}) => {
 
     // style options for Polyline generated when user checks answer
     const lineOptions = {
-        strokeColor: '#6a0dad',
+        strokeColor: "#1b093d",
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#6a0dad',
+        fillColor: "#1b093d",
         fillOpacity: 0.35,
         clickable: false,
         draggable: false,
