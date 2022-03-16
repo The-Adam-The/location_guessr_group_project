@@ -18,16 +18,15 @@
     cursor: pointer;
 }
 
-.blue-btn:hover, 
+.blue-btn:hover, .purple-btn:hover {
+    transition: .1s;
+
+}
 
 .blue-btn:hover {
     background-color: var(--hover-color-blue-btn);
-    transition: .1s;
 }
 
 .purple-btn:hover {
     background-color: var(--hover-color-purple-btn);
-    color: #fff;
-    cursor: pointer;
-    transition-delay: .1s;
 }
