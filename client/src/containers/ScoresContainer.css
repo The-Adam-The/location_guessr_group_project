@@ -2,10 +2,6 @@ div, button{
     font-family: var(--main-font);
 }
 
-Header{
-    margin-left: 900px;
-}
-
 h2{
     padding-left: 40px;
 }
@@ -45,7 +41,7 @@ ul{
     justify-content: center;
     align-content: center;
     width: 42.5vw;
-    border-radius: 5px;
+    border-radius: var(--border-radius-px);
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
@@ -54,26 +50,64 @@ ul{
     width: 42.5vw;
 }
 
-.leaderboard-headers{
-    display: flex;
-    justify-content: space-evenly;
-    column-gap: 20px;
+.position{
+    grid-area: position;
     align-content: center;
 }
 
-.leaderboard-list-items{
-    display: flex;
-    justify-content: space-evenly;
-    column-gap: 20px;
-    align-content: center;
-    margin-left: 0;
-    padding-left: 0;
+.name{
+    grid-area: name;
 }
 
+.total-points{
+    grid-area: total-points;
+}
 
+.avg-distance{
+    grid-area: avg-distance;
+}
+
+.avg-accuracy{
+    grid-area: avg-accuracy;
+}
+
+.leaderboard-position{
+    grid-area: leaderboard-position;
+}
 
 .player-name{
     font-weight: bold;
+    grid-area: player-name;
+}
+
+.player-total-points{
+    grid-area: player-total-points;
+}
+
+.player-avg-distance{
+    grid-area: player-avg-distance;
+}
+
+.player-avg-accuracy{
+    grid-area: player-avg-accuracy;
+}
+
+.leaderboard-headers{
+    display: grid;
+    grid-template-columns: 8.5vw 8.5vw 8.5vw 8.5vw 8.5vw;
+    align-content: center;
+    text-align: center;
+    grid-template-areas:
+    "position name total-points avg-distance avg-accuracy"
+}
+
+.leaderboard-list-items{
+    display: grid;
+    grid-template-columns: 8.5vw 8.5vw 8.5vw 8.5vw 8.5vw;
+    align-content: center;
+    text-align: center;
+    grid-template-areas:
+    "leaderboard-position player-name player-total-points player-avg-distance player-avg-accuracy"
 }
 
 .scores-breakdown{
@@ -90,7 +124,7 @@ ul{
 .rounds-breakdown{
     background-color: white;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    border-radius: 5px;
+    border-radius: var(--border-radius-px);
     margin: 10px;
     width: 400px;
     padding-left: 20px;
@@ -102,8 +136,45 @@ ul{
     margin-top: 70px;
 }
 
+.total-score-header {
+    margin-bottom: 0;
+}
+
+.accuracy-box {
+    display: flex;
+    align-items: center;
+}
+
+.accuracy-bar {
+    position: relative;
+    height: 35px;
+    width: 200px;
+    border-radius: var(--border-radius-px);
+    border: 1px solid #333;
+}
+
+.accuracy-filler {
+    background: var(--accent-color);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+    border-radius: inherit;
+    transition: width .2s ease-in;
+}
+
+.barfill-text {
+    margin:0;
+    color: var(--primary-color);
+    padding:0 10px 0 0;
+    font-weight: 600;
+}
+.total-points-label {
+    margin-top: 0;
+}
+
 .totals{
-    border-radius: 5px;
+    border-radius: var(--border-radius-px);
     margin: 10px;
     width: 400px;
     height: 180px;
