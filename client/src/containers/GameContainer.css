@@ -67,6 +67,14 @@
     padding: 50px;
 }
 
+.rules-section {
+    display: flex;
+}
+
+.popup-box {
+    width: 300px;
+}
+
 .rules-button {
     background-color: transparent;
     border: 2px solid var(--accent-color);
