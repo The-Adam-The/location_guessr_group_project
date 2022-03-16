@@ -2,28 +2,79 @@ div, button{
     font-family: var(--main-font);
 }
 
+Header{
+    margin-left: 900px;
+}
+
+h2{
+    padding-left: 40px;
+}
+
+h3, h4{
+    color: var(--secondary-color);
+}
+
+h2, p, li{
+    font-weight: 60;
+    color: rgb(70, 70, 70);
+    text-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
+}
+
+p{
+    padding: 3px;
+}
+
+li {
+    list-style: none;
+    padding: 10px;
+    padding-left: 0;
+
+}
+
+ul{
+    padding-left: 0;
+    margin-left: 1px;
+}
+
+.leaderboard-section{
+    margin-left: 535px;
+}
+
 .leaderboard-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
+    width: 42.5vw;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .leaderboard {
-    padding: 0 20px 20px 0;
-    overflow: hidden;
-    height: 20vh;
-    width: 60vw;
-    overflow-y: scroll;
-    border-radius: 5px;
-  }
+    min-height: 100%;
+    width: 42.5vw;
+}
+
+.leaderboard-headers{
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 20px;
+    align-content: center;
+}
 
 .leaderboard-list-items{
     display: flex;
     justify-content: space-evenly;
-    border-radius: 5px;
-    margin: 10px;
-    background-color: var(--primary-color);
+    column-gap: 20px;
+    align-content: center;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+
+
+.player-name{
+    font-weight: bold;
 }
 
 .scores-breakdown{
@@ -31,9 +82,15 @@ div, button{
     justify-content: center;
 }
 
-.rounds-breakdown{
-    background-color: var(--primary-color);
+.scores-left-aside{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 
+.rounds-breakdown{
+    background-color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     border-radius: 5px;
     margin: 10px;
     width: 400px;
@@ -43,32 +100,49 @@ div, button{
 .scores-aside{
     display: flex;
     flex-direction: column;
+    margin-top: 70px;
 }
 
 .totals{
-
     border-radius: 5px;
     margin: 10px;
     width: 400px;
-    height: 200px;
+    height: 180px;
     padding-left: 20px;
-    background-color: var(--primary-color);
+    background-color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
-.button-box{
-
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
+.dartboard-image{
+    position: absolute;
     width: 400px;
-    height: 120px;
+    height: 250px;
     margin-left: 10px;
-    background-color: var(--primary-color);
+    margin-top: 180px;
 }
 
 .new-game-button{
     font-family: var(--main-font);
-    height: 30px;
-    margin-top: 3em;
+    border-radius: 5px;
+    color: white;
+    background-color: var(--accent-color);
+    font-weight: bold;
+    font-size: 16px;
+    padding: 2px;
+    border: none;
+    height: 35px;
+    width: 120px;
+    margin-top: 5px;
+    margin-left: 50px;
     padding: 0;
+    z-index: 10;
+    align-items: center;
 }
+
+.image-text{
+    font-size: 18px;
+    margin-top: 80px;
+    margin-left: 50px;
+    z-index: 10;
+}
+
