@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Header from '../components/Header';
 import LogInForm from '../components/LogInForm'
 import InstructionsPopup from '../components/InstructionsPopup';
 import logo from '../images/globe_with_background.png';
@@ -10,7 +9,6 @@ const LogInContainer = ({displayGamePage, setUserName}) => {
     const [rulePopup, setRulePopup] = useState(false);
     return(
         <div className="login-container">
-            <Header />
                 <article className="page-info">
                     <section className="headings">
                         <h1>How many locations can you pin on the map?</h1>

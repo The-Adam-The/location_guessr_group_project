@@ -142,7 +142,6 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
 
     return(
         <div className="game-container">
-            <Header/>
             <article className="question-map-box">
                 <section className="question-section">
                     <QuestionRoundDisplay className="question-display" roundNumber={roundNumber}/>
