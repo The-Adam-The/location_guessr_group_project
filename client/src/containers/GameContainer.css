@@ -51,6 +51,7 @@
 .feedback-overlay-show h2 {
     font-size: 21px;
     color: var(--secondary-color);
+    padding-left: 0;
 }
 
 .feedback-overlay-hide {

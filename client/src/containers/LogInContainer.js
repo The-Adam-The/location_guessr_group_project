@@ -16,7 +16,7 @@ const LogInContainer = ({displayGamePage, setUserName}) => {
                         <LogInForm displayGamePage={displayGamePage} setUserName={setUserName}/>
                     </section>
                         <section className="game-info">
-                            <img className="globe" src={logo} alt="bears picture" />
+                            <img className="globe" src={logo} alt="globe with locations pinned" />
                             <div className="info-boxes">
                                 <h5 className="info-box1">3 Questions per round</h5>
                                 <h5 className="info-box2">Time: Unlimited</h5>
@@ -24,7 +24,7 @@ const LogInContainer = ({displayGamePage, setUserName}) => {
                                     <p>Pin your trivia guess on the map and see how close you got!</p>
                                 </InstructionsPopup>
                                 <nav className="question-buttons">
-                                    <button className="instructions-button" onClick={() => setRulePopup(true)}>
+                                    <button className="instructions-button blue-btn" onClick={() => setRulePopup(true)}>
                                         Instructions&nbsp;&nbsp; 
                                         <span className="toggle-id"><i class="fa fa-external-link" aria-hidden="true"></i></span>
                                     </button>
