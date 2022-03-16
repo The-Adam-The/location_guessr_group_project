@@ -34,7 +34,7 @@ const ScoreBreakdown = ({userScores, totalScore, displayLogInPage}) => {
                 </section>
                     <p className="image-text" >Not done?</p>
                     <img src={dartboard} alt="dartboard" className='dartboard-image'/>
-                    <button onClick={displayLogInPage} className="new-game-button">Play again</button>
+                    <button onClick={displayLogInPage} className="new-game-button purple-btn">Play again</button>
             </div>
         </div>
     );

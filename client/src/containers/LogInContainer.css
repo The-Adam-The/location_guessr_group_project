@@ -14,7 +14,7 @@
 .page-info {
     display: flex;
     align-items: center;
-    width: 98vw;
+    width: 100vw;
 }
 
 .globe {
@@ -32,25 +32,9 @@
 }
 
 .instructions-button {
-    border-radius: 8px;
-    border: none;
-    background-color: #43CAFC;
-    color: #fff;
-    width: 140px;
     height: 38px;
-    box-sizing: border-box;
-    text-align: center;
-    padding: 10px;
-    font-size: 15px;
     margin-top: 24px;
     margin-right: 50px;
-    font-family: 'Spartan', sans-serif;
-}
-
-.instructions-button:hover {
-    cursor: pointer;
-    background-color: #7624F6;
-    transition: .1s;
 }
 
 .info-boxes {
@@ -134,25 +118,8 @@
 }
 
 .start-game-btn {
-    width: 95px;
-    padding: 5px;
-    border-radius: 8px;
-    border: none;
-    background-color: #7624F6;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
     margin: auto;
     display: flex;
-    font-family: 'Spartan', sans-serif;
-    font-weight: 400;
-}
-
-.start-game-btn:hover {
-    background-color: #43CAFC;
-    color: #fff;
-    cursor: pointer;
-    transition-delay: .1s;
 }
 
 .instructions-popup-bg {
