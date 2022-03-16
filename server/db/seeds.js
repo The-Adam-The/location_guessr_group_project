@@ -105,7 +105,7 @@ db.questions.insertMany(
                 lng:  2.33761181204535 
             },
         },
-        imageLink: "https://upload.wikimedia.org/wikipedia/commons/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
+        imageLink: "https://upload.wikimedia.org/wikipedia/commons/b/b4/Mona-lisa_1.jpg",
     },
     {
         name: "Hogwarts Express",
