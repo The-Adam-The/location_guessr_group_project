@@ -145,7 +145,13 @@ ul{
     align-items: center;
 }
 
+.accuracy-meter {
+    display: flex;
+    align-items: center;
+}
+
 .accuracy-bar {
+    align-items: center;
     position: relative;
     height: 35px;
     width: 200px;
@@ -164,8 +170,8 @@ ul{
 }
 
 .barfill-text {
-    margin:0;
-    color: var(--primary-color);
+    margin:0 0 0 5px;
+   
     padding:0 10px 0 0;
     font-weight: 600;
 }
