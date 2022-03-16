@@ -1,9 +1,11 @@
+import {useState} from 'react';
 import { useEffect, useState } from 'react';
 import blueMarker from '../images/right_answer_marker_tick.png';
 
 const CheckButton = ({setIndAccuracy, roundNumber, displayScoresPage, nextRound, markers, setMarkers, checkButton, setCheckButton, question, setCenter, mapRef, postUserScores}) => {
 
     const [questionMarker, setQuestionMarker] = useState({})
+    const [buttonText, setButtonText] = useState("Check");
 
     useEffect(() => {
       if(question != null)
@@ -24,6 +26,12 @@ const CheckButton = ({setIndAccuracy, roundNumber, displayScoresPage, nextRound,
      const handleCheckClick = () => {
         setMarkers(current => [...current, questionMarker])
         setCheckButton(true)
+        if (roundNumber === 3){
+            setButtonText("Summary")
+        } else {
+          setButtonText("Next")
+        }
+
       };
 
     // resets state of game to default settings and will set next question
@@ -44,7 +52,8 @@ const CheckButton = ({setIndAccuracy, roundNumber, displayScoresPage, nextRound,
     return ( 
 
         <div className="checkbutton">
-            {checkButton ? <button className='question-button' onClick={handleNextClick}>Next</button> : <button className='question-button' onClick={markers.length !== 0 ? handleCheckClick : null}>Check</button>}
+            {/* {checkButton ? <button className='question-button' onClick={handleNextClick}>Next</button> : <button className='question-button' onClick={markers.length !== 0 ? handleCheckClick : null}>Check</button>} */}
+            <button className='question-button' onClick={checkButton ? handleNextClick : handleCheckClick}>{buttonText}</button>
         </div>
      );
 }
