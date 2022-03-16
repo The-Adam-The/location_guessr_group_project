@@ -23,6 +23,7 @@ const CheckButton = ({setIndAccuracy, roundNumber, displayScoresPage, nextRound,
 
      // adds question marker to marker state and switches check button to next button
      const handleCheckClick = () => {
+       if(markers.length === 0) return
         setMarkers(current => [...current, questionMarker])
         setCheckButton(true)
         if (roundNumber === 3){
