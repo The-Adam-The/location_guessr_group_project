@@ -1,15 +1,16 @@
 import React from "react";
 
-function RulesPopup(props) {
-    return (props.trigger) ? (
+function RulesPopup(rules) {
+    return (rules.trigger) ? (
         <div className="popup-bg">
             <div className="popup-box">
                 <button 
                 className="close-btn" 
-                onClick={() => props.setTrigger(false)}>
+                onClick={() => rules
+                .setTrigger(false)}>
                     X
                 </button>
-                {props.children}
+                {rules.children}
             </div>
         </div>
     ) : "";
