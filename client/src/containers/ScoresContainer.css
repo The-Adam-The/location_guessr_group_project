@@ -17,7 +17,6 @@ h3, h4{
 h2, p, li{
     font-weight: 60;
     color: rgb(70, 70, 70);
-    text-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
 }
 
 p{
@@ -123,20 +122,10 @@ ul{
 
 .new-game-button{
     font-family: var(--main-font);
-    border-radius: 5px;
-    color: white;
-    background-color: var(--accent-color);
-    font-weight: bold;
-    font-size: 16px;
-    padding: 2px;
-    border: none;
-    height: 35px;
-    width: 120px;
+    width: 125px;
     margin-top: 5px;
     margin-left: 50px;
-    padding: 0;
     z-index: 10;
-    align-items: center;
 }
 
 .image-text{
