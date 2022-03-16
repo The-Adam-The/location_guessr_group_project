@@ -16,9 +16,9 @@ const LogInForm = ({displayGamePage, setUserName}) => {
 
     return(
         <form className="login-form" onSubmit={handleSubmit}>
-            <p>Enter your name to start the game</p>
-            <input type="text" placeholder="Enter Name Here" value={tempUserName} onChange={handleInput}/>
-            <input type="submit" value="Start Game"/>
+            <p className="form-title">Enter your name to start the game</p>
+            <input className="enter-name" type="text" placeholder="" value={tempUserName} onChange={handleInput}/>
+            <input className="start-game-btn" type="submit" value="start game"/>
         </form>
     );
 };

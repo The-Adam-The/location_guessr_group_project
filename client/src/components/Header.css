@@ -5,9 +5,9 @@ nav {
 
 .logo {
     text-decoration: none;
-    font-family: var(--main-font);
+    font-family: 'Spartan', sans-serif;
     font-size: 14px;
-    margin-right: 60px;
+    margin-right: 0;
     padding-top: 15px;
 }
 
@@ -16,4 +16,6 @@ header {
     z-index: 5;
     top: 0;
     background-color: transparent;
+    padding: 10px;
+    margin-bottom: 10px;
 }
