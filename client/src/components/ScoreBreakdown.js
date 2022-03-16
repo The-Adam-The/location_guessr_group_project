@@ -7,7 +7,7 @@ const ScoreBreakdown = ({userScores, totalScore, displayLogInPage}) => {
         return <ul key={index}>
         <h4>Question {index + 1}</h4>
         <li>Points: {score.points}</li>
-        <li>{score.distance}km from location</li>
+        <li>Distance from location: {score.distance}km</li>
         </ul>
     })
 
