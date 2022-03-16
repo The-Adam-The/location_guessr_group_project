@@ -3,6 +3,7 @@ import LogInContainer from './LogInContainer';
 import GameContainer from './GameContainer';
 import ScoresContainer from './ScoresContainer';
 import ScoresService from '../services/ScoresService';
+import Header from '../components/Header';
 
 const MainContainer = () => {
 
@@ -34,6 +35,7 @@ const MainContainer = () => {
 
     return(
         <div>
+             <Header/>
             {page === 'LogInPage' ? <LogInContainer displayGamePage={displayGamePage} setUserName={setUserName}/> : null}
             {page === 'GamePage' ? <GameContainer setTotalScore={setTotalScore} displayScoresPage={displayScoresPage} userName={userName} userScores={userScores} setUserScores={setUserScores}/> : null}
             {page === 'ScoresPage' ?<ScoresContainer totalScore={totalScore} scores={scores} displayLogInPage={displayLogInPage} userScores={userScores}/> : null}
