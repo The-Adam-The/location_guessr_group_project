@@ -1,0 +1,31 @@
+.blue-btn {
+    background-color: var(--secondary-color);
+}
+
+.purple-btn {
+    background-color: var(--accent-color);
+}
+
+.blue-btn, .purple-btn {
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-family: 'Spartan', sans-serif;
+    cursor: pointer;
+}
+
+.blue-btn:hover, .purple-btn:hover {
+    transition: .1s;
+}
+
+.blue-btn:hover {
+    background-color: var(--hover-color-blue-btn);
+}
+
+.purple-btn:hover {
+    background-color: var(--hover-color-purple-btn);
+}

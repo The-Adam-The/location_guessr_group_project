@@ -1,11 +1,12 @@
+import MainContainer from './containers/MainContainer';
 import './App.css';
+import './button.css';
 
 function App() {
   return (
     <div className="App">
-     <h1>Hello World</h1>
+     <MainContainer className="main-container"/>
     </div>
   );
 }
-
 export default App;

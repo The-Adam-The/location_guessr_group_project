@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@300&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+header {
+    margin-left: 500px;
+}
+
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 0;
+    font-family: 'Spartan', sans-serif;
+}
+
+.page-info {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+}
+
+.globe {
+    margin-top: 50px;
+    width: 700px;
+    border-radius: 10px;
+}
+
+.game-info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60vw;
+    padding: 0 4.75rem;
+}
+
+.instructions-button {
+    height: 38px;
+    margin-top: 24px;
+    margin-right: 50px;
+}
+
+.info-boxes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-box1 {
+    border: 1px solid #43CAFC;
+    border-radius: 8px;
+    color: #43CAFC;
+    width: 200px;
+    height: 38px;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+    margin-right: 20px;
+    font-size: 15px;
+    font-family: 'Spartan', sans-serif;
+}
+
+.info-box2 {
+    border: 1px solid #43CAFC;
+    border-radius: 8px;
+    color: #43CAFC;
+    width: 150px;
+    height: 38px;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+    margin-right: 20px;
+    font-size: 15px;
+    font-family: 'Spartan', sans-serif;
+}
+
+.headings h1{
+    font-size: 38px;
+    padding: 30px;
+    padding-top: 100px;
+    padding-bottom: 0;
+}
+
+.headings h2 {
+    font-size: 20px;
+    padding: 0 40px;
+    padding-bottom: 40px;
+}
+
+.headings {
+    width: 40vw;
+    background-color: var(--primary-color);
+    height: 100vh;
+}
+
+.login-form {
+    background-color: #fff;
+    position: absolute;
+    width: 469px;
+    height: 174px;
+    margin-left: 40px;
+    padding: 20px 100px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(39, 15, 86, 0.1);
+}
+
+.form-title {
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 10px;
+    padding-top: 0;
+    padding-left: 0;
+    font-size: 15px;
+    color:#000000;
+}
+
+.enter-name {
+    width: 269px;
+    height: 30px;
+    border: 1px solid #5c5c5c;
+    margin-bottom: 20px;
+}
+
+.start-game-btn {
+    margin: auto;
+    display: flex;
+}
+
+.instructions-popup-bg {
+    position: absolute;
+    top: 300px;
+    right: 24px;
+    z-index: 10;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+}
+
+.instructions-popup-box {
+    /* position: relative; */
+    padding: 10px;
+    width: 280px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: flex-end;
+    margin-left: 20px;
+    background-color: rgba(255, 255, 255, .75);
+    font-size: 14px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(39, 15, 86, 0.1);
+}
+
+.instructions-close-btn {
+    border: 1px solid #270f56;
+    border-radius: 50%;
+    padding: 0 5px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    color: #270f56;
+}
+
+.instructions-close-btn:hover {
+    color: #43CAFC;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.instructions-text {
+    font-weight: 600;
+    font-family: 'Spartan', sans-serif;
+}
+
+.globe-container {
+    position: relative;
+}

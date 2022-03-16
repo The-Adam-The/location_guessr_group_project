@@ -1,0 +1,235 @@
+div, button{
+    font-family: var(--main-font);
+}
+
+h2{
+    padding-left: 40px;
+    margin: 10px;
+}
+
+h3, h4{
+    color: var(--secondary-color);
+}
+
+h2, p, li{
+    font-weight: 60;
+    color: rgb(70, 70, 70);
+}
+
+p{
+    padding: 3px;
+}
+
+li {
+    list-style: none;
+    padding: 10px;
+    padding-left: 0;
+
+}
+
+ul{
+    padding-left: 0;
+    margin-left: 1px;
+}
+
+.leaderboard-section {
+    display: flex;   
+    justify-content: center;
+    align-content: center;
+    margin-top: 10px;
+}
+
+.scores-container {
+    display: flex;
+    justify-content: center;
+    padding: 60px;
+}
+
+.scores-content {
+    display: block;
+    width: 60%;
+
+}
+
+.leaderboard-whole{
+    display: block;
+    width: 100%;
+  
+}
+
+.leaderboard-container{
+    width: 100%;
+    border-radius: var(--border-radius-px);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.leaderboard {
+    min-height: 100%;
+    width: 100%;
+}
+
+.position{
+    grid-area: position;
+    align-content: center;
+}
+
+.name{
+    grid-area: name;
+}
+
+.total-points{
+    grid-area: total-points;
+}
+
+.avg-distance{
+    grid-area: avg-distance;
+}
+
+.avg-accuracy{
+    grid-area: avg-accuracy;
+}
+
+.leaderboard-position{
+    grid-area: leaderboard-position;
+}
+
+.player-name{
+    font-weight: bold;
+    grid-area: player-name;
+}
+
+.player-total-points{
+    grid-area: player-total-points;
+}
+
+.player-avg-distance{
+    grid-area: player-avg-distance;
+}
+
+.player-avg-accuracy{
+    grid-area: player-avg-accuracy;
+}
+
+.leaderboard-headers{
+    display: grid;
+    grid-template-columns: 10% 25% 10% 25% 30%;
+    margin-left: 20px; 
+    align-content: center;
+    text-align: center;
+    grid-template-areas:
+    "position name total-points avg-distance avg-accuracy"
+}
+
+.leaderboard-list-items{
+    display: grid;
+    grid-template-columns: 10% 25% 10% 25% 30%; 
+    margin-left: 20px;
+    align-content: center;
+    text-align: center;
+    grid-template-areas:
+    "leaderboard-position player-name player-total-points player-avg-distance player-avg-accuracy"
+}
+
+.scores-breakdown{
+    display: flex;
+    justify-content: center;
+}
+
+.scores-left-aside{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.rounds-breakdown{
+    background-color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: var(--border-radius-px);
+    margin: 10px;
+    width: 400px;
+    padding-left: 20px;
+}
+
+.scores-aside{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.total-score-header {
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+
+.accuracy-box {
+    display: flex;
+    align-items: center;
+}
+
+.accuracy-meter {
+    display: flex;
+    align-items: center;
+}
+
+.accuracy-bar {
+    align-items: center;
+    position: relative;
+    height: 35px;
+    width: 200px;
+    border-radius: var(--border-radius-px);
+    border: 1px solid #333;
+}
+
+.accuracy-filler {
+    background: var(--accent-color);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+    border-radius: inherit;
+    transition: width .2s ease-in;
+}
+
+.barfill-text {
+    margin:0 0 0 5px;
+   
+    padding:0 10px 0 0;
+    font-weight: 600;
+}
+.total-points-label {
+    margin-top: 0;
+}
+
+.totals{
+    border-radius: var(--border-radius-px);
+    margin: 10px;
+    width: 400px;
+    height: 180px;
+    padding-left: 20px;
+    background-color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.dartboard-image{
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    margin-left: 10px;
+    margin-top: 180px;
+}
+
+.new-game-button{
+    font-family: var(--main-font);
+    width: 125px;
+    margin-top: 5px;
+    margin-left: 50px;
+    z-index: 10;
+}
+
+.image-text{
+    font-size: 18px;
+    margin-top: 80px;
+    margin-left: 50px;
+    z-index: 10;
+}
+
