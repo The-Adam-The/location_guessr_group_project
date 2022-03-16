@@ -29,7 +29,7 @@ const LogInContainer = ({displayGamePage, setUserName}) => {
                                 </InstructionsPopup>
                                 <nav className="question-buttons">
                                     <button className="instructions-button" onClick={() => setRulePopup(true)}>
-                                        Instructions 
+                                        Instructions&nbsp;&nbsp; 
                                         <span className="toggle-id"><i class="fa fa-external-link" aria-hidden="true"></i></span>
                                     </button>
                                 </nav>

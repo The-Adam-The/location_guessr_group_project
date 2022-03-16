@@ -36,7 +36,7 @@
     border: none;
     background-color: #43CAFC;
     color: #fff;
-    width: 150px;
+    width: 140px;
     height: 38px;
     box-sizing: border-box;
     text-align: center;
@@ -85,8 +85,6 @@
     font-size: 15px;
     font-family: 'Spartan', sans-serif;
 }
-
-
 
 .headings h1{
     font-size: 38px;
