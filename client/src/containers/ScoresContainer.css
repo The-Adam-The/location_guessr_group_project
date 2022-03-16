@@ -1,10 +1,10 @@
 div, button{
     font-family: var(--main-font);
 }
-
-Header{
-    margin-left: 900px;
-}
+/* 
+header {
+    margin-left: 160px;
+} */
 
 h2{
     padding-left: 40px;
