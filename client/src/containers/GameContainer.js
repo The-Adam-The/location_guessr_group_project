@@ -90,12 +90,12 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
         const distance = haversineDistance(markers[0], markers[1]).toFixed(2)
         setIndDistance(distance);
         const calculateAccuracy = () => {
-            if(distance <= 5){
+            if(distance <= 10){
                 setIndAccuracy(100)
-            } else if(distance > 400){
+            } else if(distance > 700){
                 setIndAccuracy(0)
             } else{
-                setIndAccuracy((100-(distance/4.)).toFixed(2))
+                setIndAccuracy((100-(distance/7.)).toFixed(2))
             }
         }
         calculateAccuracy()
