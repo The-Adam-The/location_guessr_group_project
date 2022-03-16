@@ -103,6 +103,21 @@ ul{
     margin-top: 70px;
 }
 
+.accuracy-bar {
+    position: relative;
+    height: 20px;
+    width: 200px;
+    border-radius: 50px;
+    border: 1px solid #333;
+}
+
+.accuracy-filler {
+    background: #1da598;
+    height: 100%;
+    border-radius: inherit;
+    transition: width .2s ease-in;
+}
+
 .totals{
     border-radius: 5px;
     margin: 10px;

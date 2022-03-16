@@ -25,7 +25,7 @@ const ScoreBreakdown = ({userScores, totalScore, displayLogInPage}) => {
             <div className="scores-aside">
                 <section className="totals">
                     <h3>Total</h3>
-                    <AccuracyBar/>
+                    <AccuracyBar barFill={totalScore.total.averageAccuracy}/>
                     <p>Accuracy {totalScore.total.averageAccuracy}%</p>
                     <p>{totalScore.total.points} points</p>
                     <p>{totalScore.total.averageDistance}km in total from locations</p>  

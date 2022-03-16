@@ -1,10 +1,9 @@
 import AccuracyFill from "./AccuracyFill"
 
-const AccuracyBar = () => {
+const AccuracyBar = ({barFill}) => {
     return (
        <div className="accuracy-bar">
-           <h1>accuracy bar</h1>
-           <AccuracyFill/>
+           <AccuracyFill barFill={barFill} />
        </div> 
     )
 }

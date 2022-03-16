@@ -1,8 +1,10 @@
 
 
-const AccuracyFill = () => {
+const AccuracyFill = ({barFill}) => {
+    
+
     return (
-        <div className="accuracy-filler"/>
+        <div className="accuracy-filler" style={{ width: `${barFill}%`}}/>
     )
 }
 
