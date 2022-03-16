@@ -7,7 +7,7 @@ const Map = ({markers, setMarkers, center, onMapLoad}) => {
     // sets the size of the maps
     const mapContainerStyle = {
         position: "relative",
-        width: "59vw",
+        width: "74vw",
         height: "720px"
       };
     
