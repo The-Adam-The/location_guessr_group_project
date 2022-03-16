@@ -184,7 +184,72 @@ db.questions.insertMany(
             },
         },
         imageLink: "https://upload.wikimedia.org/wikipedia/commons/9/91/Mount_Kilimanjaro.jpg"
-    }          
+    },
+    {
+        name: "Niagara Falls",
+        question: "What waterfall has the worlds fastest flow rate?",
+        location: {
+            place: "Niagara Falls, New York",
+            country: "USA",
+            coords: {
+                lat: 43.096214,
+                lng: -79.037743
+            },
+        },
+        imageLink: "https://upload.wikimedia.org/wikipedia/commons/0/05/Niagara-Falls-Horseshoe-Falls-view.jpg"
+    },
+    {
+        name: "Quokka",
+        question: "Where would you find 'the world's happiest animal', the Quokka?",
+        location: {
+            place: "Rottnest Island",
+            country: "Australia",
+            coords: {
+                lat: -31.996790,
+                lng: 115.540237
+            },
+        },
+        imageLink: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Rottnest_.jpg"
+    },  
+    {
+        name: "Spiderman",
+        question: "He's 'your friendly neighbourhood Spider-Man', but which neighbourhood is he from?",
+        location: {
+            place: "Queens, New York City",
+            country: "USA",
+            coords: {
+                lat: 40.759781,
+                lng: -73.817299
+            },
+        },
+        imageLink: "https://upload.wikimedia.org/wikipedia/commons/8/83/Queensboro_Bridge_from_Manhattan_side.jpg"
+    },  
+    {
+        name: "Shibuya",
+        question: "Where is the world's busiest pedestrian crossing located?",
+        location: {
+            place: "Shibuya, Tokyo",
+            country: "Japan",
+            coords: {
+                lat: 35.661777,
+                lng: 139.704056
+            },
+        },
+        imageLink: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Shibuya_Crossing%2C_Tokyo%3B_December_2017.jpg"
+    }, 
+    {
+        name: "Motown",
+        question: "Where was 'Motown Records' founded?",
+        location: {
+            place: "Detroit, Michigan",
+            country: "USA",
+            coords: {
+                lat: 42.331429,
+                lng: -83.045753
+            },
+        },
+        imageLink: "https://upload.wikimedia.org/wikipedia/commons/7/76/Motown_Historical_Museum_%284668668111%29.jpg"
+    }           
 ])
 
 db.scores.insertMany(
@@ -193,28 +258,28 @@ db.scores.insertMany(
         name: "Rachel",
         scores: [
             {
-                questionId: "622df62ad820f8791c4f35f6",
-                points: 75,
-                distance: 77.50,
-                accuracy: 50
+                questionId: "6230c9745161616773502f82",
+                points:"112",
+                distance:"111.80",
+                accuracy:"72.05"
             },
             {
-                questionId: "622df62ad820f8791c4f35f7",
-                points: 62,
-                distance: 102,
-                accuracy: 34.19
+                questionId: "6230c9745161616773502f7b",
+                points: "141",
+                distance: "36.90",
+                accuracy: "90.78"
             },
             {
-                questionId: "622df62ad820f8791c4f35f8",
-                points: 152,
-                distance: 15,
-                accuracy: 90.32
+                questionId: "6230c9745161616773502f86",
+                points: "0",
+                distance: "17614.30",
+                accuracy: "0"
             }
         ],
         total: {
-            points: 289,
-            averageDistance: 64.83,
-            averageAccuracy: 58.17
+            points: "253",
+            averageDistance: "5921.00",
+            averageAccuracy: "54.28"
         }
     },
     {
@@ -222,27 +287,27 @@ db.scores.insertMany(
         scores: [
             {
                 questionId: "622df62ad820f8791c4f35f6",
-                points: 75,
-                distance: 77.50,
-                accuracy: 50
+                points: "96",
+                distance: "151.35",
+                accuracy: "62.16"
             },
             {
                 questionId: "622df62ad820f8791c4f35f7",
-                points: 62,
-                distance: 102,
-                accuracy: 34.19
+                points: "94",
+                distance: "157.15",
+                accuracy: "60.71"
             },
             {
                 questionId: "622df62ad820f8791c4f35f8",
-                points: 152,
-                distance: 15,
-                accuracy: 90.32
+                points: "135",
+                distance: "51.35",
+                accuracy: "87.16"
             }
         ],
         total: {
-            points: 289,
-            averageDistance: 64.83,
-            averageAccuracy: 58.17
+            points: "325",
+            averageDistance: "119.95",
+            averageAccuracy: "70.01"
         }
     },
     {
