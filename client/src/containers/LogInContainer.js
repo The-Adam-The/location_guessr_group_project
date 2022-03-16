@@ -23,9 +23,7 @@ const LogInContainer = ({displayGamePage, setUserName}) => {
                                 <h5 className="info-box1">3 Questions per round</h5>
                                 <h5 className="info-box2">Time: Unlimited</h5>
                                 <InstructionsPopup trigger={rulePopup} setTrigger={setRulePopup}>
-                                    <h3>Game Rules:</h3>
-                                    <br />
-                                    <p>Drop your pin on the map when you have guessed the location from the clues!</p>
+                                    <p>Pin your trivia guess on the map and see how close you got!</p>
                                 </InstructionsPopup>
                                 <nav className="question-buttons">
                                     <button className="instructions-button" onClick={() => setRulePopup(true)}>
