@@ -4,7 +4,7 @@ const Question = ({question}) => {
     return(
         <div className="question-box"> 
             {question != null ? <img src={question.imageLink} alt="clue" className='image' /> : null}
-            {question != null ? <h3>{question.question}</h3> : null}
+            {question != null ? <p>{question.question}</p> : null}
         </div>
     );
 };
