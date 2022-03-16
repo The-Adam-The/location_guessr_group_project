@@ -1,9 +1,28 @@
+import { useEffect, useState } from 'react';
+import blueMarker from '../images/right_answer_marker_tick.png';
 
 const CheckButton = ({setIndAccuracy, roundNumber, displayScoresPage, nextRound, markers, setMarkers, checkButton, setCheckButton, question, setCenter, mapRef, postUserScores}) => {
-  
+
+    const [questionMarker, setQuestionMarker] = useState({})
+
+    useEffect(() => {
+      if(question != null)
+      setQuestionMarker(question.location.coords)
+    }, [question])
+
+    // useEffect(() => {
+    //   if(question != null)
+    //     questionMarker.label = "Hello"    
+    // }, [questionMarker])
+
+    questionMarker.icon = {
+      url: blueMarker,
+      scaledSize: new window.google.maps.Size(40,59)
+    }
+
      // adds question marker to marker state and switches check button to next button
      const handleCheckClick = () => {
-        setMarkers(current => [...current, question.location.coords])
+        setMarkers(current => [...current, questionMarker])
         setCheckButton(true)
       };
 
