@@ -103,19 +103,41 @@ ul{
     margin-top: 70px;
 }
 
+.total-score-header {
+    margin-bottom: 0;
+}
+
+.accuracy-box {
+    display: flex;
+    align-items: center;
+}
+
 .accuracy-bar {
     position: relative;
-    height: 20px;
+    height: 35px;
     width: 200px;
-    border-radius: 50px;
+    border-radius: var(--border-radius-px);
     border: 1px solid #333;
 }
 
 .accuracy-filler {
-    background: #1da598;
+    background: var(--accent-color);
+    display: flex;
+    justify-content: end;
+    align-items: center;
     height: 100%;
     border-radius: inherit;
     transition: width .2s ease-in;
+}
+
+.barfill-text {
+    margin:0;
+    color: var(--primary-color);
+    padding:0 10px 0 0;
+    font-weight: 600;
+}
+.total-points-label {
+    margin-top: 0;
 }
 
 .totals{

@@ -24,11 +24,13 @@ const ScoreBreakdown = ({userScores, totalScore, displayLogInPage}) => {
             </div>
             <div className="scores-aside">
                 <section className="totals">
-                    <h3>Total</h3>
-                    <AccuracyBar barFill={totalScore.total.averageAccuracy}/>
-                    <p>Accuracy {totalScore.total.averageAccuracy}%</p>
-                    <p>{totalScore.total.points} points</p>
-                    <p>{totalScore.total.averageDistance}km in total from locations</p>  
+                    <h3 className="total-score-header">Total</h3>
+                    <div className="accuracy-box">
+                        <p>Accuracy:</p>
+                        <AccuracyBar barFill={totalScore.total.averageAccuracy}/>
+                    </div>
+                    <p className="total-points-label">Points: {totalScore.total.points}</p>
+                    <p>Total distance from locations: {totalScore.total.averageDistance}km</p>  
                 </section>
                     <p className="image-text" >Not done?</p>
                     <img src={dartboard} alt="dartboard" className='dartboard-image'/>

@@ -9,7 +9,7 @@ const ScoresContainer = ({scores, userScores, displayLogInPage, totalScore}) => 
     const [barFill, setBarFill] = useState(0);
 
     useEffect(() => {
-       setBarFill(Math.round(totalScore.total.averageAccuracy))
+       setBarFill(totalScore.total.averageAccuracy)
        console.log(barFill)
 
     }, []) 
