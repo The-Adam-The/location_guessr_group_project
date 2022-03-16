@@ -50,7 +50,7 @@
 .instructions-button:hover {
     cursor: pointer;
     background-color: #7624F6;
-    transition: .1s;
+    transition: .5s;
 }
 
 .info-boxes {
@@ -152,7 +152,7 @@
     background-color: #43CAFC;
     color: #fff;
     cursor: pointer;
-    transition-delay: .1s;
+    transition: .5s;
 }
 
 .instructions-popup-bg {
@@ -170,7 +170,7 @@
     position: relative;
     padding: 10px;
     width: 280px;
-    justify-content:right;
+    justify-content: right;
     /* max-width: 640px; */
     background-color: rgba(255, 255, 255, .75);
     font-size: 14px;
@@ -178,7 +178,7 @@
     box-shadow: 0px 0px 30px rgba(39, 15, 86, 0.1);
 }
 
-.insructions-popup-box .instructions-close-btn {
+/* .insructions-popup-box .instructions-close-btn {
     position: absolute;
     top: 16px;
     right: 16px;
@@ -196,4 +196,4 @@
     font-size: 20px;
     transition: .5s;
     cursor: pointer;
-}
+} */
