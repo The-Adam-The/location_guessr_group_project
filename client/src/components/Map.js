@@ -8,8 +8,8 @@ const Map = ({markers, setMarkers, center, onMapLoad}) => {
     // sets the size of the maps
     const mapContainerStyle = {
         position: "relative",
-        width: "59vw",
-        height: "720px"
+        width: "74vw",
+        height: "80vh"
       };
     
     // loads in options to the map including the mapStyle which is how the map looks and sets allowed controls
