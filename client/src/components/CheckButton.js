@@ -44,6 +44,7 @@ const CheckButton = ({setIndAccuracy, roundNumber, displayScoresPage, nextRound,
         setCheckButton(false)
         setMarkers([])
         nextRound()
+        setButtonText("Check")
         setIndAccuracy(null)
       }
     };
