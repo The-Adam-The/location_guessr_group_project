@@ -159,7 +159,7 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
                         <p>Drop your pin on the map when you have guessed the location from the clues!</p>
                     </RulesPopup>
                     <nav className="question-buttons">
-                        <button className="rules-button" id="rules-btn" onClick={() => setRulePopup(true)}>Rules</button>
+                        <button className="rules-button" id="rules-btn" onClick={() => setRulePopup(true)}><span>?</span></button>
                         <CheckButton className="check-button" setIndAccuracy={setIndAccuracy} roundNumber={roundNumber} displayScoresPage={displayScoresPage} nextRound={nextRound} markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} mapRef={mapRef} postUserScores={postUserScores}/>
                     </nav>
                 </section>
