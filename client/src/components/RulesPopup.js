@@ -1,10 +1,10 @@
 import React from "react";
 
-function RulesPopup(props) {
-    return (props.trigger) ? (
+function RulesPopup(rules) {
+    return (rules.trigger) ? (
         <div className="popup-bg">
             <div className="popup-box">
-                {props.children}
+                {rules.children}
             </div>
         </div>
     ) : "";
