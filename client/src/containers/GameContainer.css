@@ -1,79 +1,91 @@
-.game-container {
-    padding: 5vw;
-}
-
-
-
 .question-map-box {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: 125px;
-}
-
-.question-section, .map-section {
-    box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
 }
 
 .question-section {
-    width: 21vw;
-    height: max-content;
-    margin-top: 2em;
-    padding: 0 1.7em;
-    
-
+    width: 26vw;
+    height: 100vh;
+    padding: 0 3.75rem;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.15);
+    z-index: 1;
 }
 
 .map-section {
-    /* border: 1px solid #000; */
-    width: 59vw;
-    margin: 2em 0 0 2em;
-    padding: 2em 2em 0 2em;
+    width: 74vw;
+    height: 100vh;
+    margin-right: 10px;
 }
 
-.question-box{
-    /* position: absolute; */
-    /* top: 1em;
-    right: 1em; */
-    /* z-index: 10; */
-    margin: 0;
-    padding: 10px;
-    /* width: 20%; */
-    /* border: 2px black solid;
-    border-radius: 5px; */
-}
 
 .question-round-display {
-    padding-left: 10px;
-    width: 24vw;
+    text-align: center;
+    width: 100%;
+    margin: 150px 0 2rem 0;
+    padding: 10px 20px;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    border-radius: 0.5rem;
 }
 
 .map-overlay-box {
     height:max-content;
     width: auto;
+    position: relative;
 }
 
 .feedback-overlay-show {
-    padding: 20px 0;
+    padding: 1rem 1rem 0.5rem 50px;
     height: auto;
-    width: 70em;
-    background-color: #bcbcbc;
-    color: #fff;
+    width: 61%;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--darkest-purple);
     position: absolute; 
-    bottom: 155px;
-    text-align: center;
+    right: 0;
+    bottom: 2rem;
+    /* text-align: center; */
+    border-radius: 10px 0 0 10px;
+}
+
+.feedback-overlay-show h2 {
+    font-size: 21px;
+    color: var(--secondary-color);
 }
 
 .feedback-overlay-hide {
     display: none;
     position: absolute; 
     bottom: 155px;
-
 }
 
 .question-buttons {
     display: flex;
     justify-content: space-between;
-    height: 80px;
+    align-items: flex-start;
+    height: 200px;
+    padding: 50px;
+}
+
+.rules-section {
+    display: flex;
+}
+
+.popup-box {
+    width: 300px;
+}
+
+.rules-button {
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    margin-right: 2rem;
+}
+
+.rules-button span {
+    color: var(--accent-color);
+    font-size: 20px;
+    font-weight: 600;
 }
