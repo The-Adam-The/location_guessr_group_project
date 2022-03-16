@@ -1,4 +1,3 @@
-import {useState} from 'react';
 import { useEffect, useState } from 'react';
 import blueMarker from '../images/right_answer_marker_tick.png';
 
