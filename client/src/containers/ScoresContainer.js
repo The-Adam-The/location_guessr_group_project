@@ -14,8 +14,10 @@ const ScoresContainer = ({scores, userScores, displayLogInPage, totalScore}) => 
 
     return(
         <div className="scores-container">
-            <ScoreBreakdown scores={scores} userScores={userScores} totalScore={totalScore} displayLogInPage={displayLogInPage} barFill={barFill}/>
-            <Leaderboard scores={scores}/>
+            <div className="scores-content">
+                <ScoreBreakdown scores={scores} userScores={userScores} totalScore={totalScore} displayLogInPage={displayLogInPage} barFill={barFill}/>
+                <Leaderboard scores={scores}/>
+            </div>
         </div>
     );
 };
