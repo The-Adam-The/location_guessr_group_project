@@ -4,12 +4,6 @@ function InstructionsPopup(rules) {
     return (rules.trigger) ? (
         <div className="instructions-popup-bg">
             <div className="instructions-popup-box">
-                <button 
-                className="instructions-close-btn" 
-                onClick={() => rules
-                .setTrigger(false)}>
-                    X
-                </button>
                 {rules.children}
             </div>
         </div>

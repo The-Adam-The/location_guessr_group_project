@@ -93,5 +93,7 @@
 }
 
 .rules-text {
+    margin-left: 0;
+    margin-top: 8px;
     margin-bottom: 0;
 }
