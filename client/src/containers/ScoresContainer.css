@@ -169,6 +169,7 @@ ul{
 .accuracy-meter {
     display: flex;
     align-items: center;
+    margin-left: 8px;
 }
 
 .accuracy-bar {
@@ -191,8 +192,7 @@ ul{
 }
 
 .barfill-text {
-    margin:0 0 0 5px;
-   
+    margin:0 0 0 10px;
     padding:0 10px 0 0;
     font-weight: 600;
 }

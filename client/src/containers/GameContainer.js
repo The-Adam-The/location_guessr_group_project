@@ -8,8 +8,6 @@ import Question from "../components/Question"
 import QuestionRoundDisplay from "../components/QuestionRoundDisplay";
 import RulesPopup from "../components/RulesPopup";
 import FeedbackOverlay from "../components/FeedbackOverlay";
-import Header from "../components/Header";
-// import './Header.css';
 import './GameContainer.css';
 
 

@@ -311,34 +311,6 @@ db.scores.insertMany(
         }
     },
     {
-        name: "James",
-        scores: [
-            {
-                questionId: "622df62ad820f8791c4f35f6",
-                points: 75,
-                distance: 77.50,
-                accuracy: 50
-            },
-            {
-                questionId: "622df62ad820f8791c4f35f7",
-                points: 62,
-                distance: 102,
-                accuracy: 34.19
-            },
-            {
-                questionId: "622df62ad820f8791c4f35f8",
-                points: 152,
-                distance: 15,
-                accuracy: 90.32
-            }
-        ],
-        total: {
-            points: 289,
-            averageDistance: 64.83,
-            averageAccuracy: 58.17
-        }
-    },
-    {
         name: "Adam",
         scores: [
             {
