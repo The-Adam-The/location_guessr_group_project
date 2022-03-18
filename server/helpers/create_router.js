@@ -59,35 +59,6 @@ const createRouter = (collection) => {
             })
     })
 
-
-
-      //show three random questions
-      router.get('/random/3questions', (req, res) => {
-        collection
-            .find()
-            .toArray()
-            .then((docs) => {
-                const questions = []
-            
-                for (let i = 0; i < 3; i++){
-                    var docLength = docs.length
-                    var randomNumber = Math.round(Math.random() * (docLength -1))
-                    var question = docs.splice(randomNumber, 1)
-                    questions.push(question[0])
-                }
-                res.json(questions)
-            })
-            .catch((error) => {
-                console.error(error)
-                res.status(500)
-                res.json({
-                    status: 500,
-                    error: error
-                })
-            })
-    })
-
-
     //show 
     router.get('/:id', (req, res) => {
         const id = req.params.id;
