@@ -8,14 +8,12 @@ const ScoresContainer = ({scores, userScores, displayLogInPage, totalScore}) => 
 
     useEffect(() => {
        setBarFill(totalScore.total.averageAccuracy)
-       console.log(barFill)
-
     }, []) 
 
     return(
         <div className="scores-container">
             <div className="scores-content">
-                <ScoreBreakdown scores={scores} userScores={userScores} totalScore={totalScore} displayLogInPage={displayLogInPage} barFill={barFill}/>
+                <ScoreBreakdown userScores={userScores} totalScore={totalScore} displayLogInPage={displayLogInPage} barFill={barFill}/>
                 <Leaderboard scores={scores}/>
             </div>
         </div>

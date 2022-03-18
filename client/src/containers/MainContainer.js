@@ -7,16 +7,16 @@ import Header from '../components/Header';
 
 const MainContainer = () => {
 
-    const [scores, setScores] = useState([]);
-    const [page, setPage] = useState('LogInPage')
-    const [userName, setUserName] = useState('')
+    const [userName, setUserName] = useState('');
     const [userScores, setUserScores] = useState([]);
-    const [totalScore, setTotalScore] = useState({})
+    const [totalScore, setTotalScore] = useState({});
+    const [page, setPage] = useState('LogInPage');
+    const [scores, setScores] = useState([]);
 
     useEffect(() => {
         ScoresService.getScores()
         .then(scores => setScores(scores))
-    }, [page])
+    }, [totalScore])
     
     const displayLogInPage = () => {
         setUserName('')
