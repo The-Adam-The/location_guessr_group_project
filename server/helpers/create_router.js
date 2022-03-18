@@ -42,6 +42,24 @@ const createRouter = (collection) => {
                 })
             })
     })
+    //db route for 3 samples
+    router.get('/random/questions', (req, res) => {
+        collection
+        .aggregate(
+            [ { $sample: { size: 3 } } ])
+        .toArray()
+        .then((doc) => res.json(doc))
+        .catch((error) => {
+                console.error(error)
+                res.status(500)
+                res.json({
+                    status: 500,
+                    error: error
+                })
+            })
+    })
+
+
 
       //show three random questions
       router.get('/random/3questions', (req, res) => {
