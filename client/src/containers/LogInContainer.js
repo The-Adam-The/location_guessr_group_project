@@ -26,7 +26,7 @@ const LogInContainer = ({displayGamePage, setUserName}) => {
                         <div className="info-boxes">
                             <h5 className="info-box1">3 Questions per round</h5>
                             <h5 className="info-box2">Time: Unlimited</h5>
-                            <button className="instructions-button blue-btn" onClick={() => {setRulePopup(!rulePopup)}}>
+                            <button className="instructions-button std-btn blue-btn" onClick={() => {setRulePopup(!rulePopup)}}>
                                 Instructions&nbsp;&nbsp; 
                                 <span className="toggle-id"><i className="fa fa-external-link" aria-hidden="true"></i></span>
                             </button>
