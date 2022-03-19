@@ -8,8 +8,6 @@ const ScoresContainer = ({scores, userScores, displayLogInPage, newGame, totalSc
 
     useEffect(() => {
        setBarFill(totalScore.total.averageAccuracy)
-       console.log(barFill)
-
     }, []) 
 
     return(

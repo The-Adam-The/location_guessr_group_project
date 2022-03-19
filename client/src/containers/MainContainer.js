@@ -7,16 +7,16 @@ import Header from '../components/Header';
 
 const MainContainer = () => {
 
-    const [scores, setScores] = useState([]);
-    const [page, setPage] = useState('LogInPage')
-    const [userName, setUserName] = useState('')
+    const [userName, setUserName] = useState('');
     const [userScores, setUserScores] = useState([]);
-    const [totalScore, setTotalScore] = useState({})
+    const [totalScore, setTotalScore] = useState({});
+    const [page, setPage] = useState('LogInPage');
+    const [scores, setScores] = useState([]);
 
     useEffect(() => {
         ScoresService.getScores()
         .then(scores => setScores(scores))
-    }, [page])
+    }, [totalScore])
     
     const displayLogInPage = () => {
         setUserName('')
@@ -40,7 +40,7 @@ const MainContainer = () => {
 
     return(
         <div>
-           
+            <Header/>
             {page === 'LogInPage' ? <LogInContainer displayGamePage={displayGamePage} setUserName={setUserName}/> : null}
             {page === 'GamePage' ? <GameContainer setTotalScore={setTotalScore} displayScoresPage={displayScoresPage} userName={userName} userScores={userScores} setUserScores={setUserScores}/> : null}
             {page === 'ScoresPage' ?<ScoresContainer totalScore={totalScore} scores={scores} displayLogInPage={displayLogInPage} newGame={newGame} userScores={userScores}/> : null}

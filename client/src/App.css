@@ -1,5 +1,6 @@
 .App {
     background-color: #dbdbdb;
+    width: 100%;
 }
 
 .login-container, .game-container, .scores-container{

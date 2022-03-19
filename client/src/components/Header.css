@@ -1,23 +1,31 @@
+#header-nav{
+    display: flex;
+    justify-content: start;
+    position: fixed;
+    width: 20%;
+    background-color: transparent;
+    z-index: 5;
+    padding: 10px;
+    padding-top: 25px;
+    padding-left: 35px;
+    margin: 0;
+}
+
 nav {
     display: flex;
     justify-content: center;
 }
 
-.logo {
+.logo, .logo-question-mark {
     text-decoration: none;
     font-family: 'Spartan', sans-serif;
     font-size: 14px;
     margin-right: 0;
     padding-top: 15px;
-    color: rgb(70, 70, 70);
+    color: var(--darkest-purple);
 }
 
-header {
-    position: absolute;
-    z-index: 5;
-    top: 0;
-    background-color: transparent;
-    padding: 10px;
-    margin-bottom: 10px;
-    margin-left: 160px;
+.logo-question-mark{
+    color: var(--accent-color);
+    font-weight: 900;
 }
