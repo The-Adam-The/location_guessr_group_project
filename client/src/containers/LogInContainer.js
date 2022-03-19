@@ -27,7 +27,7 @@ const LogInContainer = ({displayGamePage, setUserName}) => {
                             <h5 className="info-box2">Time: Unlimited</h5>
                             <button className="instructions-button blue-btn" onClick={() => setRulePopup(true)}>
                                 Instructions&nbsp;&nbsp; 
-                                <span className="toggle-id"><i class="fa fa-external-link" aria-hidden="true"></i></span>
+                                <span className="toggle-id"><i className="fa fa-external-link" aria-hidden="true"></i></span>
                             </button>
                         </div>
                     </section>

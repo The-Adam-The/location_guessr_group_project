@@ -3,7 +3,7 @@ import ScoreBreakdown from "../components/ScoreBreakdown";
 import Leaderboard from "../components/Leaderboard";
 import './ScoresContainer.css';
 
-const ScoresContainer = ({scores, userScores, displayLogInPage, displayGamePage, totalScore}) => {
+const ScoresContainer = ({scores, userScores, displayLogInPage, newGame, totalScore}) => {
     const [barFill, setBarFill] = useState(0);
 
     useEffect(() => {
@@ -15,7 +15,7 @@ const ScoresContainer = ({scores, userScores, displayLogInPage, displayGamePage,
     return(
         <div className="scores-container">
             <div className="scores-content">
-                <ScoreBreakdown scores={scores} userScores={userScores} totalScore={totalScore} displayLogInPage={displayLogInPage} displayGamePage={displayGamePage} barFill={barFill}/>
+                <ScoreBreakdown scores={scores} userScores={userScores} totalScore={totalScore} newGame={newGame} displayLogInPage={displayLogInPage} barFill={barFill}/>
                 <Leaderboard scores={scores}/>
             </div>
         </div>
