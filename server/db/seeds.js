@@ -96,7 +96,7 @@ db.questions.insertMany(
     },
     {
         name: "Mona Lisa",
-        question: "Where is the home of the Mona Lisa?",
+        question: "Where is the Mona Lisa currently being kept?",
         location: {
             place: "Louvre Museum, Paris",
             country: "France",
