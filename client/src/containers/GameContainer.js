@@ -152,7 +152,9 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
                     </div>
                     <nav className="question-buttons">
                         <div className="rules-section">
-                            <button className="rules-button" id="rules-btn" onClick={() => {setRulePopup(!rulePopup)}}><span>{rulePopup ? "X" : "?"}</span></button>
+                            <div className="rules-btn-div">
+                                <button className="rules-button" id="rules-btn" onClick={() => {setRulePopup(!rulePopup)}}><span>{rulePopup ? "X" : "?"}</span></button>
+                            </div>
                             {rulePopup ? 
                             <RulesPopup className="rules-popup" trigger={rulePopup} setTrigger={setRulePopup}>
                                 <h3>Game Rules</h3>

@@ -64,16 +64,29 @@
 .question-buttons {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    padding: 40px 50px;
+    align-items: center;
+    padding: 40px 30px 40px 50px;
+}
+
+#game-btn {
+    padding: 25px 35px;;
+}
+
+.rules-btn-div {
+    padding: 10px;
 }
 
 .rules-section {
+    width: auto;
+    height: auto;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .popup-box {
-    width: 300px;
+    width: auto;
+    height: auto;
 }
 
 .rules-button {
@@ -82,7 +95,6 @@
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
-    margin-right: 2rem;
     cursor: pointer;
 }
 

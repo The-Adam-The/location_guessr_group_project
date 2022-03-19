@@ -6,7 +6,19 @@
     background-color: var(--accent-color);
 }
 
-.blue-btn, .purple-btn {
+/* .blue-btn, .purple-btn {
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-family: 'Spartan', sans-serif;
+    cursor: pointer;
+} */
+
+.std-btn {
     border-radius: 8px;
     border: none;
     color: #fff;
