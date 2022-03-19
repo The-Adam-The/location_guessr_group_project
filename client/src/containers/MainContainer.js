@@ -33,12 +33,17 @@ const MainContainer = () => {
         setPage('ScoresPage')
     }
 
+    const newGame = () => {
+        setUserScores([])
+        displayGamePage()
+    }
+
     return(
         <div>
             <Header/>
             {page === 'LogInPage' ? <LogInContainer displayGamePage={displayGamePage} setUserName={setUserName}/> : null}
             {page === 'GamePage' ? <GameContainer setTotalScore={setTotalScore} displayScoresPage={displayScoresPage} userName={userName} userScores={userScores} setUserScores={setUserScores}/> : null}
-            {page === 'ScoresPage' ?<ScoresContainer totalScore={totalScore} scores={scores} displayLogInPage={displayLogInPage} userScores={userScores}/> : null}
+            {page === 'ScoresPage' ?<ScoresContainer totalScore={totalScore} scores={scores} displayLogInPage={displayLogInPage} newGame={newGame} userScores={userScores}/> : null}
         </div>
     );
 };

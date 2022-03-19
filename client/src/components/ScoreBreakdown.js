@@ -1,7 +1,7 @@
 import dartboard from '../images/dart_with_background.png';
 import AccuracyBar from './AccuracyBar';
 
-const ScoreBreakdown = ({userScores, totalScore, displayLogInPage}) => {
+const ScoreBreakdown = ({userScores, totalScore, displayLogInPage, newGame}) => {
 
     const scoresList = userScores.map((score, index) => {
         return <ul key={index}>
@@ -34,7 +34,10 @@ const ScoreBreakdown = ({userScores, totalScore, displayLogInPage}) => {
                 </section>
                     <p className="image-text" >Not done?</p>
                     <img src={dartboard} alt="dartboard" className='dartboard-image'/>
-                    <button onClick={displayLogInPage} className="new-game-button purple-btn">Play again</button>
+                    <div className="score-btns-div">
+                        <button onClick={newGame} className="new-game-button purple-btn">Play again </button>
+                        <button onClick={displayLogInPage} className="new-game-button purple-btn">Home</button>
+                    </div>
             </div>
         </div>
     );

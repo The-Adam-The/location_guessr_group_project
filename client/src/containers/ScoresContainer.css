@@ -223,13 +223,16 @@ ul{
     width: 125px;
     margin-top: 5px;
     margin-left: 50px;
-    z-index: 10;
 }
 
 .image-text{
     font-size: 18px;
-    margin-top: 80px;
-    margin-left: 50px;
+    margin: 90px 0 60px 60px;
+  
+    z-index: 10;
+}
+
+.score-btns-div{
     z-index: 10;
 }
 
