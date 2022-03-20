@@ -9,7 +9,8 @@ const Map = ({markers, setMarkers, center, onMapLoad}) => {
     const mapContainerStyle = {
         position: "relative",
         width: "74vw",
-        height: "80vh"
+        height: "80vh",
+
       };
     
     // loads in options to the map including the mapStyle which is how the map looks and sets allowed controls
@@ -19,6 +20,7 @@ const Map = ({markers, setMarkers, center, onMapLoad}) => {
         zoomControl: true,
         zoomControlOptions: {position: 3},
         minZoom: 1.75,
+        draggableCursor: 'crosshair'
       };
 
     // style options for Polyline generated when user checks answer

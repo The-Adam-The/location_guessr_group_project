@@ -13,12 +13,15 @@
     z-index: 1;
 }
 
+.map-container {
+    cursor: crosshair;
+}
+
 .map-section {
     width: 74vw;
     height: 100vh;
-    margin-right: 10px;
+    margin-right: 10px;   
 }
-
 
 .question-round-display {
     text-align: center;
