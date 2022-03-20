@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import blueMarker from '../images/right_answer_marker_orange.png';
 
-const CheckButton = ({setIndAccuracy, roundNumber, displayScoresPage, nextRound, markers, setMarkers, checkButton, setCheckButton, question, setCenter, mapRef, postUserScores}) => {
+const CheckButton = ({setIndAccuracy, roundNumber, displayScoresPage, nextRound, markers, setMarkers, checkButton, setCheckButton, question, setCenter, mapRef, postUserScores, numberOfRounds}) => {
 
     const [questionMarker, setQuestionMarker] = useState({})
     const [buttonText, setButtonText] = useState("Check");
@@ -21,7 +21,7 @@ const CheckButton = ({setIndAccuracy, roundNumber, displayScoresPage, nextRound,
        if(markers.length === 0) return
         setMarkers(current => [...current, questionMarker])
         setCheckButton(true)
-        if (roundNumber === 3){
+        if (roundNumber === numberOfRounds){
             setButtonText("Summary")
         } else {
           setButtonText("Next")
@@ -31,7 +31,7 @@ const CheckButton = ({setIndAccuracy, roundNumber, displayScoresPage, nextRound,
 
     // resets state of game to default settings and will set next question
     const handleNextClick = () => {
-      if(roundNumber === 3) {
+      if(roundNumber === numberOfRounds) {
         postUserScores()
         displayScoresPage()
       } else {

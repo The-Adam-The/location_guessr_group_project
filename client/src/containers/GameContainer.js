@@ -162,7 +162,7 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
                             </RulesPopup>
                             : null}
                         </div>
-                        <CheckButton className="check-button" setIndAccuracy={setIndAccuracy} roundNumber={roundNumber} displayScoresPage={displayScoresPage} nextRound={nextRound} markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} mapRef={mapRef} postUserScores={postUserScores}/>
+                        <CheckButton className="check-button" numberOfRounds={numberOfRounds} setIndAccuracy={setIndAccuracy} roundNumber={roundNumber} displayScoresPage={displayScoresPage} nextRound={nextRound} markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} mapRef={mapRef} postUserScores={postUserScores}/>
                     </nav>
                 </section>
             </article>
