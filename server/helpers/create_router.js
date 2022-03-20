@@ -25,7 +25,7 @@ const createRouter = (collection) => {
     })
 
 
-    //db route for 3 samples
+    //db route for random questions 
     router.get('/random/questions/:id', (req, res) => {
         const id = parseInt(req.params.id);
         collection
