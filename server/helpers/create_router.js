@@ -24,29 +24,13 @@ const createRouter = (collection) => {
             })
     })
 
-    //show random
-    router.get('/random/question', (req, res) => {
-        collection
-            .find()
-            .toArray()
-            .then((docs) => {
-                question = docs[Math.round(Math.random() * docs.length)]
-                res.json(question)
-            })
-            .catch((error) => {
-                console.error(error)
-                res.status(500)
-                res.json({
-                    status: 500,
-                    error: error
-                })
-            })
-    })
+
     //db route for 3 samples
-    router.get('/random/questions', (req, res) => {
+    router.get('/random/questions/:id', (req, res) => {
+        const id = parseInt(req.params.id);
         collection
         .aggregate(
-            [ { $sample: { size: 3 } } ])
+            [ { $sample: { size: id } } ])
         .toArray()
         .then((doc) => res.json(doc))
         .catch((error) => {
