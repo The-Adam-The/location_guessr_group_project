@@ -11,11 +11,6 @@ const CheckButton = ({setIndAccuracy, roundNumber, displayScoresPage, nextRound,
       setQuestionMarker(question.location.coords)
     }, [question])
 
-    // useEffect(() => {
-    //   if(question != null)
-    //     questionMarker.label = "Hello"    
-    // }, [questionMarker])
-
     questionMarker.icon = {
       url: blueMarker,
       scaledSize: new window.google.maps.Size(40,59)
