@@ -13,7 +13,7 @@ import './GameContainer.css';
 
 const libraries = ["places"];
 
-const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, setTotalScore}) => {
+const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, setTotalScore, numberOfRounds}) => {
   
     const {isLoaded, loadError} = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -33,7 +33,7 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
     
 
     useEffect(() => {
-        QuestionsService.getQuestions()
+        QuestionsService.getQuestions(numberOfRounds)
         .then(questions => setQuestions(questions))
     }, [])
 
@@ -142,7 +142,7 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
         <div className="game-container">
             <article className="question-map-box">
                 <section className="question-section">
-                    <QuestionRoundDisplay className="question-display" roundNumber={roundNumber}/>
+                    <QuestionRoundDisplay className="question-display" numberOfRounds={numberOfRounds} roundNumber={roundNumber}/>
                     <Question question={question}/>
                 </section>
                 <section className="map-section">
