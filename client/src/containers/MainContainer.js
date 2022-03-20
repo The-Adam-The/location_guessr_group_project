@@ -7,6 +7,7 @@ import Header from '../components/Header';
 
 const MainContainer = () => {
 
+    const [numberOfRounds, setNumberOfRounds] = useState(3)
     const [userName, setUserName] = useState('');
     const [userScores, setUserScores] = useState([]);
     const [totalScore, setTotalScore] = useState({});
