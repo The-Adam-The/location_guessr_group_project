@@ -118,10 +118,20 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
      }
 
     // calculates averages and posts score object to db
+
     const postUserScores = () => {
-        const calcAvgDistance = ((userScores.map(score => score.distance).reduce((prev, next) => parseFloat(prev) + parseFloat(next))) / 3).toFixed(2);
-        const calcAvgAccuracy = ((userScores.map(score => score.accuracy).reduce((prev, next) => parseFloat(prev) + parseFloat(next))) / 3).toFixed(2);
-        const totalPoints = ((userScores.map(score => score.points).reduce((prev, next) => parseFloat(prev) + parseFloat(next)))).toFixed(0);
+
+        if (userScores.length > 1) {
+            var calcAvgDistance = ((userScores.map(score => score.distance).reduce((prev, next) => parseFloat(prev) + parseFloat(next))) / 3).toFixed(2);
+            var calcAvgAccuracy = ((userScores.map(score => score.accuracy).reduce((prev, next) => parseFloat(prev) + parseFloat(next))) / 3).toFixed(2);
+            var totalPoints = ((userScores.map(score => score.points).reduce((prev, next) => parseFloat(prev) + parseFloat(next)))).toFixed(0);
+
+        } else {
+            var calcAvgDistance = userScores.distance
+            var calcAvgAccuracy = userScores.accuracy
+            var totalPoints = userScores.points
+
+        }
         const score = {
             name: userName,
             scores: userScores,
