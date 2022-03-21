@@ -26,7 +26,7 @@ const createRouter = (collection) => {
 
 
     //db route for 3 samples
-    router.get('/random/questions/:id', (req, res) => {
+    router.get('/questions/:id', (req, res) => {
         const id = parseInt(req.params.id);
         collection
         .aggregate(
