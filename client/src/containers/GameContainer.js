@@ -120,18 +120,22 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
     // calculates averages and posts score object to db
 
     const postUserScores = () => {
+        var calcAvgDistance = 0;
+        var calcAvgAccuracy = 0;
+        var totalPoints = 0;
 
+        console.log(userScores.length)
         if (userScores.length > 1) {
-            var calcAvgDistance = ((userScores.map(score => score.distance).reduce((prev, next) => parseFloat(prev) + parseFloat(next))) / 3).toFixed(2);
-            var calcAvgAccuracy = ((userScores.map(score => score.accuracy).reduce((prev, next) => parseFloat(prev) + parseFloat(next))) / 3).toFixed(2);
-            var totalPoints = ((userScores.map(score => score.points).reduce((prev, next) => parseFloat(prev) + parseFloat(next)))).toFixed(0);
+            calcAvgDistance = ((userScores.map(score => score.distance).reduce((prev, next) => parseFloat(prev) + parseFloat(next))) / 3).toFixed(2);
+            calcAvgAccuracy = ((userScores.map(score => score.accuracy).reduce((prev, next) => parseFloat(prev) + parseFloat(next))) / 3).toFixed(2);
+            totalPoints = ((userScores.map(score => score.points).reduce((prev, next) => parseFloat(prev) + parseFloat(next)))).toFixed(0);
 
         } else {
-            var calcAvgDistance = userScores.distance
-            var calcAvgAccuracy = userScores.accuracy
-            var totalPoints = userScores.points
-
+            calcAvgDistance = parseFloat(userScores[0].distance).toFixed(2)
+            calcAvgAccuracy = parseFloat(userScores[0].accuracy).toFixed(2)
+            totalPoints = parseFloat(userScores[0].points).toFixed(0)
         }
+        
         const score = {
             name: userName,
             scores: userScores,
