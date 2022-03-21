@@ -1,7 +1,7 @@
-const QuestionRoundDisplay = ({roundNumber}) => {
+const QuestionRoundDisplay = ({roundNumber, numberOfRounds}) => {
     return (
         <div className="question-round-display">
-            <h3>Question {roundNumber}/3</h3>
+            <h3>Question {roundNumber}/{numberOfRounds}</h3>
         </div>
     )
 }

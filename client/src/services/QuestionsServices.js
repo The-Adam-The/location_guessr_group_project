@@ -1,8 +1,8 @@
 const baseURL = 'http://127.0.0.1:5000/api/questions'
 
 const QuestionsService = {
-    getQuestions() {
-        return fetch(baseURL + '/random/questions')
+    getQuestions(numberOfQuestions) {
+        return fetch(baseURL + `/random/questions/${numberOfQuestions}`)
                .then(res => res.json())
     }
 }

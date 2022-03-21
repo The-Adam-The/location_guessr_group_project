@@ -7,6 +7,7 @@ import Header from '../components/Header';
 
 const MainContainer = () => {
 
+    const [numberOfRounds, setNumberOfRounds] = useState(1)
     const [userName, setUserName] = useState('');
     const [userScores, setUserScores] = useState([]);
     const [totalScore, setTotalScore] = useState({});
@@ -41,9 +42,9 @@ const MainContainer = () => {
     return(
         <div>
             <Header/>
-            {page === 'LogInPage' ? <LogInContainer displayGamePage={displayGamePage} setUserName={setUserName}/> : null}
-            {page === 'GamePage' ? <GameContainer setTotalScore={setTotalScore} displayScoresPage={displayScoresPage} userName={userName} userScores={userScores} setUserScores={setUserScores}/> : null}
-            {page === 'ScoresPage' ?<ScoresContainer totalScore={totalScore} scores={scores} displayLogInPage={displayLogInPage} newGame={newGame} userScores={userScores}/> : null}
+            {page === 'LogInPage' ? <LogInContainer numberOfRounds={numberOfRounds} displayGamePage={displayGamePage} setUserName={setUserName}/> : null}
+            {page === 'GamePage' ? <GameContainer numberOfRounds={numberOfRounds} setTotalScore={setTotalScore} displayScoresPage={displayScoresPage} userName={userName} userScores={userScores} setUserScores={setUserScores}/> : null}
+            {page === 'ScoresPage' ?<ScoresContainer numberOfRounds={numberOfRounds} totalScore={totalScore} scores={scores} displayLogInPage={displayLogInPage} newGame={newGame} userScores={userScores}/> : null}
         </div>
     );
 };

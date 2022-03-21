@@ -13,7 +13,7 @@ import './GameContainer.css';
 
 const libraries = ["places"];
 
-const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, setTotalScore}) => {
+const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, setTotalScore, numberOfRounds}) => {
   
     const {isLoaded, loadError} = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -33,7 +33,7 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
     
 
     useEffect(() => {
-        QuestionsService.getQuestions()
+        QuestionsService.getQuestions(numberOfRounds)
         .then(questions => setQuestions(questions))
     }, [])
 
@@ -118,10 +118,24 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
      }
 
     // calculates averages and posts score object to db
+
     const postUserScores = () => {
-        const calcAvgDistance = ((userScores.map(score => score.distance).reduce((prev, next) => parseFloat(prev) + parseFloat(next))) / 3).toFixed(2);
-        const calcAvgAccuracy = ((userScores.map(score => score.accuracy).reduce((prev, next) => parseFloat(prev) + parseFloat(next))) / 3).toFixed(2);
-        const totalPoints = ((userScores.map(score => score.points).reduce((prev, next) => parseFloat(prev) + parseFloat(next)))).toFixed(0);
+        var calcAvgDistance = 0;
+        var calcAvgAccuracy = 0;
+        var totalPoints = 0;
+
+        console.log(userScores.length)
+        if (userScores.length > 1) {
+            calcAvgDistance = ((userScores.map(score => score.distance).reduce((prev, next) => parseFloat(prev) + parseFloat(next))) / 3).toFixed(2);
+            calcAvgAccuracy = ((userScores.map(score => score.accuracy).reduce((prev, next) => parseFloat(prev) + parseFloat(next))) / 3).toFixed(2);
+            totalPoints = ((userScores.map(score => score.points).reduce((prev, next) => parseFloat(prev) + parseFloat(next)))).toFixed(0);
+
+        } else {
+            calcAvgDistance = parseFloat(userScores[0].distance).toFixed(2)
+            calcAvgAccuracy = parseFloat(userScores[0].accuracy).toFixed(2)
+            totalPoints = parseFloat(userScores[0].points).toFixed(0)
+        }
+        
         const score = {
             name: userName,
             scores: userScores,
@@ -142,7 +156,7 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
         <div className="game-container">
             <article className="question-map-box">
                 <section className="question-section">
-                    <QuestionRoundDisplay className="question-display" roundNumber={roundNumber}/>
+                    <QuestionRoundDisplay className="question-display" numberOfRounds={numberOfRounds} roundNumber={roundNumber}/>
                     <Question question={question}/>
                 </section>
                 <section className="map-section">
@@ -162,7 +176,7 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
                             </RulesPopup>
                             : null}
                         </div>
-                        <CheckButton className="check-button" setIndAccuracy={setIndAccuracy} roundNumber={roundNumber} displayScoresPage={displayScoresPage} nextRound={nextRound} markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} mapRef={mapRef} postUserScores={postUserScores}/>
+                        <CheckButton className="check-button" numberOfRounds={numberOfRounds} setIndAccuracy={setIndAccuracy} roundNumber={roundNumber} displayScoresPage={displayScoresPage} nextRound={nextRound} markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} mapRef={mapRef} postUserScores={postUserScores}/>
                     </nav>
                 </section>
             </article>
