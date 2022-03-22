@@ -38,18 +38,39 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
     }, [])
 
     useEffect(() => {
-        setQuestion({})
+        
         selectQuestion()
     }, [questions, roundNumber])
-    
+
+    useEffect(() => {
+        showQuestion()
+    }, [question])
+  
     const selectQuestion = () => {
         setQuestion(questions[roundNumber-1])
-    }  
+    }
+
+    const showQuestion = () => {
+        if (question) {
+            return (
+           <Question question={question}/>
+            )
+        } else {
+            return(
+                <div>
+                    <p>Loading</p>
+                </div>
+            )
+        } 
+    }
+
 
     const nextRound = () => {
         const temp = roundNumber + 1;
         setRoundNumber(temp)
     }
+
+
 
     // sets the map in reference state so we can use the reference to pan around with the panTo function
     const mapRef = useRef();
@@ -157,6 +178,9 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
             <article className="question-map-box">
                 <section className="question-section">
                     <QuestionRoundDisplay className="question-display" numberOfRounds={numberOfRounds} roundNumber={roundNumber}/>
+                    
+
+                    {showQuestion}
                     <Question question={question}/>
                 </section>
                 <section className="map-section">
