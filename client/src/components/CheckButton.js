@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import blueMarker from '../images/right_answer_marker_orange.png';
 
-const CheckButton = ({setIndAccuracy, roundNumber, displayScoresPage, nextRound, markers, setMarkers, checkButton, setCheckButton, question, setCenter, mapRef, postUserScores, numberOfRounds}) => {
+const CheckButton = ({setIndAccuracy, roundNumber, displayScoresPage, nextRound, markers, setMarkers, checkButton, setCheckButton, question, setQuestion, setCenter, mapRef, postUserScores, numberOfRounds}) => {
 
     const [questionMarker, setQuestionMarker] = useState({})
     const [buttonText, setButtonText] = useState("Check");
