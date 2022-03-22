@@ -38,6 +38,7 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
     }, [])
 
     useEffect(() => {
+        setQuestion({})
         selectQuestion()
     }, [questions, roundNumber])
     
@@ -118,7 +119,6 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
      }
 
     // calculates averages and posts score object to db
-
     const postUserScores = () => {
         var calcAvgDistance = 0;
         var calcAvgAccuracy = 0;
@@ -176,7 +176,7 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
                             </RulesPopup>
                             : null}
                         </div>
-                        <CheckButton className="check-button" numberOfRounds={numberOfRounds} setIndAccuracy={setIndAccuracy} roundNumber={roundNumber} displayScoresPage={displayScoresPage} nextRound={nextRound} markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setCenter={setCenter} mapRef={mapRef} postUserScores={postUserScores}/>
+                        <CheckButton className="check-button" numberOfRounds={numberOfRounds} setIndAccuracy={setIndAccuracy} roundNumber={roundNumber} displayScoresPage={displayScoresPage} nextRound={nextRound} markers={markers} setMarkers={setMarkers} checkButton={checkButton} setCheckButton={setCheckButton} question={question} setQuestion={setQuestion} setCenter={setCenter} mapRef={mapRef} postUserScores={postUserScores}/>
                     </nav>
                 </section>
             </article>
