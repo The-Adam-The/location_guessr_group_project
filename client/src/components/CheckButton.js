@@ -3,7 +3,7 @@ import blueMarker from '../images/right_answer_marker_orange.png';
 
 const CheckButton = ({setIndAccuracy, roundNumber, displayScoresPage, nextRound, markers, setMarkers, checkButton, setCheckButton, question, setQuestion, setCenter, mapRef, postUserScores, numberOfRounds}) => {
 
-    const [questionMarker, setQuestionMarker] = useState({})
+    const [questionMarker, setQuestionMarker] = useState({});
     const [buttonText, setButtonText] = useState("Check");
 
     useEffect(() => {
@@ -26,7 +26,6 @@ const CheckButton = ({setIndAccuracy, roundNumber, displayScoresPage, nextRound,
         } else {
           setButtonText("Next")
         }
-
       };
 
     // resets state of game to default settings and will set next question
@@ -42,16 +41,13 @@ const CheckButton = ({setIndAccuracy, roundNumber, displayScoresPage, nextRound,
         nextRound()
         setButtonText("Check")
         setIndAccuracy(null)
-      }
+      };
     };
-
     return ( 
-
         <div className="checkbutton">
-            {/* {checkButton ? <button className='question-button' onClick={handleNextClick}>Next</button> : <button className='question-button' onClick={markers.length !== 0 ? handleCheckClick : null}>Check</button>} */}
             <button id="game-btn" className="std-btn purple-btn" onClick={checkButton ? handleNextClick : handleCheckClick}>{buttonText}</button>
         </div>
      );
-}
+};
 
 export default CheckButton;
