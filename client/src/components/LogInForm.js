@@ -6,7 +6,7 @@ const LogInForm = ({displayGamePage, setUserName}) => {
 
     const handleInput = (event) => {
         setTempUserName(event.target.value)
-    }
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault()

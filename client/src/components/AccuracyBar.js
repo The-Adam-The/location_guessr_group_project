@@ -11,4 +11,4 @@ const AccuracyBar = ({barFill}) => {
     );
 }
 
-export default AccuracyBar
+export default AccuracyBar;

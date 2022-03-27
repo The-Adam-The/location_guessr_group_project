@@ -3,6 +3,7 @@ import {GoogleMap, Marker, Polyline} from "@react-google-maps/api"
 import mapStyle from "../mapStyle"
 import logoMarker from '../images/whereabouts_marker.png';
 
+
 const Map = ({markers, setMarkers, center, onMapLoad}) => {
 
     // sets the size of the maps
@@ -10,7 +11,6 @@ const Map = ({markers, setMarkers, center, onMapLoad}) => {
         position: "relative",
         width: "74vw",
         height: "80vh",
-
       };
     
     // loads in options to the map including the mapStyle which is how the map looks and sets allowed controls
@@ -49,7 +49,6 @@ const Map = ({markers, setMarkers, center, onMapLoad}) => {
             }
         }])
     }, []);
-
     return(
         <div className='map-box'>
             <GoogleMap mapContainerStyle={mapContainerStyle} zoom={2} center={center} options={options} mapContainerClassName={'map-container'} onClick={markers.length !== 2 ? handleMarkerClick : null} onLoad={onMapLoad}>
