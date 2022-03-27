@@ -21,6 +21,15 @@
  If you have any feedback for the game, or if you find any game breaking bugs please just post a comment on github and we will get back to you. Try to be as descriptive as possible and error logs are extremely helpful!
 
 
+# Dependencies
+Node.js
+React.js
+core.js
+express.js
+mongodb
+Google Maps api
+
+
 # Installation: 
 Ensure that you have node.js installed:
 https://nodejs.org/en/download/
