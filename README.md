@@ -18,7 +18,7 @@
 
  Each session has three rounds and you're given a breakdown of your scores at the end of the session. You are free to play as many sessions as you like.
 
- If you have any feedback for the game, or if you find any game break bugs please just post a comment on github and we will get back to you. Try to be as descriptive as possible and error logs are extremely helpful!
+ If you have any feedback for the game, or if you find any game breaking bugs please just post a comment on github and we will get back to you. Try to be as descriptive as possible and error logs are extremely helpful!
 
 
 # Installation: 
@@ -38,9 +38,9 @@ react:
 
 2. After installation, initate react by typing 'npm start'.
 
-3. After that, in your browser enter the following intothe url bar: http://localhost:3000/
+3. After that, in your browser enter the following into the url bar: http://localhost:3000/
 
-4. If your installation ran correctly you should see the home page for whereabouts, if you don't check both the terminal for  the client and server side folders, if they are showing errors we suggest reviewing the installation step by step. If you're still having problems please don't hesitate to send us a message explaning your issue and we will help in anyway we can.
+4. If your installation ran correctly you should see the home page for 'whereabouts?'. If you don't, check both the terminal for the client and server folders, if they are showing errors we suggest reviewing the installation step by step. If you're still having problems please don't hesitate to send us a message explaning your issue and we will help in anyway we can.
 
 # Development Information
 
@@ -52,7 +52,7 @@ For more information on our development process please check out the development
 # The Team
 
 We are a team of four and we made the game for our capstone project @CodeClan. 
-We really enjoyed making this game and we hope you have fun playing it to.
+We really enjoyed making this game and we hope you have fun playing it too.
 
 Feel free to send us a message, or say hi! 
 
