@@ -22,8 +22,7 @@ const createRouter = (collection) => {
                     error: error
                 })
             })
-    })
-
+    });
 
     //db route for 3 samples
     router.get('/questions/:id', (req, res) => {
@@ -41,7 +40,7 @@ const createRouter = (collection) => {
                     error: error
                 })
             })
-    })
+    });
 
     //show 
     router.get('/:id', (req, res) => {
@@ -59,7 +58,7 @@ const createRouter = (collection) => {
                     error: error
                 })
             })
-    })
+    });
 
     //create
     router.post('/', (req, res) => {
@@ -75,10 +74,9 @@ const createRouter = (collection) => {
                     error: error
                 })
             })
-    })
+    });
 
     return router
-
 };
 
 module.exports = createRouter;

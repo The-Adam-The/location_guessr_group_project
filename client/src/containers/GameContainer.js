@@ -43,7 +43,7 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
     const nextRound = () => {
         const temp = roundNumber + 1;
         setRoundNumber(temp)
-    }
+    };
 
     // sets the map in reference state so we can use the reference to pan around with the panTo function
     const mapRef = useRef();
@@ -92,7 +92,7 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
             }
         }
         calculateAccuracy()
-    }
+    };
 
     // adds scores object to userScores array
     useEffect(() => {
@@ -108,16 +108,15 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
             points: indPoints, 
             distance: indDistance, 
             accuracy: indAccuracy
-        }
+        };
         setUserScores([...userScores, score])
-     }
+     };
 
     // calculates averages and posts score object to db
     const postUserScores = () => {
         var calcAvgDistance = 0;
         var calcAvgAccuracy = 0;
         var totalPoints = 0;
-
 
         if (userScores.length > 1) {
             calcAvgDistance = ((userScores.map(score => score.distance).reduce((prev, next) => parseFloat(prev) + parseFloat(next))) / 3).toFixed(2);
@@ -141,11 +140,10 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
         }
         ScoresService.postScore(score)
         setTotalScore(score)
-    }
+    };
 
     if (loadError) return "Error loading maps";
     if (!isLoaded) return "Loading map";
-
     return(
         <div className="game-container">
             <article className="question-map-box">

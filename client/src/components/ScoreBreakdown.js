@@ -9,9 +9,7 @@ const ScoreBreakdown = ({userScores, totalScore, displayLogInPage, newGame}) => 
         <li>Points: {score.points}</li>
         <li>Distance from location: {score.distance}km</li>
         </ul>
-    })
-
-    
+    });
     return(
         <div className="scores-breakdown">
             <div className="scores-left-aside">

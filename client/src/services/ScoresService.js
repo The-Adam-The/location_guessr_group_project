@@ -14,6 +14,6 @@ const ScoresService = {
         })
         .then(res => res.json())
     }
-}
+};
 
 export default ScoresService;

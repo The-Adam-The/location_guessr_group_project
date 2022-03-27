@@ -8,8 +8,7 @@ const Leaderboard = ({scores}) => {
 
     const scoresList = scores.sort((a, b) => b.total.points-a.total.points).map((score, index) => {
         return <LeaderboardScore score={score} key={index} index={index}/>
-    })
-
+    });
     return(
         <section className="leaderboard-section">
             <div className="leaderboard-whole">

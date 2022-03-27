@@ -5,7 +5,6 @@ const QuestionsService = {
         return fetch(baseURL + `/questions/${numberOfQuestions}`)
                .then(res => res.json())
     }
-}
-
+};
 
 export default QuestionsService

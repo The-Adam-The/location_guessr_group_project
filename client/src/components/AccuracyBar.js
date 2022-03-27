@@ -7,9 +7,8 @@ const AccuracyBar = ({barFill}) => {
            <AccuracyFill barFill={barFill} />
        </div>
         <p className="barfill-text">{barFill}%</p>  
-
     </div>
-    )
+    );
 }
 
-export default AccuracyBar
+export default AccuracyBar;

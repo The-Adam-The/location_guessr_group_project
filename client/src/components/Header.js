@@ -7,7 +7,7 @@ const Header = () => {
                 <a className="logo" href="/">WHEREABOUTS</a><a className="logo-question-mark" href="/">?</a>
             </nav>
         </header>
-    )
+    );
 };
 
 export default Header;

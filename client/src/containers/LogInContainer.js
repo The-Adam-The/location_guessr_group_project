@@ -7,7 +7,6 @@ import './LogInContainer.css';
 
 const LogInContainer = ({displayGamePage, setUserName}) => {
     const [rulePopup, setRulePopup] = useState(false);
-    
     return(
         <div className="login-container">
                 <article className="page-info">

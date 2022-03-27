@@ -8,6 +8,6 @@ const LeaderboardScore = ({score, index}) => {
             <p className="player-avg-accuracy">{score.total.averageAccuracy}%</p>
         </li>
     );
-}
+};
 
 export default LeaderboardScore;
