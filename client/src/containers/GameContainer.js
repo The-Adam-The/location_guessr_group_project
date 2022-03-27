@@ -31,46 +31,19 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
     const [indDistance, setIndDistance] = useState(0);
     const [indAccuracy, setIndAccuracy] = useState(null);
     
-
     useEffect(() => {
         QuestionsService.getQuestions(numberOfRounds)
         .then(questions => setQuestions(questions))
     }, [])
 
     useEffect(() => {
-        
-        selectQuestion()
-    }, [questions, roundNumber])
-
-    useEffect(() => {
-        showQuestion()
-    }, [question])
-  
-    const selectQuestion = () => {
         setQuestion(questions[roundNumber-1])
-    }
-
-    const showQuestion = () => {
-        if (question) {
-            return (
-           <Question question={question}/>
-            )
-        } else {
-            return(
-                <div>
-                    <p>Loading</p>
-                </div>
-            )
-        } 
-    }
-
+    }, [questions, roundNumber])
 
     const nextRound = () => {
         const temp = roundNumber + 1;
         setRoundNumber(temp)
     }
-
-
 
     // sets the map in reference state so we can use the reference to pan around with the panTo function
     const mapRef = useRef();
@@ -145,7 +118,7 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
         var calcAvgAccuracy = 0;
         var totalPoints = 0;
 
-        console.log(userScores.length)
+
         if (userScores.length > 1) {
             calcAvgDistance = ((userScores.map(score => score.distance).reduce((prev, next) => parseFloat(prev) + parseFloat(next))) / 3).toFixed(2);
             calcAvgAccuracy = ((userScores.map(score => score.accuracy).reduce((prev, next) => parseFloat(prev) + parseFloat(next))) / 3).toFixed(2);
@@ -178,9 +151,6 @@ const GameContainer = ({displayScoresPage, userName, userScores, setUserScores, 
             <article className="question-map-box">
                 <section className="question-section">
                     <QuestionRoundDisplay className="question-display" numberOfRounds={numberOfRounds} roundNumber={roundNumber}/>
-                    
-
-                    {showQuestion}
                     <Question question={question}/>
                 </section>
                 <section className="map-section">
